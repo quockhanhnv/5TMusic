@@ -31,7 +31,7 @@
 							<div class="m-stack m-stack--ver m-stack--general">
 								<div class="m-stack__item m-stack__item--middle m-brand__logo">
 									<a href="layout.blade.php" class="m-brand__logo-wrapper">
-										<img alt="" src="{{ asset('admin/assets/demo/demo12/media/img/logo/logo.png') }}"/>
+										<img alt="" src="{{ asset('admin-assets/assets/demo/demo12/media/img/logo/logo.png') }}"/>
 									</a>
 								</div>
 								<div class="m-stack__item m-stack__item--middle m-brand__tools">
@@ -962,7 +962,7 @@
 										<li class="m-nav__item m-topbar__user-profile  m-dropdown m-dropdown--medium m-dropdown--arrow  m-dropdown--align-right m-dropdown--mobile-full-width m-dropdown--skin-light" m-dropdown-toggle="click">
 											<a href="#" class="m-nav__link m-dropdown__toggle">
 												<span class="m-topbar__userpic">
-													<img src="{{ asset('admin/assets/app/media/img/users/user4.jpg') }}" class="m--img-rounded m--marginless m--img-centered" alt=""/>
+													<img src="{{ asset('admin-assets/assets/app/media/img/users/user4.jpg') }}" class="m--img-rounded m--marginless m--img-centered" alt=""/>
 												</span>
 												<span class="m-nav__link-icon m-topbar__usericon  m--hide">
 													<span class="m-nav__link-icon-wrapper">
@@ -979,7 +979,7 @@
 													<div class="m-dropdown__header m--align-center">
 														<div class="m-card-user m-card-user--skin-light">
 															<div class="m-card-user__pic">
-																<img src="{{ asset('admin/assets/app/media/img/users/user4.jpg') }}" class="m--img-rounded m--marginless" alt=""/>
+																<img src="{{ asset('admin-assets/assets/app/media/img/users/user4.jpg') }}" class="m--img-rounded m--marginless" alt=""/>
 															</div>
 															<div class="m-card-user__details">
 																<span class="m-card-user__name m--font-weight-500">
@@ -1632,7 +1632,7 @@
 								<div class="m-messenger__wrapper">
 									<div class="m-messenger__message m-messenger__message--in">
 										<div class="m-messenger__message-pic">
-											<img src="{{ asset('admin/assets/app/media/img//users/user3.jpg') }}" alt=""/>
+											<img src="{{ asset('admin-assets/assets/app/media/img//users/user3.jpg') }}" alt=""/>
 										</div>
 										<div class="m-messenger__message-body">
 											<div class="m-messenger__message-arrow"></div>
@@ -1662,7 +1662,7 @@
 								<div class="m-messenger__wrapper">
 									<div class="m-messenger__message m-messenger__message--in">
 										<div class="m-messenger__message-pic">
-											<img src="{{ asset('admin/assets/app/media/img//users/user3.jpg') }}" alt=""/>
+											<img src="{{ asset('admin-assets/assets/app/media/img//users/user3.jpg') }}" alt=""/>
 										</div>
 										<div class="m-messenger__message-body">
 											<div class="m-messenger__message-arrow"></div>
@@ -1695,7 +1695,7 @@
 								<div class="m-messenger__wrapper">
 									<div class="m-messenger__message m-messenger__message--in">
 										<div class="m-messenger__message-pic">
-											<img src="{{ asset('admin/assets/app/media/img//users/user3.jpg') }}"  alt=""/>
+											<img src="{{ asset('admin-assets/assets/app/media/img//users/user3.jpg') }}"  alt=""/>
 										</div>
 										<div class="m-messenger__message-body">
 											<div class="m-messenger__message-arrow"></div>
@@ -1772,7 +1772,7 @@
 								<div class="m-messenger__wrapper">
 									<div class="m-messenger__message m-messenger__message--in">
 										<div class="m-messenger__message-pic">
-											<img src="{{ asset('admin/assets/app/media/img//users/user3.jpg') }}"  alt=""/>
+											<img src="{{ asset('admin-assets/assets/app/media/img//users/user3.jpg') }}"  alt=""/>
 										</div>
 										<div class="m-messenger__message-body">
 											<div class="m-messenger__message-arrow"></div>
