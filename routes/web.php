@@ -12,5 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('client.pages.home.index');
+});
+
+Route::group(['prefix' => '5t-music', 'middleware' => [], 'namespace' => 'Admin'], function () {
+    Route::get('user', 'UserController@index');
+
 });
