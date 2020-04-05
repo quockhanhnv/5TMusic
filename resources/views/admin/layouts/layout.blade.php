@@ -1112,7 +1112,7 @@
 									<span class="m-menu__item-here"></span>
 									<i class="m-menu__link-icon flaticon-layers"></i>
 									<span class="m-menu__link-text">
-										Resources
+										Category
 									</span>
 									<i class="m-menu__ver-arrow la la-angle-right"></i>
 								</a>
@@ -1161,11 +1161,11 @@
 								</div>
 							</li>
 							<li class="m-menu__item " aria-haspopup="true"  m-menu-link-redirect="1">
-								<a  href="inner.html" class="m-menu__link ">
+								<a  href="{{ route('admin.category.index') }}" class="m-menu__link ">
 									<span class="m-menu__item-here"></span>
 									<i class="m-menu__link-icon flaticon-suitcase"></i>
 									<span class="m-menu__link-text">
-										Finance
+										Danh mục
 									</span>
 								</a>
 							</li>
@@ -1542,7 +1542,9 @@
 					</div>
 					<!-- END: Subheader -->
 					<div class="m-content">
-                        @yield('content')
+
+                            @yield('content')
+
 					</div>
 				</div>
 			</div>
@@ -2242,6 +2244,7 @@
 		<!-- begin::Quick Nav -->
 
 		@include('admin.includes.script')
+        @yield('js')
 	</body>
 	<!-- end::Body -->
 </html>
