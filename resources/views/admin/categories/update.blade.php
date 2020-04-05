@@ -24,7 +24,7 @@
                         <label for="example_input_full_name">
                             Tên danh mục:
                         </label>
-                        <input type="text" name="c_name" class="form-control m-input" value="{{ $category->c_name }}" placeholder="Enter category">
+                        <input type="text" name="c_name" class="form-control m-input" value="{{  $category->c_name ?? old('c_name') }}" placeholder="Enter category">
 
                     </div>
                     <div class="form-group m-form__group">
@@ -46,8 +46,7 @@
                             <label for="c_avatar">
                                 Hình ảnh:
                             </label>
-                            <input type="file" name="c_avatar" id="c_avatar" value="{{ asset($category->c_avatar) }}" class="form-control m-input" placeholder="Enter category image">
-
+                            <input type="file" name="c_avatar" id="c_avatar" value="{{ asset($category->c_avatar) ?? old('c_avatar') }}" class="form-control m-input" placeholder="Enter category image">
                         </div>
                     </div>
                 </div>

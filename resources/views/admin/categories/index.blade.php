@@ -88,7 +88,17 @@
             <!--end::Section-->
         </div>
         <!--end::Form-->
+        <!-- Begin: Pagination -->
+        <br>
+        <div class="form-group m-form__group row align-items-center">
+            <div class="col-md-5"></div>
+            <div class="col-md-5 text-center">
+                {{$categories->links()}}
+            </div>
+        </div>
+        <!-- End: Pagination -->
     </div>
+
 @endsection
 
 @section('js')

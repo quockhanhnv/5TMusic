@@ -6,7 +6,7 @@ use App\Services\UserService;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class UserController extends Controller
+class AdminUserController extends Controller
 {
     protected $userService;
 

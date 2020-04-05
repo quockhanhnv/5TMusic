@@ -15,7 +15,7 @@ class Category extends Model
         return $this->hasMany(self::class,'c_parent_id','id');
     }
 
-    public static function recursive($categories, &$listCategoriesSort, $parent_id = 0, $level = 1)
+    public function recursive($categories, &$listCategoriesSort, $parent_id = 0, $level = 1)
     {
         if(count($categories) > 0 )
         {

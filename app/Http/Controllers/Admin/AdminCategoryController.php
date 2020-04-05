@@ -2,74 +2,74 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Category;
+use App\Http\Requests\AdminCategoryRequest;
+use App\Services\CategoryService;
 use App\Services\UploadFileService;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 
 class AdminCategoryController extends Controller
 {
+    protected $categoryService;
     protected $uploadFileService;
 
-    public function __construct(UploadFileService $uploadFileService) {
+    public function __construct(CategoryService $categoryService,UploadFileService $uploadFileService) {
+        $this->categoryService = $categoryService;
         $this->uploadFileService = $uploadFileService;
     }
     public function index()
     {
-        $categories = Category::paginate(10);
+        $categories = $this->categoryService->paginate(2);
 
         return view('admin.categories.index', compact('categories'));
     }
 
     public function create()
     {
-        $categories = $this->getCategoriesSort();
+        $categories = $this->categoryService->getCategoriesSort();
+
         return view('admin.categories.create', compact('categories'));
     }
 
     public function edit($id)
     {
-        $category = Category::find($id);
-        $categories = $this->getCategoriesSort();
+        $category = $this->categoryService->findById($id);
+
+        $categories = $this->categoryService->getCategoriesSort();
+
         return view('admin.categories.update', compact('category','categories'));
     }
 
-    public function store(Request $request)
+    public function store(AdminCategoryRequest $request)
     {
-        $data               = $request->except('_token','c_avatar');
-        $data['c_slug']     = Str::slug($request->c_name);
-        $data['created_at'] = Carbon::now();
-        if ($request->c_avatar) {
-            $avatarPath = $this->uploadFileService->upload($file = $request->file('c_avatar'), 'category');
-            $data['c_avatar'] = $avatarPath;
+        try {
+            $this->categoryService->store($request->all());
+            return redirect()->route('admin.category.index')->with('success', 'Tạo mới danh mục thành công');
+        } catch (\Exception $exception) {
+            Log::error('Something went wrong when insert category ' . $exception->getMessage());
+            return redirect()->back()->withInput()->with('error', 'Xảy ra lỗi trong thao tác, vui lòng thử lại');
         }
-
-        $id = Category::insertGetId($data);
-        return redirect()->back();
     }
 
-    public function update(Request $request, $id)
+    public function update(AdminCategoryRequest $request, $id)
     {
-        $category           = Category::find($id);
-        $data               = $request->except('_token','c_avatar');
-        $data['c_slug']     = Str::slug($request->c_name);
-        $data['updated_at'] = Carbon::now();
-
-        if ($request->c_avatar) {
-            $avatarPath = $this->uploadFileService->upload($file = $request->file('c_avatar'), 'category');
-            $data['c_avatar'] = $avatarPath;
+        try {
+            $this->categoryService->update($request->all(), $id);
+            return redirect()->route('admin.category.index')->with('success', 'Cập nhật danh mục thành công');
+        } catch (\Exception $exception) {
+            Log::error('Something went wrong when update category ' . $exception->getMessage());
+            return redirect()->back()->withInput()->with('error', 'Xảy ra lỗi trong thao tác, vui lòng thử lại');
         }
-
-        $category->update($data);
-        return redirect()->back();
     }
 
     public function active($id)
     {
-        $category = Category::find($id);
+        $category = $this->categoryService->findById($id);
         $category->c_status = ! $category->c_status;
+
         $category->save();
 
         return redirect()->back();
@@ -77,7 +77,7 @@ class AdminCategoryController extends Controller
 
     public function hot($id)
     {
-        $category = Category::find($id);
+        $category = $this->categoryService->findById($id);
         $category->c_hot = ! $category->c_hot;
         $category->save();
 
@@ -86,19 +86,10 @@ class AdminCategoryController extends Controller
 
     public function delete($id)
     {
-        $category = Category::find($id);
+        $category = $this->categoryService->findById($id);
         if ($category) $category->delete();
 
         return redirect()->back();
     }
 
-    protected function getCategoriesSort()
-    {
-        $categories = Category::where('c_status', Category::STATUS_ACTIVE)
-            ->select('id', 'c_parent_id', 'c_name')->get();
-
-        $listCategoriesSort = [];
-        Category::recursive($categories, $listCategoriesSort, $parent = 0, $level = 1);
-        return $listCategoriesSort;
-    }
 }

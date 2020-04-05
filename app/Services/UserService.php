@@ -2,11 +2,11 @@
 
 namespace App\Services;
 
-use App\Repositories\User\UserRepositoryInterface;
+use App\Repositories\User\CategoryRepositoryInterface;
 
 class UserService extends BaseService
 {
-    public function __construct(UserRepositoryInterface $repository)
+    public function __construct(CategoryRepositoryInterface $repository)
     {
         $this->repository = $repository;
     }

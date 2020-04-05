@@ -24,8 +24,10 @@
                          <label for="c_name">
                              Tên danh mục:
                          </label>
-                         <input type="text" name="c_name" id="c_name" class="form-control m-input" placeholder="Enter category">
-
+                         <input type="text" name="c_name" id="c_name" value="{{  $category->c_name ?? old('c_name') }}" class="form-control m-input" placeholder="Enter category">
+                         @if(count($errors) > 0)
+                             <span class="text-danger">{{$errors->first('c_name')}}</span>
+                         @endif
                      </div>
                      <div class="form-group m-form__group">
                          <label>
@@ -40,14 +42,19 @@
                                  </option>
                              @endforeach
                          </select>
+                         @if(count($errors) > 0)
+                             <span class="text-danger">{{$errors->first('c_parent_id')}}</span>
+                         @endif
                      </div>
                      <div class="form-group m-form__group">
                          <div class="form-group m-form__group">
                              <label for="c_avatar">
                                  Hình ảnh:
                              </label>
-                             <input type="file" name="c_avatar" id="c_avatar" class="form-control m-input" placeholder="Enter category image">
-
+                             <input type="file" name="c_avatar" id="c_avatar" value="{{ asset($category->c_avatar) ?? old('c_avatar') }}" class="form-control m-input" placeholder="Enter category image">
+                             @if(count($errors) > 0)
+                                 <span class="text-danger">{{$errors->first('c_avatar')}}</span>
+                             @endif
                          </div>
                      </div>
                  </div>
