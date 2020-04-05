@@ -58,9 +58,8 @@ class AdminCategoryController extends Controller
         $data['updated_at'] = Carbon::now();
 
         if ($request->c_avatar) {
-            $image = upload_image('c_avatar');
-            if ($image['code'] == 1)
-                $data['c_avatar'] = $image['name'];
+            $avatarPath = $this->uploadFileService->upload($file = $request->file('c_avatar'), 'category');
+            $data['c_avatar'] = $avatarPath;
         }
 
         $category->update($data);
