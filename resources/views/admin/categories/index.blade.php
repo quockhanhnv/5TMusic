@@ -39,9 +39,6 @@
                                 Nổi bật
                             </th>
                             <th>
-                                Thời gian
-                            </th>
-                            <th>
                                 Hành động
                             </th>
                         </tr>
@@ -54,7 +51,7 @@
                                     <td>{{ $category->c_name }}</td>
                                     <td>
                                         <div class="m-widget4__item">
-                                            <img class="" src="{{asset($category->c_avatar)}}" style="width: 50px" title="">
+                                            <img class="" src="{{ asset($category->c_avatar)}}" style="width: 50px;height: 50px" title="">
                                         </div>
 
 
@@ -73,7 +70,6 @@
                                             <a href="{{ route('admin.category.hot', $category->id) }}" class="label label-default"><span class="m-badge m-badge--metal m-badge--wide">none</span></a>
                                         @endif
                                     </td>
-                                    <td>{{  $category->created_at }}</td>
                                     <td>
                                         <a href="{{ route('admin.category.update', $category->id) }}" class="m-portlet__nav-link btn m-btn m-btn--hover-info m-btn--icon m-btn--icon-only m-btn--pill" title="Cập nhật"><i class="la la-edit"></i></a>
                                         <a href="javascript:;" onclick="confirmRemove('{{ route('admin.category.delete', $category->id) }}')" class="m-portlet__nav-link btn m-btn m-btn--hover-danger m-btn--icon m-btn--icon-only m-btn--pill m-btn--delete" title="Xóa"><i class="la la-trash"></i></a>

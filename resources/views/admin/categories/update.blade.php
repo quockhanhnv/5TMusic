@@ -46,7 +46,10 @@
                             <label for="c_avatar">
                                 Hình ảnh:
                             </label>
-                            <input type="file" name="c_avatar" id="c_avatar" value="{{ asset($category->c_avatar) ?? old('c_avatar') }}" class="form-control m-input" placeholder="Enter category image">
+                            <input onchange="encodeImageFileAsURL(this)" type="file" name="c_avatar" id="c_avatar" value="{{ asset($category->c_avatar) ?? old('c_avatar') }}" class="form-control m-input" placeholder="Enter category image">
+                            <div class="preview-image">
+                                <img id="preview" src="{{ asset($category->c_avatar) }}" alt="" class="img-responsive" style="width: 300px;max-height: 300px;overflow: hidden">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -64,4 +67,24 @@
         </form>
         <!--end::Form-->
     </div>
+@endsection
+
+@section('js')
+    <script>
+        // get image base 64
+        function encodeImageFileAsURL(element) {
+            var file = element.files[0];
+            if(file == undefined)
+            {
+                $('#preview').attr('src', '{{ asset('images/defaults/default-image.jpg') }}');
+                return false;
+            }
+            var reader = new FileReader();
+            reader.onloadend = function() {
+                console.log('RESULT', reader.result)
+                $('#preview').attr('src', reader.result);
+            }
+            reader.readAsDataURL(file);
+        }
+    </script>
 @endsection

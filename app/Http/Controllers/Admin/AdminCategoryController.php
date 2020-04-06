@@ -22,7 +22,7 @@ class AdminCategoryController extends Controller
     }
     public function index()
     {
-        $categories = $this->categoryService->paginate(2);
+        $categories = $this->categoryService->paginate(10);
 
         return view('admin.categories.index', compact('categories'));
     }
@@ -37,7 +37,6 @@ class AdminCategoryController extends Controller
     public function edit($id)
     {
         $category = $this->categoryService->findById($id);
-
         $categories = $this->categoryService->getCategoriesSort();
 
         return view('admin.categories.update', compact('category','categories'));
@@ -56,6 +55,7 @@ class AdminCategoryController extends Controller
 
     public function update(AdminCategoryRequest $request, $id)
     {
+//        dd($request->all());
         try {
             $this->categoryService->update($request->all(), $id);
             return redirect()->route('admin.category.index')->with('success', 'Cập nhật danh mục thành công');
