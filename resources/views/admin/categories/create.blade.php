@@ -47,17 +47,15 @@
                         @endif
                     </div>
                     <div class="form-group m-form__group">
-                        <div class="form-group m-form__group">
-                            <label for="c_avatar">
-                                Hình ảnh:
-                            </label>
-                            <input onchange="encodeImageFileAsURL(this)" type="file" name="c_avatar" id="c_avatar" class="form-control m-input" placeholder="Enter category image">
-                            @if(count($errors) > 0)
-                                <span class="text-danger">{{$errors->first('c_avatar')}}</span>
-                            @endif
-                            <div class="preview-image">
-                                <img id="preview" src="{{ asset('images/default-image.jpg') }}" alt="" class="img-responsive" style="width: 300px;max-height: 300px;overflow: hidden">
-                            </div>
+                        <label for="c_avatar">
+                            Hình ảnh:
+                        </label>
+                        <input onchange="encodeImageFileAsURL(this)" type="file" name="c_avatar" id="c_avatar" class="form-control m-input" placeholder="Enter category image">
+                        @if(count($errors) > 0)
+                            <span class="text-danger">{{$errors->first('c_avatar')}}</span>
+                        @endif
+                        <div class="preview-image">
+                            <img id="preview" src="{{ asset('images/default-image.jpg') }}" alt="" class="img-responsive" style="width: 300px;max-height: 300px;overflow: hidden">
                         </div>
                     </div>
                 </div>
