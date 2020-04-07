@@ -4,7 +4,9 @@ namespace App\Repositories\Product;
 
 interface ProductRepositoryInterface
 {
-    public function paginate($itemPerPage);
+    public function withRelation($relation);
+
+    public function paginate($models, $itemPerPage);
 
     public function findById($id);
 

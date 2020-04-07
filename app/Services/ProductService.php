@@ -14,10 +14,14 @@ class ProductService extends BaseService
         $this->repository = $repository;
         $this->uploadFileService = $uploadFileService;
     }
-
-    public function paginate($itemPerPage)
+    public function withRelation($relation)
     {
-        return $this->repository->paginate($itemPerPage);
+        return $this->repository->withRelation($relation);
+    }
+
+    public function paginate($models, $itemPerPage)
+    {
+        return $this->repository->paginate($models, $itemPerPage);
     }
 
     public function findById($id)
@@ -27,7 +31,7 @@ class ProductService extends BaseService
 
     public function store($data)
     {
-        $data['pro_slug']     = Str::slug($data['pro_name']);
+        $data['pro_slug'] = Str::slug($data['pro_name']);
         $data['pro_eq_pickup'] = isset($data['pro_eq_pickup']) ? 1 : 0;
         if (isset($data['pro_avatar'])) {
             $avatarPath = $this->uploadFileService->upload($data['pro_avatar'], 'products');
@@ -39,11 +43,11 @@ class ProductService extends BaseService
 
     public function update($data, $id)
     {
-
-        $data['c_slug']     = Str::slug($data['c_name']);
-        if (isset($data['c_avatar'])) {
-            $avatarPath = $this->uploadFileService->upload($data['c_avatar'], 'category');
-            $data['c_avatar'] = $avatarPath;
+        $data['pro_slug'] = Str::slug($data['pro_name']);
+        $data['pro_eq_pickup'] = isset($data['pro_eq_pickup']) ? 1 : 0;
+        if (isset($data['pro_avatar'])) {
+            $avatarPath = $this->uploadFileService->upload($data['pro_avatar'], 'products');
+            $data['pro_avatar'] = $avatarPath;
         }
 
         return $this->repository->update($data, $id);

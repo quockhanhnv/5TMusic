@@ -179,7 +179,7 @@
                 <div class="col-8">
                     <span class="m-switch m-switch--icon m-switch--success">
                         <label>
-                            <input type="checkbox" name="pro_eq_pickup" {{ ($product->pro_eq_pickup ?? old('pro_eq_pickup')) ?? "checked" }}>
+                            <input type="checkbox" name="pro_eq_pickup" checked>
                             <span></span>
                         </label>
                     </span>
@@ -203,7 +203,7 @@
                 <span class="text-danger">{{$errors->first('pro_avatar')}}</span>
             @endif
             <div class="preview-image">
-                <img id="preview" src="{{ asset('images/default-image.jpg') }}" alt="" class="img-responsive" style="width: 305px;max-height: 123px;;overflow: hidden">
+                <img id="preview" src="{{ asset($product->pro_avatar ?? '') ?? asset('images/default-image.jpg') }}" alt="" class="img-responsive" style="width: 305px;max-height: 123px;;overflow: hidden">
             </div>
         </div>
     </div>
@@ -220,7 +220,7 @@
             <div class="col-lg-4"></div>
             <div class="col-lg-8">
                 <button type="submit" class="btn btn-primary">
-                    Thêm mới
+                    {{ isset($product) ? "Cập nhật" : "Thêm mới" }}
                 </button>
                 <button type="reset" class="btn btn-secondary">
                     Hủy

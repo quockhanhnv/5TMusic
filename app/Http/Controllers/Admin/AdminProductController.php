@@ -23,7 +23,8 @@ class AdminProductController extends Controller
 
     public function index()
     {
-        $products = $this->productService->paginate(10);
+        $products = $this->productService->withRelation('category');
+        $products = $this->productService->paginate($products, 10);
 
         $viewData = [
           'products' => $products
@@ -48,5 +49,51 @@ class AdminProductController extends Controller
             Log::error('Something went wrong when insert product ' . $exception->getMessage());
             return redirect()->back()->withInput()->with('error', 'Xảy ra lỗi trong thao tác, vui lòng thử lại');
         }
+    }
+
+    public function edit($id)
+    {
+        $product = $this->productService->findById($id);
+        $categories = $this->categoryService->getAll();
+
+        return view('admin.products.update', compact('product', 'categories'));
+    }
+
+    public function update(AdminProductRequest $request, $id)
+    {
+        try {
+            $this->productService->update($request->all(), $id);
+            return redirect()->route('admin.product.index')->with('success', 'Cập nhật sản phẩm thành công');
+        } catch (\Exception $exception) {
+            Log::error('Something went wrong when update product ' . $exception->getMessage());
+            return redirect()->back()->withInput()->with('error', 'Xảy ra lỗi trong thao tác, vui lòng thử lại');
+        }
+    }
+
+    public function active($id)
+    {
+        $product = $this->productService->findById($id);
+        $product->pro_active = ! $product->pro_active;
+
+        $product->save();
+
+        return redirect()->back();
+    }
+
+    public function hot($id)
+    {
+        $product = $this->productService->findById($id);
+        $product->pro_hot = ! $product->pro_hot;
+        $product->save();
+
+        return redirect()->back();
+    }
+
+    public function delete($id)
+    {
+        $product = $this->productService->findById($id);
+        if ($product) $product->delete();
+
+        return redirect()->back();
     }
 }

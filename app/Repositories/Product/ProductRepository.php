@@ -12,9 +12,13 @@ class ProductRepository extends BaseRepository implements ProductRepositoryInter
         return Product::class;
     }
 
-    public function paginate($itemPerPage)
+    public function withRelation($relation)
     {
-        return $this->model->paginate($itemPerPage);
+        return $this->model->with($relation);
+    }
+    public function paginate($models, $itemPerPage)
+    {
+        return $models->paginate($itemPerPage);
     }
 
     public function findById($id)

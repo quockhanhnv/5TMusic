@@ -15,6 +15,11 @@ class Category extends Model
         return $this->hasMany(self::class,'c_parent_id','id');
     }
 
+    public function products()
+    {
+        return $this->hasMany(Product::class, 'pro_category_id');
+    }
+
     public function recursive($categories, &$listCategoriesSort, $parent_id = 0, $level = 1)
     {
         if(count($categories) > 0 )

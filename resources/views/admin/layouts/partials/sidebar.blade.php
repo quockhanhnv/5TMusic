@@ -17,12 +17,12 @@
                 <i class="m-menu__section-icon flaticon-more-v3"></i>
             </li>
             <li class="m-menu__item  m-menu__item--active" aria-haspopup="true" >
-                <a href="layout.blade.php" class="m-menu__link ">
+                <a href="{{ route('dashboard') }}" class="m-menu__link ">
                     <span class="m-menu__item-here"></span>
                     <i class="m-menu__link-icon flaticon-line-graph"></i>
                     <span class="m-menu__link-text">
-										Dashboard
-									</span>
+                        Dashboard
+                    </span>
                 </a>
             </li>
 
@@ -31,8 +31,17 @@
                     <span class="m-menu__item-here"></span>
                     <i class="m-menu__link-icon flaticon-suitcase"></i>
                     <span class="m-menu__link-text">
-										Danh mục
-									</span>
+                        Danh mục
+                    </span>
+                </a>
+            </li>
+            <li class="m-menu__item " aria-haspopup="true"  m-menu-link-redirect="1">
+                <a href="{{ route('admin.product.index') }}" class="m-menu__link ">
+                    <span class="m-menu__item-here"></span>
+                    <i class="m-menu__link-icon flaticon-light"></i>
+                    <span class="m-menu__link-text">
+                        Sản phẩm
+                    </span>
                 </a>
             </li>
             <li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  m-menu-submenu-toggle="hover" m-menu-link-redirect="1">
@@ -40,38 +49,38 @@
                     <span class="m-menu__item-here"></span>
                     <i class="m-menu__link-icon flaticon-graphic-1"></i>
                     <span class="m-menu__link-title">
-										<span class="m-menu__link-wrap">
-											<span class="m-menu__link-text">
-												Support
-											</span>
-											<span class="m-menu__link-badge">
-												<span class="m-badge m-badge--accent">
-													3
-												</span>
-											</span>
-										</span>
-									</span>
+                        <span class="m-menu__link-wrap">
+                            <span class="m-menu__link-text">
+                                Support
+                            </span>
+                            <span class="m-menu__link-badge">
+                                <span class="m-badge m-badge--accent">
+                                    3
+                                </span>
+                            </span>
+                        </span>
+                    </span>
                     <i class="m-menu__ver-arrow la la-angle-right"></i>
                 </a>
                 <div class="m-menu__submenu ">
                     <span class="m-menu__arrow"></span>
                     <ul class="m-menu__subnav">
                         <li class="m-menu__item  m-menu__item--parent" aria-haspopup="true"  m-menu-link-redirect="1">
-											<span class="m-menu__link">
-												<span class="m-menu__item-here"></span>
-												<span class="m-menu__link-title">
-													<span class="m-menu__link-wrap">
-														<span class="m-menu__link-text">
-															Support
-														</span>
-														<span class="m-menu__link-badge">
-															<span class="m-badge m-badge--accent">
-																3
-															</span>
-														</span>
-													</span>
-												</span>
-											</span>
+                            <span class="m-menu__link">
+                                <span class="m-menu__item-here"></span>
+                                <span class="m-menu__link-title">
+                                    <span class="m-menu__link-wrap">
+                                        <span class="m-menu__link-text">
+                                            Support
+                                        </span>
+                                        <span class="m-menu__link-badge">
+                                            <span class="m-badge m-badge--accent">
+                                                3
+                                            </span>
+                                        </span>
+                                    </span>
+                                </span>
+                            </span>
                         </li>
                         <li class="m-menu__item " aria-haspopup="true"  m-menu-link-redirect="1">
                             <a  href="inner.html" class="m-menu__link ">
@@ -79,8 +88,8 @@
                                     <span></span>
                                 </i>
                                 <span class="m-menu__link-text">
-													Reports
-												</span>
+                                    Reports
+                                </span>
                             </a>
                         </li>
                         <li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  m-menu-submenu-toggle="hover" m-menu-link-redirect="1">
@@ -89,8 +98,8 @@
                                     <span></span>
                                 </i>
                                 <span class="m-menu__link-text">
-													Cases
-												</span>
+                                    Cases
+                                </span>
                                 <i class="m-menu__ver-arrow la la-angle-right"></i>
                             </a>
                             <div class="m-menu__submenu ">
@@ -102,8 +111,8 @@
                                                 <span></span>
                                             </i>
                                             <span class="m-menu__link-text">
-																Pending
-															</span>
+                                                Pending
+                                            </span>
                                         </a>
                                     </li>
                                     <li class="m-menu__item " aria-haspopup="true"  m-menu-link-redirect="1">
@@ -112,8 +121,8 @@
                                                 <span></span>
                                             </i>
                                             <span class="m-menu__link-text">
-																Urgent
-															</span>
+                                                Urgent
+                                            </span>
                                         </a>
                                     </li>
                                     <li class="m-menu__item " aria-haspopup="true"  m-menu-link-redirect="1">
@@ -122,8 +131,8 @@
                                                 <span></span>
                                             </i>
                                             <span class="m-menu__link-text">
-																Done
-															</span>
+                                                Done
+                                            </span>
                                         </a>
                                     </li>
                                     <li class="m-menu__item " aria-haspopup="true"  m-menu-link-redirect="1">
@@ -132,8 +141,8 @@
                                                 <span></span>
                                             </i>
                                             <span class="m-menu__link-text">
-																Archive
-															</span>
+                                                Archive
+                                            </span>
                                         </a>
                                     </li>
                                 </ul>
@@ -145,8 +154,8 @@
                                     <span></span>
                                 </i>
                                 <span class="m-menu__link-text">
-													Clients
-												</span>
+                                    Clients
+                                </span>
                             </a>
                         </li>
                         <li class="m-menu__item " aria-haspopup="true"  m-menu-link-redirect="1">
@@ -155,29 +164,20 @@
                                     <span></span>
                                 </i>
                                 <span class="m-menu__link-text">
-													Audit
-												</span>
+                                    Audit
+                                </span>
                             </a>
                         </li>
                     </ul>
                 </div>
             </li>
             <li class="m-menu__item " aria-haspopup="true"  m-menu-link-redirect="1">
-                <a href="{{ route('admin.product.index') }}" class="m-menu__link ">
-                    <span class="m-menu__item-here"></span>
-                    <i class="m-menu__link-icon flaticon-light"></i>
-                    <span class="m-menu__link-text">
-										Sản phẩm
-									</span>
-                </a>
-            </li>
-            <li class="m-menu__item " aria-haspopup="true"  m-menu-link-redirect="1">
                 <a  href="inner.html" class="m-menu__link ">
                     <span class="m-menu__item-here"></span>
                     <i class="m-menu__link-icon flaticon-share"></i>
                     <span class="m-menu__link-text">
-										Management
-									</span>
+                        Management
+                    </span>
                 </a>
             </li>
             <li class="m-menu__section ">
@@ -191,8 +191,8 @@
                     <span class="m-menu__item-here"></span>
                     <i class="m-menu__link-icon flaticon-graphic"></i>
                     <span class="m-menu__link-text">
-										Accounting
-									</span>
+                        Accounting
+                    </span>
                 </a>
             </li>
             <li class="m-menu__item " aria-haspopup="true"  m-menu-link-redirect="1">
@@ -200,8 +200,8 @@
                     <span class="m-menu__item-here"></span>
                     <i class="m-menu__link-icon flaticon-network"></i>
                     <span class="m-menu__link-text">
-										Products
-									</span>
+                        Products
+                    </span>
                 </a>
             </li>
             <li class="m-menu__item " aria-haspopup="true"  m-menu-link-redirect="1">
@@ -209,8 +209,8 @@
                     <span class="m-menu__item-here"></span>
                     <i class="m-menu__link-icon flaticon-network"></i>
                     <span class="m-menu__link-text">
-										Sales
-									</span>
+                        Sales
+                    </span>
                 </a>
             </li>
             <li class="m-menu__item " aria-haspopup="true"  m-menu-link-redirect="1">
@@ -218,17 +218,17 @@
                     <span class="m-menu__item-here"></span>
                     <i class="m-menu__link-icon flaticon-alert"></i>
                     <span class="m-menu__link-title">
-										<span class="m-menu__link-wrap">
-											<span class="m-menu__link-text">
-												Bills
-											</span>
-											<span class="m-menu__link-badge">
-												<span class="m-badge m-badge--danger">
-													12
-												</span>
-											</span>
-										</span>
-									</span>
+                        <span class="m-menu__link-wrap">
+                            <span class="m-menu__link-text">
+                                Bills
+                            </span>
+                            <span class="m-menu__link-badge">
+                                <span class="m-badge m-badge--danger">
+                                    12
+                                </span>
+                            </span>
+                        </span>
+                    </span>
                 </a>
             </li>
             <li class="m-menu__item " aria-haspopup="true"  m-menu-link-redirect="1">
@@ -236,8 +236,8 @@
                     <span class="m-menu__item-here"></span>
                     <i class="m-menu__link-icon flaticon-technology"></i>
                     <span class="m-menu__link-text">
-										IPO
-									</span>
+                        IPO
+                    </span>
                 </a>
             </li>
             <li class="m-menu__section ">
@@ -251,20 +251,20 @@
                     <span class="m-menu__item-here"></span>
                     <i class="m-menu__link-icon flaticon-clipboard"></i>
                     <span class="m-menu__link-text">
-										Applications
-									</span>
+                        Applications
+                    </span>
                     <i class="m-menu__ver-arrow la la-angle-right"></i>
                 </a>
                 <div class="m-menu__submenu ">
                     <span class="m-menu__arrow"></span>
                     <ul class="m-menu__subnav">
                         <li class="m-menu__item  m-menu__item--parent" aria-haspopup="true" >
-											<span class="m-menu__link">
-												<span class="m-menu__item-here"></span>
-												<span class="m-menu__link-text">
-													Applications
-												</span>
-											</span>
+                            <span class="m-menu__link">
+                                <span class="m-menu__item-here"></span>
+                                <span class="m-menu__link-text">
+                                    Applications
+                                </span>
+                            </span>
                         </li>
                         <li class="m-menu__item " aria-haspopup="true"  m-menu-link-redirect="1">
                             <a  href="inner.html" class="m-menu__link ">
@@ -272,8 +272,8 @@
                                     <span></span>
                                 </i>
                                 <span class="m-menu__link-text">
-													Audit
-												</span>
+                                    Audit
+                                </span>
                             </a>
                         </li>
                         <li class="m-menu__item " aria-haspopup="true"  m-menu-link-redirect="1">
@@ -282,8 +282,8 @@
                                     <span></span>
                                 </i>
                                 <span class="m-menu__link-text">
-													Notifications
-												</span>
+                                    Notifications
+                                </span>
                             </a>
                         </li>
                         <li class="m-menu__item " aria-haspopup="true"  m-menu-link-redirect="1">
@@ -292,8 +292,8 @@
                                     <span></span>
                                 </i>
                                 <span class="m-menu__link-text">
-													Messages
-												</span>
+                                    Messages
+                                </span>
                             </a>
                         </li>
                     </ul>
@@ -304,20 +304,20 @@
                     <span class="m-menu__item-here"></span>
                     <i class="m-menu__link-icon flaticon-computer"></i>
                     <span class="m-menu__link-text">
-										Modules
-									</span>
+                        Modules
+                    </span>
                     <i class="m-menu__ver-arrow la la-angle-right"></i>
                 </a>
                 <div class="m-menu__submenu ">
                     <span class="m-menu__arrow"></span>
                     <ul class="m-menu__subnav">
                         <li class="m-menu__item  m-menu__item--parent" aria-haspopup="true" >
-											<span class="m-menu__link">
-												<span class="m-menu__item-here"></span>
-												<span class="m-menu__link-text">
-													Modules
-												</span>
-											</span>
+                            <span class="m-menu__link">
+                                <span class="m-menu__item-here"></span>
+                                <span class="m-menu__link-text">
+                                    Modules
+                                </span>
+                            </span>
                         </li>
                         <li class="m-menu__item " aria-haspopup="true"  m-menu-link-redirect="1">
                             <a  href="inner.html" class="m-menu__link ">
@@ -325,8 +325,8 @@
                                     <span></span>
                                 </i>
                                 <span class="m-menu__link-text">
-													Logs
-												</span>
+                                    Logs
+                                </span>
                             </a>
                         </li>
                         <li class="m-menu__item " aria-haspopup="true"  m-menu-link-redirect="1">
@@ -335,8 +335,8 @@
                                     <span></span>
                                 </i>
                                 <span class="m-menu__link-text">
-													Errors
-												</span>
+                                    Errors
+                                </span>
                             </a>
                         </li>
                         <li class="m-menu__item " aria-haspopup="true"  m-menu-link-redirect="1">
@@ -345,8 +345,8 @@
                                     <span></span>
                                 </i>
                                 <span class="m-menu__link-text">
-													Configuration
-												</span>
+                                    Configuration
+                                </span>
                             </a>
                         </li>
                     </ul>
@@ -357,8 +357,8 @@
                     <span class="m-menu__item-here"></span>
                     <i class="m-menu__link-icon flaticon-cogwheel"></i>
                     <span class="m-menu__link-text">
-										Files
-									</span>
+                        Files
+                    </span>
                 </a>
             </li>
             <li class="m-menu__item " aria-haspopup="true"  m-menu-link-redirect="1">
@@ -366,8 +366,8 @@
                     <span class="m-menu__item-here"></span>
                     <i class="m-menu__link-icon flaticon-lifebuoy"></i>
                     <span class="m-menu__link-text">
-										Security
-									</span>
+                        Security
+                    </span>
                 </a>
             </li>
             <li class="m-menu__item " aria-haspopup="true"  m-menu-link-redirect="1">
@@ -375,8 +375,8 @@
                     <span class="m-menu__item-here"></span>
                     <i class="m-menu__link-icon flaticon-settings"></i>
                     <span class="m-menu__link-text">
-										Options
-									</span>
+                        Options
+                    </span>
                 </a>
             </li>
         </ul>

@@ -21,23 +21,3 @@
     <!--end::Form-->
 </div>
 @endsection
-
-@section('js')
-    <script>
-        // get image base 64
-        function encodeImageFileAsURL(element) {
-            var file = element.files[0];
-            if(file == undefined)
-            {
-                $('#preview').attr('src', '{{ asset('images/defaults/default-image.jpg') }}');
-                return false;
-            }
-            var reader = new FileReader();
-            reader.onloadend = function() {
-                console.log('RESULT', reader.result)
-                $('#preview').attr('src', reader.result);
-            }
-            reader.readAsDataURL(file);
-        }
-    </script>
-@endsection
