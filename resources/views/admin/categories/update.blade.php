@@ -10,7 +10,7 @@
                         <i class="la la-gear"></i>
                     </span>
                     <h3 class="m-portlet__head-text">
-                        Thêm mới danh mục
+                        Cập nhật danh mục
                     </h3>
                 </div>
             </div>

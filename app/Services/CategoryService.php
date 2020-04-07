@@ -2,9 +2,7 @@
 
 namespace App\Services;
 
-use App\Models\Category;
 use App\Repositories\Category\CategoryRepositoryInterface;
-use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
 class CategoryService extends BaseService
@@ -32,16 +30,16 @@ class CategoryService extends BaseService
         return $this->repository->index();
     }
 
-//    public function store($data)
-//    {
-//        return $this->repository->store($data);
-//    }
+    public function getAll()
+    {
+        return $this->repository->getAll();
+    }
 
     public function store($data)
     {
         $data['c_slug']     = Str::slug($data['c_name']);
         if (isset($data['c_avatar'])) {
-            $avatarPath = $this->uploadFileService->upload($data['c_avatar'], 'category');
+            $avatarPath = $this->uploadFileService->upload($data['c_avatar'], 'categories');
             $data['c_avatar'] = $avatarPath;
         }
 

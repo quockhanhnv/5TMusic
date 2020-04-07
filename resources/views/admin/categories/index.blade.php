@@ -58,16 +58,16 @@
                                     </td>
                                     <td>
                                         @if ($category->c_status == 1)
-                                            <a href="{{ route('admin.category.active', $category->id) }}" class="label label-info"><span class="m-badge m-badge--success m-badge--wide">Show</span></a>
+                                            <a href="{{ route('admin.category.active', $category->id) }}" class="label label-info"><span class="m-badge m-badge--success m-badge--wide">Hoạt động</span></a>
                                         @else
-                                            <a href="{{ route('admin.category.active', $category->id) }}" class="label label-default"><span class="m-badge m-badge--metal m-badge--wide">Hide</span></a>
+                                            <a href="{{ route('admin.category.active', $category->id) }}" class="label label-default"><span class="m-badge m-badge--metal m-badge--wide">Ẩn</span></a>
                                         @endif
                                     </td>
                                     <td>
                                         @if ($category->c_hot == 1)
-                                            <a href="{{ route('admin.category.hot', $category->id) }}" class="label label-info"><span class="m-badge m-badge--success m-badge--wide">hot</span></a>
+                                            <a href="{{ route('admin.category.hot', $category->id) }}" class="label label-info"><span class="m-badge m-badge--success m-badge--wide">Có</span></a>
                                         @else
-                                            <a href="{{ route('admin.category.hot', $category->id) }}" class="label label-default"><span class="m-badge m-badge--metal m-badge--wide">none</span></a>
+                                            <a href="{{ route('admin.category.hot', $category->id) }}" class="label label-default"><span class="m-badge m-badge--metal m-badge--wide">Không</span></a>
                                         @endif
                                     </td>
                                     <td>

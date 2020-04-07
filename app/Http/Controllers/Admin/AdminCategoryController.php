@@ -4,21 +4,15 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\AdminCategoryRequest;
 use App\Services\CategoryService;
-use App\Services\UploadFileService;
-use Carbon\Carbon;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Str;
 
 class AdminCategoryController extends Controller
 {
     protected $categoryService;
-    protected $uploadFileService;
 
-    public function __construct(CategoryService $categoryService,UploadFileService $uploadFileService) {
+    public function __construct(CategoryService $categoryService) {
         $this->categoryService = $categoryService;
-        $this->uploadFileService = $uploadFileService;
     }
     public function index()
     {
@@ -55,7 +49,6 @@ class AdminCategoryController extends Controller
 
     public function update(AdminCategoryRequest $request, $id)
     {
-//        dd($request->all());
         try {
             $this->categoryService->update($request->all(), $id);
             return redirect()->route('admin.category.index')->with('success', 'Cập nhật danh mục thành công');
