@@ -30,6 +30,7 @@ class CreateProductsTable extends Migration
             $table->text('pro_content')->nullable();
             $table->integer('pro_review_total')->default(0);
             $table->integer('pro_review_star')->default(0);
+            $table->tinyInteger('pro_provider')->default(0);
             $table->string('pro_style')->nullable(); // Kiểu dáng
             $table->string('pro_type')->nullable(); // Loại đàn
             $table->string('pro_strings')->nullable(); // Số dây
@@ -44,8 +45,6 @@ class CreateProductsTable extends Migration
             $table->string('pro_bridge')->nullable(); // Ngựa đàn
             $table->string('pro_comb')->nullable(); // Lược đàn
             $table->string('pro_string_type')->nullable(); // Dây đàn
-
-
             $table->timestamps();
         });
     }

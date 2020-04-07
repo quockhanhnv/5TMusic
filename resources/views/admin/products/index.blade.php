@@ -55,14 +55,17 @@
                                 <tr>
                                     <td>{{ $product->id }}</td>
                                     <td>{{ $product->pro_name }}</td>
-                                    <td>{{ $product->category->c_name }}</td>
+                                    <td>
+                                        <span class="m-badge m-badge--primary m-badge--wide">{{ $product->category->c_name }}</span>
+                                    </td>
                                     <td>
                                         <div class="m-widget4__item">
                                             <img class="" src="{{ asset($product->pro_avatar)}}" style="width: 50px;height: 50px" title="">
                                         </div>
                                     </td>
                                     <td>
-                                        {{ number_format($product->pro_price, 0, '.', ',') }}
+                                        <span>{{ number_format(getPriceSale($product->pro_price, $product->pro_sale), 0, '.', ',') }}</span><br><br>
+                                        <span style="text-decoration: line-through;color: red">{{ number_format($product->pro_price, 0, '.', ',') }}</span>
                                     </td>
                                     <td>
                                         @if ($product->pro_active == 1)
@@ -73,7 +76,7 @@
                                     </td>
                                     <td>
                                         @if ($product->pro_hot == 1)
-                                            <a href="{{ route('admin.product.hot', $product->id) }}" class="label label-info"><span class="m-badge m-badge--success m-badge--wide">Có</span></a>
+                                            <a href="{{ route('admin.product.hot', $product->id) }}" class="label label-info"><span class="m-badge m-badge--danger m-badge--wide">Có</span></a>
                                         @else
                                             <a href="{{ route('admin.product.hot', $product->id) }}" class="label label-default"><span class="m-badge m-badge--metal m-badge--wide">Không</span></a>
                                         @endif

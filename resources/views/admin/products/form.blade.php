@@ -172,20 +172,36 @@
             @endif
         </div>
         <div class="col-lg-4">
+            <label>
+                Nhà sản xuất:
+            </label>
+            <select name="pro_provider" class="form-control m-input" id="exampleSelect1">
+                <option value="1" {{ ($product->pro_provider ?? '' ) == 1 ? "selected='selected'" : "" }}>5TMusic</option>
+                <option value="2" {{ ($product->pro_provider ?? '' ) == 2 ? "selected='selected'" : "" }}>Japan</option>
+                <option value="3" {{ ($product->pro_provider ?? '' ) == 3 ? "selected='selected'" : "" }}>UK</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group m-form__group row">
+        <div class="col-lg-4">
             <div class="row">
                 <label class="col-4 col-form-label">
                     EQ & Pickup:
                 </label>
-                <div class="col-8">
-                    <span class="m-switch m-switch--icon m-switch--success">
-                        <label>
-                            <input type="checkbox" name="pro_eq_pickup" checked>
-                            <span></span>
-                        </label>
-                    </span>
+                <div class="col-4">
+                <span class="m-switch m-switch--icon m-switch--success">
+                    <label>
+                        <input type="checkbox" name="pro_eq_pickup" checked>
+                        <span></span>
+                    </label>
+                </span>
                 </div>
             </div>
+            @if(count($errors) > 0)
+                <span class="text-danger">{{$errors->first('pro_eq_pickup')}}</span>
+            @endif
         </div>
+
     </div>
     <div class="form-group m-form__group row">
         <div class="col-lg-8">
