@@ -43,7 +43,7 @@
         Route::get('update/{id}','AdminCourseController@edit')->name('admin.course.update');
         Route::post('update/{id}','AdminCourseController@update');
 
-        Route::get('hot/{id}','AdminCourseController@hot')->name('admin.course.shot');
+        Route::get('hot/{id}','AdminCourseController@hot')->name('admin.course.hot');
         Route::get('active/{id}','AdminCourseController@active')->name('admin.course.active');
 
 

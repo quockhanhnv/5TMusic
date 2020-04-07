@@ -30,6 +30,9 @@
                                 Tên
                             </th>
                             <th>
+                                Danh mục cha
+                            </th>
+                            <th>
                                 Hình ảnh
                             </th>
                             <th>
@@ -49,6 +52,7 @@
                                 <tr>
                                     <td>{{ $category->id }}</td>
                                     <td>{{ $category->c_name }}</td>
+                                    <td>{{ $category->parent->c_name ?? 'Trống' }}</td>
                                     <td>
                                         <div class="m-widget4__item">
                                             <img class="" src="{{ asset($category->c_avatar)}}" style="width: 50px;height: 50px" title="">
@@ -65,7 +69,7 @@
                                     </td>
                                     <td>
                                         @if ($category->c_hot == 1)
-                                            <a href="{{ route('admin.category.hot', $category->id) }}" class="label label-info"><span class="m-badge m-badge--success m-badge--wide">Có</span></a>
+                                            <a href="{{ route('admin.category.hot', $category->id) }}" class="label label-info"><span class="m-badge m-badge--danger m-badge--wide">Có</span></a>
                                         @else
                                             <a href="{{ route('admin.category.hot', $category->id) }}" class="label label-default"><span class="m-badge m-badge--metal m-badge--wide">Không</span></a>
                                         @endif

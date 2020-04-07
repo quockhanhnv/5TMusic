@@ -7,17 +7,25 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     protected $guarded = [];
-    const STATUS_ACTIVE = 1;
-    const STATUS_HIDE = 0;
 
-    public function children()
+    public function childrens()
     {
         return $this->hasMany(self::class,'c_parent_id','id');
+    }
+
+    public function parent()
+    {
+        return $this->belongsTo(self::class,'c_parent_id','id');
     }
 
     public function products()
     {
         return $this->hasMany(Product::class, 'pro_category_id');
+    }
+
+    public function courses()
+    {
+        return $this->hasMany(Course::class, 'course_category_id');
     }
 
     public function recursive($categories, &$listCategoriesSort, $parent_id = 0, $level = 1)

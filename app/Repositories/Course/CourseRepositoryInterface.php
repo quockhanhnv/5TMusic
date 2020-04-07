@@ -1,9 +1,8 @@
 <?php
 
-namespace App\Repositories\Category;
+namespace App\Repositories\Course;
 
-
-interface CategoryRepositoryInterface
+interface CourseRepositoryInterface
 {
     public function withRelation($relation);
 
@@ -16,6 +15,4 @@ interface CategoryRepositoryInterface
     public function store($data);
 
     public function update($data, $id);
-
-    public function getRecursive($categories, &$listCategoriesSort, $parent_id = 0, $level = 1);
 }

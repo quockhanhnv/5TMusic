@@ -15,9 +15,14 @@ class CategoryService extends BaseService
         $this->uploadFileService = $uploadFileService;
     }
 
-    public function paginate($itemPerPage)
+    public function withRelation($relation)
     {
-        return $this->repository->paginate($itemPerPage);
+        return $this->repository->withRelation($relation);
+    }
+
+    public function paginate($models, $itemPerPage)
+    {
+        return $this->repository->paginate($models, $itemPerPage);
     }
 
     public function findById($id)

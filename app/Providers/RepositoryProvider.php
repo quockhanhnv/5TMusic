@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use App\Repositories\Category\CategoryRepository;
 use App\Repositories\Category\CategoryRepositoryInterface;
+use App\Repositories\Course\CourseRepository;
+use App\Repositories\Course\CourseRepositoryInterface;
 use App\Repositories\Product\ProductRepository;
 use App\Repositories\Product\ProductRepositoryInterface;
 use App\Repositories\User\UserRepository;
@@ -34,6 +36,7 @@ class RepositoryProvider extends ServiceProvider
                      CategoryRepositoryInterface::class => CategoryRepository::class,
                      UserRepositoryInterface::class => UserRepository::class,
                      ProductRepositoryInterface::class => ProductRepository::class,
+                     CourseRepositoryInterface::class => CourseRepository::class,
                  ] as $interface => $concrete) {
 
             app()->bind($interface, $concrete);

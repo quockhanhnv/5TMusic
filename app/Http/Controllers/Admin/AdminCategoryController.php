@@ -16,7 +16,8 @@ class AdminCategoryController extends Controller
     }
     public function index()
     {
-        $categories = $this->categoryService->paginate(10);
+        $categories = $this->categoryService->withRelation('parent');
+        $categories = $this->categoryService->paginate($categories, 10);
 
         return view('admin.categories.index', compact('categories'));
     }

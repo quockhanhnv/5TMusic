@@ -24,7 +24,7 @@ class AdminCourseRequest extends FormRequest
     public function rules()
     {
         return [
-            'course_name'          => 'required|max:190|min:3|unique:products,pro_name,'.$this->id,
+            'course_name'          => 'required|max:190|min:3|unique:courses,course_name,'.$this->id,
             'course_price'         => 'required',
             'course_description'   => 'required',
             'course_category_id'   => 'required',

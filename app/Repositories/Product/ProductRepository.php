@@ -28,7 +28,7 @@ class ProductRepository extends BaseRepository implements ProductRepositoryInter
 
     public function getAll()
     {
-        return $this->model->where('c_status', PRODUCT_ACTIVE)->get();
+        return $this->model->where('c_status', ACTIVE_STATUS)->get();
     }
 
     public function store($data)

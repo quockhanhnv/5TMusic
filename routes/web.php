@@ -14,4 +14,9 @@
 Route::get('/', function () {
     return view('client.pages.home.index');
 });
+use App\Models\Product;
+Route::get('rating', function () {
+    $products = Product::all();
 
+   return view('client.pages.home.test-rating', compact('products'));
+});
