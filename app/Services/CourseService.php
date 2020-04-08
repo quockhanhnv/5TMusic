@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Repositories\Course\CourseRepositoryInterface;
 use Illuminate\Support\Str;
+use Illuminate\Support\Arr;
 
 class CourseService extends BaseService
 {

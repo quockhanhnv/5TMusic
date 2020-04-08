@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $('#course_content').summernote({
-        height: 150,
+        height: 350,
         callbacks: {
             onImageUpload: function(files, editor, welEditable) {
                 for (var i = 0; i < files.length; i++) {
@@ -76,7 +76,7 @@ $(document).ready(function() {
             success: function (filename) {
                 console.log('success');
                 console.log(filename);
-                debugger;
+                // debugger;
                 filename = $.parseJSON( filename );
                 if (filename == '') {
                     return;

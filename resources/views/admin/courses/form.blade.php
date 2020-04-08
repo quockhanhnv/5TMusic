@@ -100,6 +100,9 @@
                 Mô tả ngắn:
             </label>
             <textarea name="course_description" class="form-control m-input m-input--solid" id="exampleTextarea" rows="9">{{  $course->course_description ?? old('course_description') }}</textarea>
+            @if(count($errors) > 0)
+                <span class="text-danger">{{$errors->first('course_description')}}</span>
+            @endif
         </div>
         <div class="col-lg-4">
             <label for="course_avatar">
@@ -120,13 +123,15 @@
                 Nội dung:
             </label>
             (<span class="label-required"></span>)
-            <div class="course_content"><?php echo $course->course_content ?? old('course_content'); ?></div>
-            <input type="hidden" id="course_content" name="course_content" value="{{  $course->course_content ?? old('course_content') }}" />
+            <div class="course_content"></div>
             @if ($errors->has('course_content'))
                 <div class="form-control-feedback">
                     {{ $errors->first('course_content') }}
                 </div>
             @endif
+{{--            <input type="hidden" id="course_content" name="course_content" value="{{  $course->course_content ?? old('course_content') }}" />--}}
+            <textarea name="course_content" class="form-control m-input m-input--solid" id="course_content" rows="9">{{  $course->course_content ?? old('course_content') }}</textarea>
+
         </div>
     </div>
 

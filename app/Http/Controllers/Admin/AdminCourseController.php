@@ -40,8 +40,9 @@ class AdminCourseController extends Controller
 
     public function store(AdminCourseRequest $request)
     {
+        $data = $request->except('files');
         try {
-            $this->courseService->store($request->all());
+            $this->courseService->store($data);
             return redirect()->route('admin.course.index')->with('success', 'Tạo mới khóa học thành công');
         } catch (\Exception $exception) {
             Log::error('Something went wrong when insert course ' . $exception->getMessage());
@@ -59,8 +60,9 @@ class AdminCourseController extends Controller
 
     public function update(AdminCourseRequest $request, $id)
     {
+        $data = $request->except('files');
         try {
-            $this->courseService->update($request->all(), $id);
+            $this->courseService->update($data, $id);
             return redirect()->route('admin.course.index')->with('success', 'Cập nhật khóa thành công');
         } catch (\Exception $exception) {
             Log::error('Something went wrong when update course ' . $exception->getMessage());
