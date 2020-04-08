@@ -115,11 +115,21 @@
         </div>
     </div>
     <div class="form-group m-form__group row">
-        <label for="exampleTextarea">
-            Nội dung:
-        </label>
-        <textarea name="course_content" class="form-control m-input m-input--solid" id="exampleTextarea" rows="9">{{  $course->course_content ?? old('course_content') }}</textarea>
+        <div class="col-lg-12 {{ $errors->has('course_content') ? ' has-danger' : '' }}">
+            <label class="form-control-label" for="course_content">
+                Nội dung:
+            </label>
+            (<span class="label-required"></span>)
+            <div class="course_content"><?php echo $course->course_content ?? old('course_content'); ?></div>
+            <input type="hidden" id="course_content" name="course_content" value="{{  $course->course_content ?? old('course_content') }}" />
+            @if ($errors->has('course_content'))
+                <div class="form-control-feedback">
+                    {{ $errors->first('course_content') }}
+                </div>
+            @endif
+        </div>
     </div>
+
 </div>
 <div class="m-portlet__foot m-portlet__no-border m-portlet__foot--fit">
     <div class="m-form__actions m-form__actions--solid">
@@ -136,3 +146,11 @@
         </div>
     </div>
 </div>
+
+@section('js')
+    <script>
+        var _upload = "{{route('content-images-upload')}}";
+        var _token = $('meta[name="csrf-token"]').attr('content');
+    </script>
+    <script src="{{asset('js/pages/courses/create.js')}}" type="text/javascript"></script>
+@endsection

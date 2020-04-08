@@ -1806,7 +1806,6 @@
 			</li>
 		</ul>
 		<!-- begin::Quick Nav -->
-
 		@include('admin.includes.script')
         @yield('js')
 	</body>

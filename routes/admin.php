@@ -51,6 +51,13 @@
         Route::get('delete-image/{id}','AdminCourseController@deleteImage')->name('admin.course.delete_image');
     });
 
+
+//    ======================= COMMON ROUTE ==============================================
+        Route::post('upload-content-images', 'AdminUploadController@uploadContentImages')->name('content-images-upload');
+
+//   ====================== END COMMON ROUTE ===========================================
+
+
 //    ===========Bengin Dropzone ==============
     Route::get('dropzone', function () {
         return view('admin.dashboard.dropzone');
