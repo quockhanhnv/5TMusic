@@ -74,6 +74,9 @@ $(document).ready(function() {
             contentType: false,
             processData: false,
             success: function (filename) {
+                console.log('success');
+                console.log(filename);
+                debugger;
                 filename = $.parseJSON( filename );
                 if (filename == '') {
                     return;
