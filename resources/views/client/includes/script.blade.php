@@ -1,6 +1,6 @@
 <!-- JS | Custom script for all pages -->
 <script src="{{ asset('template/js/custom.js') }}"></script>
-
+<script src="{{ asset('admin-assets\assets\demo\demo12\custom\components\base\sweetalert2.js') }}"></script>
 <!-- SLIDER REVOLUTION 5.0 EXTENSIONS
       (Load Extensions only on Local File Systems !
        The following part can be removed on Server for On Demand Loading) -->

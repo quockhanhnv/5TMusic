@@ -25,11 +25,3 @@
         reader.readAsDataURL(file);
     }
 </script>
-{{--<script>--}}
-{{--    window._token = '{{ csrf_token() }}';--}}
-{{--    window._domain = '{{ url('/') }}';--}}
-{{--    window._upload = '{{ route('upload') }}';--}}
-
-{{--    --}}{{--var _datetime_format = '{{ config('app.date_time_format')[systemConfig()['datetime_format']] }}';--}}
-{{--    --}}{{--var _date_format = '{{ config('app.date_format')[systemConfig()['date_format']] }}';--}}
-{{--</script>--}}
