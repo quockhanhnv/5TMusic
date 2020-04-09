@@ -589,25 +589,18 @@
 
                 // JUST RESPONSE (Not needed)
                 var ratingValue = parseInt($('#stars li.selected').last().data('value'), 10);
-                var msg = "";
+
                 if (ratingValue > 1) {
-                    confirmRemove(ratingValue);
+                    confirmRating(ratingValue);
                 }
                 else {
-                    msg = "We will improve ourselves. You rated this " + ratingValue + " stars.";
+                    ratingOneStar(ratingValue);
                 }
-                responseMessage(msg);
-
             });
 
         });
 
-        function responseMessage(msg) {
-            $('.success-box').fadeIn(200);
-            $('.success-box div.text-message').html("<span>" + msg + "</span>");
-        }
-
-        function confirmRemove(value)
+        function confirmRating(value)
         {
             console.log(value);
             Swal.fire({
@@ -619,10 +612,36 @@
                 confirmButtonText: 'Ok',
             }).then((result) => {
                 if (result.value) {
-                    // window.location.href = url;
                     console.log(value);
+                    $.ajax({
+                        url: '{{ route('client.rating.course') }}',
+                        method: 'POST',
+                        data: {
+                            rating_star_number: value,
+                            rating_course_id:'{{ $course->id }}',
+                            _token: '{{ csrf_token() }}',
+                        },
+                        dataType: 'JSON',
+                        success: function (response) {
+                            console.log(response);
+                        },
+                        error: function () {
+                            console.log('Something went wrong when sending ajax');
+                        }
+                    });
                 }
             })
+        }
+
+        function ratingOneStar(ratingValue) {
+            Swal.fire({
+                title: 'Gửi đánh giá',
+                text: 'Chúng tôi sẽ cải thiện service.Cảm ơn bạn đã đánh giá ' + ratingValue + ' sao !',
+                icon: 'success',
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Ok',
+            });
         }
     </script>
 @endsection

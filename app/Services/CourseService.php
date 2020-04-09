@@ -60,4 +60,9 @@ class CourseService extends BaseService
     {
         return $this->repository->getHotCourses($courseNumber);
     }
+
+    public function findAndUpdateReviewTotal($ratingStarNumber, $courseId)
+    {
+        return $this->repository->findAndUpdateReviewTotal($ratingStarNumber, $courseId);
+    }
 }

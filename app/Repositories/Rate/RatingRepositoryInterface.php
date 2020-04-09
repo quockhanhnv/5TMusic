@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Repositories\Course;
+namespace App\Repositories\Rate;
 
-interface CourseRepositoryInterface
+interface RatingRepositoryInterface
 {
     public function withRelation($relation);
 
@@ -15,8 +15,4 @@ interface CourseRepositoryInterface
     public function store($data);
 
     public function update($data, $id);
-
-    public function getHotCourses($courseNumber);
-
-    public function findAndUpdateReviewTotal($ratingStarNumber, $courseId);
 }
