@@ -469,23 +469,26 @@
                 <div class="section-title">
                     <div class="row">
                         <div class="col-md-12">
-                            <h2 class="text-uppercase title">Popular <span class="text-theme-colored2">Courses</span></h2>
-                            <p class="text-uppercase mb-0">Choose Your Desired Course</p>
+                            <h2 class="text-uppercase title">KHÓA HỌC <span class="text-theme-colored2">PHỔ BIỂN</span></h2>
+                            <p class="text-uppercase mb-0">Chọn khóa học bạn muốn</p>
                             <div class="double-line-bottom-theme-colored-2"></div>
                         </div>
                     </div>
                 </div>
+
+{{--                Begin Course Slide--}}
                 <div class="row mtli-row-clearfix">
                     <div class="owl-carousel-3col" data-nav="true">
+                        @foreach($hotCourses as $hotCourse)
                         <div class="item">
                             <div class="course-single-item bg-white border-1px clearfix mb-30">
                                 <div class="course-thumb">
-                                    <img class="img-fullwidth" alt="" src="{{ asset('template/images/course/sm1.jpg') }}">
-                                    <div class="price-tag">$290</div>
+                                    <img class="img-fullwidth" alt="" src="{{ $hotCourse->course_avatar }}">
+                                    <div class="price-tag">{{ number_format($hotCourse->course_price, 0, '.', ',') }} đ</div>
                                 </div>
                                 <div class="course-details clearfix p-20 pt-15">
                                     <div class="course-top-part pull-left mr-40">
-                                        <a href="page-course-details.html"><h4 class="mt-0 mb-5">Nural Networking Course</h4></a>
+                                        <a href="{{ route('client.course.show',$hotCourse->course_slug.'-'.$hotCourse->id) }}"><h4 class="mt-0 mb-5">{{ $hotCourse->course_name }}</h4></a>
                                         <ul class="list-inline">
                                             <li class="review-stars">
                                                 <i class="fa fa-star"></i>
@@ -502,155 +505,28 @@
                                         <img src="{{ asset('template/images/course/xs1.jpg') }}" alt="" class="img-circle">
                                     </div>
                                     <div class="clearfix"></div>
-                                    <p class="course-description mt-20">Lorem ipsum dolor sit amet, consec teturadipsi cing elit. Nobis commodi esse aliquam eligend reprehenderit, numquam a odio.</p>
+                                    <p class="course-description mt-20">{{ \Illuminate\Support\Str::limit($hotCourse->course_description, 123) }}</p>
                                     <ul class="list-inline course-meta mt-15">
                                         <li>
-                                            <h6>4 year</h6>
-                                            <span> Course</span>
+                                            <h6>{{ $hotCourse->category->c_name }}</h6>
+                                            <span>Trình độ</span>
                                         </li>
                                         <li>
-                                            <h6>35</h6>
-                                            <span> Class Size</span>
+                                            <h6>{{ $hotCourse->course_number_student }}</h6>
+                                            <span>Số lượng</span>
                                         </li>
                                         <li>
-                                            <h6><span class="course-time">2 hours 30 min</span></h6>
-                                            <span> Class Duration</span>
+                                            <h6><span class="course-time">{{ $hotCourse->course_duration }}</span></h6>
+                                            <span>Thời gian</span>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
-                        <div class="item">
-                            <div class="course-single-item bg-white border-1px clearfix mb-30">
-                                <div class="course-thumb">
-                                    <img class="img-fullwidth" alt="" src="{{ asset('template/images/course/sm2.jpg') }}">
-                                    <div class="price-tag">$290</div>
-                                </div>
-                                <div class="course-details clearfix p-20 pt-15">
-                                    <div class="course-top-part pull-left mr-40">
-                                        <a href="page-course-details.html"><a href="page-course-details.html"><h4 class="mt-0 mb-5">Nural Networking Course</h4></a></a>
-                                        <ul class="list-inline">
-                                            <li class="review-stars">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-half"></i>
-                                                <i class="fa fa-star-o"></i>
-                                                <i class="fa fa-star-o"></i>
-                                            </li>
-                                            <li>25 <i class="fa fa-comments-o text-theme-colored2"></i></li>
-                                            <li>68 <i class="fa fa-thumbs-o-up text-theme-colored2"></i></li>
-                                        </ul>
-                                    </div>
-                                    <div class="author-thumb">
-                                        <img src="{{ asset('template/images/course/xs2.jpg') }}" alt="" class="img-circle">
-                                    </div>
-                                    <div class="clearfix"></div>
-                                    <p class="course-description mt-20">Lorem ipsum dolor sit amet, consec teturadipsi cing elit. Nobis commodi esse aliquam eligend reprehenderit, numquam a odio.</p>
-                                    <ul class="list-inline course-meta mt-15">
-                                        <li>
-                                            <h6>3 year</h6>
-                                            <span> Course</span>
-                                        </li>
-                                        <li>
-                                            <h6>20</h6>
-                                            <span> Class Size</span>
-                                        </li>
-                                        <li>
-                                            <h6><span class="course-time">1 hour 45 min</span></h6>
-                                            <span> Class Duration</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="course-single-item bg-white border-1px clearfix mb-30">
-                                <div class="course-thumb">
-                                    <img class="img-fullwidth" alt="" src="{{ asset('template/images/course/sm3.jpg') }}">
-                                    <div class="price-tag">Free</div>
-                                </div>
-                                <div class="course-details clearfix p-20 pt-15">
-                                    <div class="course-top-part pull-left mr-40">
-                                        <a href="page-course-details.html"><h4 class="mt-0 mb-5">Nural Networking Course</h4></a>
-                                        <ul class="list-inline">
-                                            <li class="review-stars">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </li>
-                                            <li>25 <i class="fa fa-comments-o text-theme-colored2"></i></li>
-                                            <li>68 <i class="fa fa-thumbs-o-up text-theme-colored2"></i></li>
-                                        </ul>
-                                    </div>
-                                    <div class="author-thumb">
-                                        <img src="{{ asset('template/images/course/xs3.jpg') }}" alt="" class="img-circle">
-                                    </div>
-                                    <div class="clearfix"></div>
-                                    <p class="course-description mt-20">Lorem ipsum dolor sit amet, consec teturadipsi cing elit. Nobis commodi esse aliquam eligend reprehenderit, numquam a odio.</p>
-                                    <ul class="list-inline course-meta mt-15">
-                                        <li>
-                                            <h6>2 year</h6>
-                                            <span> Course</span>
-                                        </li>
-                                        <li>
-                                            <h6>30</h6>
-                                            <span> Class Size</span>
-                                        </li>
-                                        <li>
-                                            <h6><span class="course-time">2 hours 30 min</span></h6>
-                                            <span> Class Duration</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="course-single-item bg-white border-1px clearfix mb-30">
-                                <div class="course-thumb">
-                                    <img class="img-fullwidth" alt="" src="{{ asset('template/images/course/sm4.jpg') }}">
-                                    <div class="price-tag">$290</div>
-                                </div>
-                                <div class="course-details clearfix p-20 pt-15">
-                                    <div class="course-top-part pull-left mr-40">
-                                        <a href="page-course-details.html"><h4 class="mt-0 mb-5">Nural Networking Course</h4></a>
-                                        <ul class="list-inline">
-                                            <li class="review-stars">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-o"></i>
-                                            </li>
-                                            <li>25 <i class="fa fa-comments-o text-theme-colored2"></i></li>
-                                            <li>68 <i class="fa fa-thumbs-o-up text-theme-colored2"></i></li>
-                                        </ul>
-                                    </div>
-                                    <div class="author-thumb">
-                                        <img src="{{ asset('template/images/course/xs1.jpg') }}" alt="" class="img-circle">
-                                    </div>
-                                    <div class="clearfix"></div>
-                                    <p class="course-description mt-20">Lorem ipsum dolor sit amet, consec teturadipsi cing elit. Nobis commodi esse aliquam eligend reprehenderit, numquam a odio.</p>
-                                    <ul class="list-inline course-meta mt-15">
-                                        <li>
-                                            <h6>1 year</h6>
-                                            <span> Course</span>
-                                        </li>
-                                        <li>
-                                            <h6>45</h6>
-                                            <span> Class Size</span>
-                                        </li>
-                                        <li>
-                                            <h6><span class="course-time">3 hours 20 min</span></h6>
-                                            <span> Class Duration</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
+{{--                End Course Slide--}}
             </div>
         </section>
 
@@ -659,43 +535,43 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 sm-text-center">
-                        <h3 class="text-white mt-30 mb-0">Get a Free online Registration</h3>
-                        <h2 class="text-theme-colored2 font-54 mt-0">Register Now!</h2>
+                        <h3 class="text-white mt-30 mb-0">Nhận đăng ký trực tuyến miễn phí</h3>
+                        <h2 class="text-theme-colored2 font-54 mt-0">Đăng Ký Ngay!</h2>
                         <p class="text-gray-darkgray font-15 pr-90 pr-sm-0 mb-sm-60">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam suscipit fugiat sint totam soluta assumenda quasi reprehenderit, quas. Natus voluptatibus perferendis repellendus provident? Amet rerum quis odio voluptas dolorem placeat soluta sit officiis odit velit! Nihil qui placeat quibusdam, voluptates voluptatum et.</p>
                         <div class="row mt-30 sm-text-center">
                             <div class="col-xs-12 col-sm-6 col-md-3 mb-md-50">
                                 <div class="funfact">
                                     <i class="pe-7s-smile mb-20 text-theme-colored2"></i>
-                                    <h2 data-animation-duration="2000" data-value="754" class="animate-number text-white font-38 font-weight-400 mt-0 mb-15">0</h2>
-                                    <h5 class="text-white text-uppercase">Happy Students</h5>
+                                    <h2 data-animation-duration="2000" data-value="10.000" class="animate-number text-white font-38 font-weight-400 mt-0 mb-15">0</h2>
+                                    <h5 class="text-white text-uppercase">HỌC VIÊN</h5>
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-6 col-md-3 mb-md-50">
                                 <div class="funfact">
                                     <i class="pe-7s-notebook mb-20 text-theme-colored2"></i>
-                                    <h2 data-animation-duration="2000" data-value="675" class="animate-number text-white font-38 font-weight-400 mt-0 mb-15">0</h2>
-                                    <h5 class="text-white text-uppercase">Approved Courses</h5>
+                                    <h2 data-animation-duration="2000" data-value="10" class="animate-number text-white font-38 font-weight-400 mt-0 mb-15">0</h2>
+                                    <h5 class="text-white text-uppercase">KHÓA HỌC</h5>
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-6 col-md-3 mb-md-50">
                                 <div class="funfact">
                                     <i class="pe-7s-users mb-20 text-theme-colored2"></i>
-                                    <h2 data-animation-duration="2000" data-value="675" class="animate-number text-white font-38 font-weight-400 mt-0 mb-15">0</h2>
-                                    <h5 class="text-white text-uppercase">Certified Teachers</h5>
+                                    <h2 data-animation-duration="2000" data-value="20" class="animate-number text-white font-38 font-weight-400 mt-0 mb-15">0</h2>
+                                    <h5 class="text-white text-uppercase">GIÁO VIÊN</h5>
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-6 col-md-3 mb-md-50">
                                 <div class="funfact">
                                     <i class="pe-7s-study mb-20 text-theme-colored2"></i>
-                                    <h2 data-animation-duration="2000" data-value="1248" class="animate-number text-white font-38 font-weight-400 mt-0 mb-15">0</h2>
-                                    <h5 class="text-white text-uppercase">Graduate Students</h5>
+                                    <h2 data-animation-duration="2000" data-value="15" class="animate-number text-white font-38 font-weight-400 mt-0 mb-15">0</h2>
+                                    <h5 class="text-white text-uppercase">ĐỐI TÁC</h5>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="p-30 mt-0 bg-dark-transparent-2">
-                            <h3 class="title-pattern mt-0"><span class="text-white">Request <span class="text-theme-colored2">Information</span></span></h3>
+                            <h3 class="title-pattern mt-0"><span class="text-white">Đăng ký <span class="text-theme-colored2">Thông Tin</span></span></h3>
                             <!-- Appilication Form Start-->
                             <form id="reservation_form" name="reservation_form" class="reservation-form mt-20" method="post" action="http://html.kodesolution.live/j/learnpro/v4.0/demo/includes/reservation.php" novalidate="novalidate">
                                 <div class="row">
@@ -740,7 +616,7 @@
                                     <div class="col-sm-12">
                                         <div class="form-group mb-0 mt-10">
                                             <input name="form_botcheck" class="form-control" value="" type="hidden">
-                                            <button type="submit" class="btn btn-colored btn-theme-colored2 text-white btn-lg btn-block" data-loading-text="Please wait...">Submit Request</button>
+                                            <button type="submit" class="btn btn-colored btn-theme-colored2 text-white btn-lg btn-block" data-loading-text="Please wait...">Đăng ký</button>
                                         </div>
                                     </div>
                                 </div>

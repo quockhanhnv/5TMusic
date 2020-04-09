@@ -15,4 +15,6 @@ interface CourseRepositoryInterface
     public function store($data);
 
     public function update($data, $id);
+
+    public function getHotCourses($courseNumber);
 }

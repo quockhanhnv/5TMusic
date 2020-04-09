@@ -42,4 +42,9 @@ class CourseRepository extends BaseRepository implements CourseRepositoryInterfa
     {
         return $this->model->find($id)->fill($data)->save();
     }
+
+    public function getHotCourses($courseNumber)
+    {
+        return $this->model->with('category')->limit($courseNumber)->get();
+    }
 }

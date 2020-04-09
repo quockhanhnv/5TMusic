@@ -54,4 +54,10 @@ class CourseService extends BaseService
 
         return $this->repository->update($data, $id);
     }
+
+    // =============== client ==========
+    public function getHotCourses($courseNumber)
+    {
+        return $this->repository->getHotCourses($courseNumber);
+    }
 }

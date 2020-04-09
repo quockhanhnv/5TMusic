@@ -41,7 +41,7 @@
 
 <!-- Footer Scripts -->
     @include('client.includes.script')
-    @yield('script')
+    @yield('js')
 </body>
 
 <!-- Mirrored from html.kodesolution.live/j/learnpro/v4.0/demo/index-mp-layout1.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 13 Nov 2019 03:13:31 GMT -->

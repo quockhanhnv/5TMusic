@@ -37,7 +37,7 @@
     <div class="container pt-20 pb-20">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-4">
-                <a class="menuzord-brand pull-left flip sm-pull-center mb-15" href="index-mp-layout1.html"><img src="{{ asset('template/images/logo-wide.png') }}" alt=""></a>
+                <a class="menuzord-brand pull-left flip sm-pull-center mb-15" href="{{ route('home') }}"><img src="{{ asset('template/images/logo-wide.png') }}" alt=""></a>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-8">
                 <div class="row">
@@ -72,7 +72,7 @@
         <div class="container">
             <nav id="menuzord" class="menuzord default menuzord-responsive">
                 <ul class="menuzord-menu">
-                    <li class="active"><a href="#home">Home</a>
+                    <li class="active"><a href="{{ route('home') }}">Home</a>
                         <ul class="dropdown">
                             <li><a href="#">Multipage Layouts</a>
                                 <ul class="dropdown">
