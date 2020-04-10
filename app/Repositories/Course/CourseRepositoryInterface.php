@@ -18,5 +18,6 @@ interface CourseRepositoryInterface
 
     public function getHotCourses($courseNumber);
 
-    public function findAndUpdateReviewTotal($ratingStarNumber, $courseId);
+    public function findAndUpdateReviewTotal($ratingStarNumber, $courseId, $operator);
+
 }

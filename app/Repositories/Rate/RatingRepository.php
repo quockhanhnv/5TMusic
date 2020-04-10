@@ -4,6 +4,7 @@ namespace App\Repositories\Rate;
 
 use App\Models\Rating;
 use App\Repositories\BaseRepository;
+use Illuminate\Support\Facades\DB;
 
 class RatingRepository extends BaseRepository implements RatingRepositoryInterface
 {
@@ -15,17 +16,17 @@ class RatingRepository extends BaseRepository implements RatingRepositoryInterfa
 
     public function withRelation($relation)
     {
-        // TODO: Implement withRelation() method.
+        return $this->model->with($relation);
     }
 
     public function paginate($models, $itemPerPage)
     {
-        // TODO: Implement paginate() method.
+        return $models->paginate($itemPerPage);
     }
 
     public function findById($id)
     {
-        // TODO: Implement findById() method.
+        return $this->model->find($id);
     }
 
     public function getAll()
@@ -41,5 +42,13 @@ class RatingRepository extends BaseRepository implements RatingRepositoryInterfa
     public function update($data, $id)
     {
         // TODO: Implement update() method.
+    }
+
+    public function statisticReviewForClient($id)
+    {
+        return $this->model->groupBy('rating_star_number')
+            ->where('rating_course_id', $id)
+            ->select('rating_star_number',DB::raw('count(rating_star_number) as numberReview'), DB::raw('sum(rating_star_number) as total'))
+            ->get()->toArray();
     }
 }

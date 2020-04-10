@@ -61,8 +61,11 @@ class CourseService extends BaseService
         return $this->repository->getHotCourses($courseNumber);
     }
 
-    public function findAndUpdateReviewTotal($ratingStarNumber, $courseId)
+    // đánh giá thì phải tăng số lần review và sổ sao cho khóa học, // xóa đánh giá thì phải giảm số lần review và sổ sao cho khóa học
+    public function findAndUpdateReviewTotal($ratingStarNumber, $courseId, $operator)
     {
-        return $this->repository->findAndUpdateReviewTotal($ratingStarNumber, $courseId);
+        return $this->repository->findAndUpdateReviewTotal($ratingStarNumber, $courseId, $operator);
     }
+
+
 }

@@ -286,54 +286,29 @@
 {{--                                            --- end rating ------}}
                                         </h4>
                                         <div class="course-reviews">
-                                            <h4 class="mb-0">Trung bình:<span class="text-theme-colored2 vertical-align-middle font-30 ml-20">4.6</span></h4>
+                                            <h4 class="mb-0">
+                                                Số lần đánh giá:
+                                                <span class="text-theme-colored2 vertical-align-middle font-30 ml-20">{{ $course->course_review_total }}</span>
+                                            </h4>
+                                            <h4 class="mb-0">Trung bình:<span class="text-theme-colored2 vertical-align-middle font-30 ml-20">{{ $course->course_review_total ? round($course->course_review_star/$course->course_review_total, 2) : 0}}</span></h4>
+
                                             <div class="row">
                                                 <div class="col-md-7">
                                                     <div class="star-rating filled mt-5 mb-5 ml-0">
-                                                        <span data-width="87%"></span>
+                                                        <span data-width="{{$course->course_review_total ? (($course->course_review_star/$course->course_review_total)/5)*100 : 0}}%"></span>
                                                     </div>
+                                                    @foreach($ratingsDefault as $key => $item)
                                                     <div class="course-progress-area">
                                                         <div class="progress-item style3">
                                                             <div class="progress-title">
-                                                                <h5>5 Sao<span class="pull-right">24</span></h5>
+                                                                <h5>{{ $key }} Sao <span class="pull-right">{{ $item['numberReview'] ? $item['numberReview'] : 0 }}</span></h5>
                                                             </div>
                                                             <div class="progress">
-                                                                <div class="progress-bar" data-percent="100"></div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="progress-item style3">
-                                                            <div class="progress-title">
-                                                                <h5>4 Sao<span class="pull-right">5</span></h5>
-                                                            </div>
-                                                            <div class="progress">
-                                                                <div class="progress-bar" data-percent="75"></div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="progress-item style3">
-                                                            <div class="progress-title">
-                                                                <h5>3 Sao<span class="pull-right">2</span></h5>
-                                                            </div>
-                                                            <div class="progress">
-                                                                <div class="progress-bar" data-percent="60"></div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="progress-item style3">
-                                                            <div class="progress-title">
-                                                                <h5>2 Sao<span class="pull-right">0</span></h5>
-                                                            </div>
-                                                            <div class="progress">
-                                                                <div class="progress-bar" data-percent="35"></div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="progress-item style3">
-                                                            <div class="progress-title">
-                                                                <h5>1 Sao<span class="pull-right">0</span></h5>
-                                                            </div>
-                                                            <div class="progress">
-                                                                <div class="progress-bar" data-percent="15"></div>
+                                                                <div class="progress-bar" data-percent="{{ $item['numberReview'] ? ($item['numberReview'] / $course->course_review_total)*100 : 0 }}"></div>
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    @endforeach
                                                 </div>
                                             </div>
                                         </div>

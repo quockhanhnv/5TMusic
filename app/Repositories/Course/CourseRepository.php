@@ -48,11 +48,21 @@ class CourseRepository extends BaseRepository implements CourseRepositoryInterfa
         return $this->model->with('category')->limit($courseNumber)->get();
     }
 
-    public function findAndUpdateReviewTotal($ratingStarNumber, $courseId)
+    public function findAndUpdateReviewTotal($ratingStarNumber, $courseId, $operator)
     {
         $course = $this->model->find($courseId);
-        $course->course_review_total++;
-        $course->course_review_star += $ratingStarNumber;
+        if($operator === '-')
+        {
+            $course->course_review_total--;
+            $course->course_review_star -= $ratingStarNumber;
+
+        } else {
+            $course->course_review_total++;
+            $course->course_review_star += $ratingStarNumber;
+        }
+
         return $course->save();
     }
+
+
 }

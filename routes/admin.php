@@ -51,7 +51,10 @@
         Route::get('delete-image/{id}','AdminCourseController@deleteImage')->name('admin.course.delete_image');
     });
 
-
+    Route::group(['prefix' => 'ratings'], function(){
+        Route::get('','AdminRatingController@index')->name('admin.rating.index');
+        Route::get('delete/{id}','AdminRatingController@delete')->name('admin.rating.delete');
+    });
 //    ======================= COMMON ROUTE ==============================================
         Route::post('upload-content-images', 'AdminUploadController@uploadContentImages')->name('content-images-upload');
 

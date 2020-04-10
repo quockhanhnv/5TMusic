@@ -12,4 +12,9 @@ class Course extends Model
     {
         return $this->belongsTo(Category::class, 'course_category_id');
     }
+
+        public function ratings()
+    {
+        return $this->hasMany(Rating::class, 'rating_course_id');
+    }
 }
