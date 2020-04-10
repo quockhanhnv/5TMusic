@@ -208,6 +208,9 @@
             <label for="exampleTextarea">
                 Mô tả ngắn:
             </label>
+            @if(count($errors) > 0)
+                <span class="text-danger">&nbsp {{$errors->first('pro_description')}}</span>
+            @endif
             <textarea name="pro_description" class="form-control m-input m-input--solid" id="exampleTextarea" rows="9">{{  $product->pro_description ?? old('pro_description') }}</textarea>
         </div>
         <div class="col-lg-4">
@@ -227,6 +230,10 @@
         <label for="exampleTextarea">
             Nội dung:
         </label>
+        <br>
+        @if(count($errors) > 0)
+            <span class="text-danger">&nbsp {{$errors->first('pro_content')}}</span>
+        @endif
         <textarea name="pro_content" class="form-control m-input m-input--solid" id="exampleTextarea" rows="9">{{  $product->pro_content ?? old('pro_content') }}</textarea>
     </div>
 </div>

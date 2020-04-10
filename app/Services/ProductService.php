@@ -52,4 +52,10 @@ class ProductService extends BaseService
 
         return $this->repository->update($data, $id);
     }
+
+//    ====== client ===========
+    public function getHotProducts()
+    {
+        return $this->repository->getAll();
+    }
 }

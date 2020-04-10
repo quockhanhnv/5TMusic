@@ -86,7 +86,7 @@
         <div class="container pt-20 pb-20">
             <div class="row">
                 <div class="col-md-6">
-                    <p class="font-12 text-black-777 m-0 sm-text-center">Copyright &copy;2017 ThemeMascot. All Rights Reserved</p>
+                    <p class="font-12 text-black-777 m-0 sm-text-center">Copyright &copy;2020 quockhanhnv0209@gmail.com</p>
                 </div>
                 <div class="col-md-6 text-right">
                     <div class="widget no-border m-0">

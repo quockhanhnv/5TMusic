@@ -20,7 +20,7 @@ class CreateProductsTable extends Migration
             $table->integer('pro_price')->default(0);
             $table->integer('pro_category_id')->default(0);
             $table->integer('pro_admin_id')->default(0);
-            $table->tinyInteger('pro_sale')->default(0);
+            $table->tinyInteger('pro_sale')->default(0)->nullable();
             $table->string('pro_avatar')->nullable();
             $table->integer('pro_view')->default(0);
             $table->tinyInteger('pro_hot')->index()->default(0);

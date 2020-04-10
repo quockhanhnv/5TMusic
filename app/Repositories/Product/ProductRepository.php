@@ -28,7 +28,7 @@ class ProductRepository extends BaseRepository implements ProductRepositoryInter
 
     public function getAll()
     {
-        return $this->model->where('c_status', ACTIVE_STATUS)->get();
+        return $this->model->where('pro_active', ACTIVE_STATUS);
     }
 
     public function store($data)
@@ -39,5 +39,10 @@ class ProductRepository extends BaseRepository implements ProductRepositoryInter
     public function update($data, $id)
     {
         return $this->model->find($id)->fill($data)->save();
+    }
+
+    public function getHotProducts()
+    {
+        return $this->model->where('pro_active', ACTIVE_STATUS);
     }
 }

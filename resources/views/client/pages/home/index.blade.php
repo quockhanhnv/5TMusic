@@ -12,9 +12,9 @@
                     <div id="rev_slider_home" class="rev_slider fullwidthabanner" style="display:none;" data-version="5.0.7">
                         <ul>
                             <!-- SLIDE 1 -->
-                            <li data-index="rs-1" data-transition="fade" data-slotamount="default" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="{{ asset('template/images/bg/bg1.jpg') }}" data-rotate="0"  data-fstransition="fade" data-saveperformance="off" data-title="Web Show" data-description="">
+                            <li data-index="rs-1" data-transition="fade" data-slotamount="default" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="{{ asset('template/images/bg/hoc-vien.jpg') }}" data-rotate="0"  data-fstransition="fade" data-saveperformance="off" data-title="Web Show" data-description="">
                                 <!-- MAIN IMAGE -->
-                                <img src="{{ asset('template/images/bg/bg1.jpg') }}" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                                <img src="{{ asset('template/images/bg/hoc-vien.jpg') }}" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
                                 <!-- LAYERS -->
                                 <!-- LAYER NR. 1 -->
                                 <div class="tp-caption tp-shape tp-shapewrapper tp-resizeme rs-parallaxlevel-0 bg-theme-colored-transparent-4"
@@ -53,7 +53,7 @@
                                      data-splitin="none"
                                      data-splitout="none"
                                      data-responsive_offset="on"
-                                     style="z-index: 5; white-space: nowrap; font-weight:700;">Best <span class="text-theme-colored2">Online</span> Course
+                                     style="z-index: 5; white-space: nowrap; font-weight:700;"> <span class="text-theme-colored2">5T</span> Guitar
                                 </div>
                                 <!-- LAYER NR. 3 -->
                                 <div class="tp-caption tp-resizeme text-white rs-parallaxlevel-0"
@@ -76,7 +76,7 @@
                                      data-splitin="none"
                                      data-splitout="none"
                                      data-responsive_offset="on"
-                                     style="z-index: 5; white-space: nowrap;">We provides always our best educational services for our all students <br> and  always try to achieve our students trust and satisfaction
+                                     style="z-index: 5; white-space: nowrap;">Đệm Hát Trong Vòng <span class="text-theme-colored2"><b>8</b></span> Buổi<br> Chỉ Với <span class="label label-danger">999K</span> Cam Kết Đầu Ra Hỗ Trợ Trọn Đời
                                 </div>
                                 <!-- LAYER NR. 4 -->
                                 <div class="tp-caption rs-parallaxlevel-0"
@@ -97,14 +97,14 @@
                                      data-splitout="none"
                                      data-responsive_offset="on"
                                      data-responsive="off"
-                                     style="z-index: 5; white-space: nowrap; letter-spacing:1px;"><a class="btn btn-theme-colored2 btn-lg btn-flat text-white font-weight-600 pl-30 pr-30 mr-15" href="#">Our Service</a><a class="btn btn-default btn-transparent btn-bordered btn-lg btn-flat font-weight-600 pl-30 pr-30" href="#">Get a Quote</a>
+                                     style="z-index: 5; white-space: nowrap; letter-spacing:1px;"><a class="btn btn-theme-colored2 btn-lg btn-flat text-white font-weight-600 pl-30 pr-30 mr-15" href="#">Thông Tin</a><a class="btn btn-default btn-transparent btn-bordered btn-lg btn-flat font-weight-600 pl-30 pr-30" href="#">Các Khóa Học</a>
                                 </div>
                             </li>
 
                             <!-- SLIDE 2 -->
-                            <li data-index="rs-2" data-transition="fade" data-slotamount="default" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="{{ asset('template/images/bg/bg2.jpg') }}" data-rotate="0"  data-fstransition="fade" data-saveperformance="off" data-title="Web Show" data-description="">
+                            <li data-index="rs-2" data-transition="fade" data-slotamount="default" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="{{ asset('template/images/bg/hoc-vien-2.jpg') }}" data-rotate="0"  data-fstransition="fade" data-saveperformance="off" data-title="Web Show" data-description="">
                                 <!-- MAIN IMAGE -->
-                                <img src="{{ asset('template/images/bg/bg2.jpg') }}" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                                <img src="{{ asset('template/images/bg/hoc-vien-2.jpg') }}" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
                                 <!-- LAYERS -->
                                 <!-- LAYER NR. 1 -->
                                 <div class="tp-caption tp-shape tp-shapewrapper tp-resizeme rs-parallaxlevel-0 bg-theme-colored-transparent-4"
@@ -192,9 +192,9 @@
                             </li>
 
                             <!-- SLIDE 3 -->
-                            <li data-index="rs-3" data-transition="fade" data-slotamount="default" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="{{ asset('template/images/bg/bg3.jpg') }}" data-rotate="0"  data-fstransition="fade" data-saveperformance="off" data-title="Web Show" data-description="">
+                            <li data-index="rs-3" data-transition="fade" data-slotamount="default" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="{{ asset('template/images/bg/hoc-vien-5.jpg') }}" data-rotate="0"  data-fstransition="fade" data-saveperformance="off" data-title="Web Show" data-description="">
                                 <!-- MAIN IMAGE -->
-                                <img src="{{ asset('template/images/bg/bg3.jpg') }}" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                                <img src="{{ asset('template/images/bg/hoc-vien-5.jpg') }}" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
                                 <!-- LAYERS -->
                                 <!-- LAYER NR. 1 -->
                                 <div class="tp-caption tp-shape tp-shapewrapper tp-resizeme rs-parallaxlevel-0 bg-theme-colored-transparent-4"
@@ -402,7 +402,7 @@
                                 <img src="{{ asset('template/images/icons/online.png') }}" alt="">
                             </div>
                             <div class="feature-title">
-                                <h3>Online Course Facilities</h3>
+                                <h3>Đăng Ký Online</h3>
                                 <a href="#" class="read-more font-roboto-slab text-theme-colored2">Read More</a>
                             </div>
                         </div>
@@ -413,7 +413,7 @@
                                 <img src="{{ asset('template/images/icons/book.png') }}" alt="">
                             </div>
                             <div class="feature-title">
-                                <h3>Modern Book Library</h3>
+                                <h3>Giáo Trình Hiện Đại</h3>
                                 <a href="#" class="read-more font-roboto-slab text-theme-colored2">Read More</a>
                             </div>
                         </div>
@@ -424,7 +424,7 @@
                                 <img src="{{ asset('template/images/icons/graduate.png') }}" alt="">
                             </div>
                             <div class="feature-title">
-                                <h3>Be Industrial Leader</h3>
+                                <h3>Hơn 20.000 Học Viên</h3>
                                 <a href="#" class="read-more font-roboto-slab text-theme-colored2">Read More</a>
                             </div>
                         </div>
@@ -442,10 +442,10 @@
                             <img class="img-fullwidth maxwidth500" src="{{ asset('template/images/about/1.png') }}" alt="">
                         </div>
                         <div class="col-md-4">
-                            <h2 class="text-uppercasetext-theme-colored mt-0 mt-sm-30">About <span class="text-theme-colored2">Learnpro</span></h2>
+                            <h2 class="text-uppercasetext-theme-colored mt-0 mt-sm-30">Giới thiệu <span class="text-theme-colored2">5T Guitar</span></h2>
                             <div class="double-line-bottom-theme-colored-2"></div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas voluptatem maiores eaque similique non distinctio voluptates perspiciatis omnis, repellendus ipsa aperiam, laudantium voluptatum nulla?.</p>
-                            <p class="hidden-md">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, assumenda, voluptatum. Libero eligendi molestias iure error animi totam laudantium, aspernatur similique id eos at consectetur illo culpa, quisquam temporibus esse!</p>
+                            <p>Hệ thống Trung tâm dạy học Guitar 5T là hệ thống Trung tâm Giáo dục Âm nhạc cải cách theo hướng hiện đại, mở ra 1 cách học mới, cách tiếp cận âm nhạc mới cho người chơi. </p>
+                            <p class="hidden-md">Là nơi duy nhất - đầu tiên của Việt Nam có 1 phương pháp Quốc tế kết hợp nắm bắt và thấu hiểu tâm lý người Việt để cho ra 1 bộ giáo trình, giúp các học viên có thể đệm đàn sau 4 buổi học từ người chưa biết gì.</p>
                             <a href="#" class="btn btn-colored btn-theme-colored2 text-white btn-lg pl-40 pr-40 mt-15">Read More</a>
                         </div>
                         <div class="col-md-3">
@@ -484,7 +484,7 @@
                             <div class="course-single-item bg-white border-1px clearfix mb-30">
                                 <div class="course-thumb">
                                     <img class="img-fullwidth" alt="" src="{{ $hotCourse->course_avatar }}">
-                                    <div class="price-tag">{{ number_format($hotCourse->course_price, 0, '.', ',') }} đ</div>
+                                    <div class="price-tag">{{ number_format($hotCourse->course_price, 0, '.', ',') }} k</div>
                                 </div>
                                 <div class="course-details clearfix p-20 pt-15">
                                     <div class="course-top-part pull-left mr-40">
@@ -531,18 +531,18 @@
         </section>
 
         <!-- Divider: Reservation Form -->
-        <section id="reservation" class="parallax layer-overlay overlay-theme-colored-9" data-bg-img="{{ asset('template/images/bg/bg1.jpg') }}" data-parallax-ratio="0.4">
+        <section id="reservation" class="parallax layer-overlay overlay-theme-colored-9" data-bg-img="{{ asset('template/images/bg/hoc-vien.jpg') }}" data-parallax-ratio="0.4">
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 sm-text-center">
                         <h3 class="text-white mt-30 mb-0">Nhận đăng ký trực tuyến miễn phí</h3>
                         <h2 class="text-theme-colored2 font-54 mt-0">Đăng Ký Ngay!</h2>
-                        <p class="text-gray-darkgray font-15 pr-90 pr-sm-0 mb-sm-60">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam suscipit fugiat sint totam soluta assumenda quasi reprehenderit, quas. Natus voluptatibus perferendis repellendus provident? Amet rerum quis odio voluptas dolorem placeat soluta sit officiis odit velit! Nihil qui placeat quibusdam, voluptates voluptatum et.</p>
+                        <p class="text-gray-darkgray font-15 pr-90 pr-sm-0 mb-sm-60">5T luôn khẳng định là Đơn vị Đào tạo Âm nhạc Top 1 Hà Nội về số lượng học viên đông nhất, phòng học lớn, tiện nghi sang trọng nhất, với 6 cơ sở dạy đàn Guitar tại Linh Đàm, Pháp Vân, Cầu Giấy, Mỹ Đình, ĐH Bách Khoa và Hà Đông. Học viên của 5T có thể biểu diễn ở nhiều sân khấu lớn, nhỏ sau khi khoá học kết thúc và các bạn đã thay đổi được nhận thức về cách sống thông qua âm nhạc.</p>
                         <div class="row mt-30 sm-text-center">
                             <div class="col-xs-12 col-sm-6 col-md-3 mb-md-50">
                                 <div class="funfact">
                                     <i class="pe-7s-smile mb-20 text-theme-colored2"></i>
-                                    <h2 data-animation-duration="2000" data-value="10.000" class="animate-number text-white font-38 font-weight-400 mt-0 mb-15">0</h2>
+                                    <h2 data-animation-duration="2000" data-value="20.000" class="animate-number text-white font-38 font-weight-400 mt-0 mb-15">0</h2>
                                     <h5 class="text-white text-uppercase">HỌC VIÊN</h5>
                                 </div>
                             </div>
@@ -660,7 +660,7 @@
                 <div class="section-content">
                     <div class="row">
                         <div class="col-md-6">
-                            <h3 class="text-uppercase line-bottom-theme-colored-2 mt-0 line-height-1"><i class="fa fa-calendar mr-10"></i>Upcoming <span class="text-theme-colored2">Events</span></h3>
+                            <h3 class="text-uppercase line-bottom-theme-colored-2 mt-0 line-height-1"><i class="fa fa-calendar mr-10"></i><span class="text-theme-colored2">SỰ KIỆN</span> NỔI BẬT </h3>
                             <article>
                                 <div class="event-block">
                                     <div class="event-date text-center">
@@ -671,7 +671,7 @@
                                     </div>
                                     <div class="event-meta border-1px pl-40">
                                         <div class="event-content pull-left flip">
-                                            <h4 class="event-title media-heading font-roboto-slab font-weight-700"><a href="#">Admission Fair Spring 2017</a></h4>
+                                            <h4 class="event-title media-heading font-roboto-slab font-weight-700"><a href="#">Sales Đồng Loạt Guitar</a></h4>
                                             <span class="mb-10 text-gray-darkgray mr-10"><i class="fa fa-clock-o mr-5 text-theme-colored2"></i> at 5.00 pm - 7.30 pm</span>
                                             <span class="text-gray-darkgray"><i class="fa fa-map-marker mr-5 text-theme-colored2"></i> 25 Newyork City</span>
                                             <p class="mt-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commod</p>
@@ -689,7 +689,7 @@
                                     </div>
                                     <div class="event-meta border-1px pl-40">
                                         <div class="event-content pull-left flip">
-                                            <h4 class="event-title media-heading font-roboto-slab font-weight-700"><a href="#">Learning Spoken English</a></h4>
+                                            <h4 class="event-title media-heading font-roboto-slab font-weight-700"><a href="#">Ưu Đãi Học Phí Tháng 5</a></h4>
                                             <span class="mb-10 text-gray-darkgray mr-10"><i class="fa fa-clock-o mr-5 text-theme-colored2"></i> at 5.00 pm - 7.30 pm</span>
                                             <span class="text-gray-darkgray"><i class="fa fa-map-marker mr-5 text-theme-colored2"></i> 25 Newyork City</span>
                                             <p class="mt-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commod</p>
@@ -707,7 +707,7 @@
                                     </div>
                                     <div class="event-meta border-1px pl-40">
                                         <div class="event-content pull-left flip">
-                                            <h4 class="event-title media-heading font-roboto-slab font-weight-700"><a href="#">Workshop Online Marketing</a></h4>
+                                            <h4 class="event-title media-heading font-roboto-slab font-weight-700"><a href="#">Giao Lưu Với Học Viên 5T</a></h4>
                                             <span class="mb-10 text-gray-darkgray mr-10"><i class="fa fa-clock-o mr-5 text-theme-colored2"></i> at 5.00 pm - 7.30 pm</span>
                                             <span class="text-gray-darkgray"><i class="fa fa-map-marker mr-5 text-theme-colored2"></i> 25 Newyork City</span>
                                             <p class="mt-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commod</p>
@@ -717,13 +717,13 @@
                             </article>
                         </div>
                         <div class="col-md-6">
-                            <h3 class="text-uppercase line-bottom-theme-colored-2 line-height-1 mt-0 mt-sm-30"><i class="fa fa-question-circle-o mr-10"></i>Frequently Asked <span class="text-theme-colored2">Questions</span></h3>
+                            <h3 class="text-uppercase line-bottom-theme-colored-2 line-height-1 mt-0 mt-sm-30"><i class="fa fa-question-circle-o mr-10"></i><span class="text-theme-colored2">Câu Hỏi</span>Thường Gặp </h3>
                             <div class="panel-group accordion-stylished-left-border accordion-icon-filled accordion-no-border accordion-icon-left accordion-icon-filled-theme-colored2" id="accordion6" role="tablist" aria-multiselectable="true">
                                 <div class="panel panel-default">
                                     <div class="panel-heading" role="tab" id="headin1">
                                         <h6 class="panel-title">
                                             <a role="button" data-toggle="collapse" data-parent="#accordion6" href="#collaps1" aria-expanded="true" aria-controls="collaps1">
-                                                Why LearnPro University is Best?
+                                                Tại Sao Chọn 5T
                                             </a>
                                         </h6>
                                     </div>
@@ -737,7 +737,7 @@
                                     <div class="panel-heading" role="tab" id="heading2">
                                         <h6 class="panel-title">
                                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion6" href="#collapse2" aria-expanded="false" aria-controls="collapse2">
-                                                Why LearnPro University is Best?
+                                                Chế Độ Bảo Hành Của 5T Ra Sao ?
                                             </a>
                                         </h6>
                                     </div>
@@ -751,7 +751,7 @@
                                     <div class="panel-heading" role="tab" id="heading3">
                                         <h6 class="panel-title">
                                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion6" href="#collapse3" aria-expanded="false" aria-controls="collapse3">
-                                                Why LearnPro University is Best?
+                                                Đầu Ra Học Viên Của 5T Có Tốt Không ?
                                             </a>
                                         </h6>
                                     </div>
@@ -765,7 +765,7 @@
                                     <div class="panel-heading" role="tab" id="heading4">
                                         <h6 class="panel-title">
                                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion6" href="#collapse4" aria-expanded="false" aria-controls="collapse4">
-                                                Why LearnPro University is Best?
+                                                Đàn Ở 5T Sản Xuất Ở Đâu Và Chất Lượng Thế Nào ?
                                             </a>
                                         </h6>
                                     </div>
@@ -779,7 +779,7 @@
                                     <div class="panel-heading" role="tab" id="heading5">
                                         <h6 class="panel-title">
                                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion6" href="#collapse5" aria-expanded="false" aria-controls="collapse5">
-                                                Why LearnPro University is Best?
+                                                Cơ Sở Vật Chất Ở 5T Sản Xuất Thế Nào ?
                                             </a>
                                         </h6>
                                     </div>
@@ -802,8 +802,8 @@
                 <div class="section-title">
                     <div class="row">
                         <div class="col-md-12">
-                            <h2 class="text-uppercase title">Qualified <span class="text-theme-colored2">Teachers</span></h2>
-                            <p class="text-uppercase mb-0">We Have Highly Qualified Teachers</p>
+                            <h2 class="text-uppercase title">ĐỘI NGŨ <span class="text-theme-colored2">GIÁO VIÊN</span></h2>
+                            <p class="text-uppercase mb-0">CHÚNG TÔI CÓ NHỮNG GIÁO VIÊN CHẤT LƯỢNG</p>
                             <div class="double-line-bottom-theme-colored-2"></div>
                         </div>
                     </div>
@@ -822,8 +822,8 @@
                                 </ul>
                             </div>
                             <div class="team-details">
-                                <h4 class="text-uppercase text-theme-colored font-weight-600 m-5">Jhon Anderson</h4>
-                                <h6 class="text-gray font-13 font-weight-400 line-bottom-centered mt-0">Civil Engineer</h6>
+                                <h4 class="text-uppercase text-theme-colored font-weight-600 m-5">PHẠM BÁ THÀNH</h4>
+                                <h6 class="text-gray font-13 font-weight-400 line-bottom-centered mt-0">Người Sáng Lập</h6>
                                 <p class="hidden-md">Lorem ipsum dolor sit ametcon secte adipis elit. Debitis magnam placeat dignissimos saperator ellium</p>
                             </div>
                         </div>
@@ -841,8 +841,8 @@
                                 </ul>
                             </div>
                             <div class="team-details">
-                                <h4 class="text-uppercase text-theme-colored font-weight-600 m-5">Jhon Anderson</h4>
-                                <h6 class="text-gray font-13 font-weight-400 line-bottom-centered mt-0">Civil Engineer</h6>
+                                <h4 class="text-uppercase text-theme-colored font-weight-600 m-5">BÙI TIẾN DŨNG</h4>
+                                <h6 class="text-gray font-13 font-weight-400 line-bottom-centered mt-0">Giáo Viên</h6>
                                 <p class="hidden-md">Lorem ipsum dolor sit ametcon secte adipis elit. Debitis magnam placeat dignissimos saperator ellium</p>
                             </div>
                         </div>
@@ -860,8 +860,8 @@
                                 </ul>
                             </div>
                             <div class="team-details">
-                                <h4 class="text-uppercase text-theme-colored font-weight-600 m-5">Jhon Anderson</h4>
-                                <h6 class="text-gray font-13 font-weight-400 line-bottom-centered mt-0">Civil Engineer</h6>
+                                <h4 class="text-uppercase text-theme-colored font-weight-600 m-5">NGUYỄN CÔNG PHƯỢNG</h4>
+                                <h6 class="text-gray font-13 font-weight-400 line-bottom-centered mt-0">Trợ Giảng</h6>
                                 <p class="hidden-md">Lorem ipsum dolor sit ametcon secte adipis elit. Debitis magnam placeat dignissimos saperator ellium</p>
                             </div>
                         </div>
@@ -879,8 +879,8 @@
                                 </ul>
                             </div>
                             <div class="team-details">
-                                <h4 class="text-uppercase text-theme-colored font-weight-600 m-5">Jhon Anderson</h4>
-                                <h6 class="text-gray font-13 font-weight-400 line-bottom-centered mt-0">Civil Engineer</h6>
+                                <h4 class="text-uppercase text-theme-colored font-weight-600 m-5">ĐOÀN VĂN HẬU</h4>
+                                <h6 class="text-gray font-13 font-weight-400 line-bottom-centered mt-0">Cộng Tác Viên</h6>
                                 <p class="hidden-md">Lorem ipsum dolor sit ametcon secte adipis elit. Debitis magnam placeat dignissimos saperator ellium</p>
                             </div>
                         </div>
@@ -895,8 +895,8 @@
                 <div class="section-title">
                     <div class="row">
                         <div class="col-md-12">
-                            <h2 class="text-uppercase title">Campus <span class="text-theme-colored2">Gallery</span></h2>
-                            <p class="text-uppercase mb-0">See our gallery pictures</p>
+                            <h2 class="text-uppercase title">HÌNH ẢNH <span class="text-theme-colored2">HỌC VIÊN</span></h2>
+                            <p class="text-uppercase mb-0">Học Viên Tại Hệ Thống 5T</p>
                             <div class="double-line-bottom-theme-colored-2"></div>
                         </div>
                     </div>
@@ -1145,8 +1145,8 @@
             <div class="container pt-60 pb-90">
                 <div class="row">
                     <div class="col-md-12 text-center">
-                        <h2 class="text-white text-uppercase font-46 font-weight-700 mb-10">Let's have a <span class="text-theme-colored2">Campus</span> Tour</h2>
-                        <p class="font-16 text-white mb-20">We provides always our best industrial solution for our clientsand  always try to <br> achieve our client's trust and satisfaction. </p>
+                        <h2 class="text-white text-uppercase font-46 font-weight-700 mb-10">VIDEO GIỚI THIỆU<span class="text-theme-colored2"> 5T</span> MUSIC</h2>
+                        <p class="font-16 text-white mb-20">Sang trọng và khác biệt hơn<br> Đam mê sáng tạo – Chắc chắn thành công! </p>
                         <a href="https://www.youtube.com/watch?v=kt-4lJs_8fE" data-lightbox-gallery="youtube-video"><i class="fa fa-play-circle text-theme-colored2 play-btn"></i></a>
                     </div>
                 </div>
@@ -1159,7 +1159,7 @@
                 <div class="section-title">
                     <div class="row">
                         <div class="col-md-12">
-                            <h2 class="text-uppercase title">What <span class="text-theme-colored2">People </span>Say</h2>
+                            <h2 class="text-uppercase title">NHẬN XÉT CỦA <span class="text-theme-colored2">HỌC VIÊN </span></h2>
                             <p class="text-uppercase mb-0">Student and Parents Opinion</p>
                             <div class="double-line-bottom-theme-colored-2"></div>
                         </div>
@@ -1174,9 +1174,9 @@
                                         <img class="img-thumbnail img-circle" alt="" src="{{ asset('template/images/testimonials/1.jpg') }}" width="110">
                                     </div>
                                     <div class="testimonial-content">
-                                        <h4 class="mt-0 font-weight-300">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas vel sint, ut. Quisquam doloremque minus possimus eligendi dolore ad.</h4>
-                                        <h5 class="mt-10 font-16 mb-0">Catherine Grace</h5>
-                                        <h6 class="mt-5">CEO apple.inc</h6>
+                                        <h4 class="mt-0 font-weight-300">Đến với 5T tôi cảm thấy mình tìm được cảm hứng về âm nhạc. Yêu đời hơn và có cái nhìn lạc quan về cuộc sống</h4>
+                                        <h5 class="mt-10 font-16 mb-0">Nguyễn Quốc Khánh</h5>
+                                        <h6 class="mt-5">Lập Trình Viên</h6>
                                     </div>
                                 </div>
                             </div>
@@ -1186,9 +1186,9 @@
                                         <img class="img-thumbnail img-circle" alt="" src="{{ asset('template/images/testimonials/2.jpg') }}" width="110">
                                     </div>
                                     <div class="testimonial-content">
-                                        <h4 class="mt-0 font-weight-300">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas vel sint, ut. Quisquam doloremque minus possimus eligendi dolore ad.</h4>
-                                        <h5 class="mt-10 font-16 mb-0">Catherine Grace</h5>
-                                        <h6 class="mt-5">CEO apple.inc</h6>
+                                        <h4 class="mt-0 font-weight-300">Chất lượng giảng dạy ở đây cực kỳ tốt, cơ sở vật chất đầy đủ sang trọng, giáo viên còn nhiệt tình và đẹp trai nữa :))</h4>
+                                        <h5 class="mt-10 font-16 mb-0">Mai Phương Thúy</h5>
+                                        <h6 class="mt-5">SV ĐH Thương Mại</h6>
                                     </div>
                                 </div>
                             </div>
@@ -1198,9 +1198,9 @@
                                         <img class="img-thumbnail img-circle" alt="" src="{{ asset('template/images/testimonials/3.jpg') }}" width="110">
                                     </div>
                                     <div class="testimonial-content">
-                                        <h4 class="mt-0 font-weight-300">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas vel sint, ut. Quisquam doloremque minus possimus eligendi dolore ad.</h4>
-                                        <h5 class="mt-10 font-16 mb-0">Catherine Grace</h5>
-                                        <h6 class="mt-5">CEO apple.inc</h6>
+                                        <h4 class="mt-0 font-weight-300">Đến với 5T tôi cảm thấy mình tìm được cảm hứng về âm nhạc. Yêu đời hơn và có cái nhìn lạc quan về cuộc sống</h4>
+                                        <h5 class="mt-10 font-16 mb-0">Bills Gates</h5>
+                                        <h6 class="mt-5">Tỷ Phú</h6>
                                     </div>
                                 </div>
                             </div>
@@ -1210,9 +1210,9 @@
                                         <img class="img-thumbnail img-circle" alt="" src="{{ asset('template/images/testimonials/1.jpg') }}" width="110">
                                     </div>
                                     <div class="testimonial-content">
-                                        <h4 class="mt-0 font-weight-300">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas vel sint, ut. Quisquam doloremque minus possimus eligendi dolore ad.</h4>
-                                        <h5 class="mt-10 font-16 mb-0">Catherine Grace</h5>
-                                        <h6 class="mt-5">CEO apple.inc</h6>
+                                        <h4 class="mt-0 font-weight-300">Đến với 5T tôi cảm thấy mình tìm được cảm hứng về âm nhạc. Yêu đời hơn và có cái nhìn lạc quan về cuộc sống</h4>
+                                        <h5 class="mt-10 font-16 mb-0">Hồ Ngọc Hà</h5>
+                                        <h6 class="mt-5">Hoa Hậu</h6>
                                     </div>
                                 </div>
                             </div>
@@ -1228,8 +1228,8 @@
                 <div class="section-title">
                     <div class="row">
                         <div class="col-md-12">
-                            <h2 class="text-uppercase title">Latest <span class="text-theme-colored2">News </span></h2>
-                            <p class="text-uppercase mb-0">See All Time Latest News</p>
+                            <h2 class="text-uppercase title"><span class="text-theme-colored2">TIN TỨC </span>Mới Nhất </h2>
+                            <p class="text-uppercase mb-0">BẢNG TIN CỦA 5T</p>
                             <div class="double-line-bottom-theme-colored-2"></div>
                         </div>
                     </div>
@@ -1286,7 +1286,7 @@
                                             <div class="entry-meta media no-bg no-border mt-0 mb-10">
                                                 <div class="media-body pl-0">
                                                     <div class="event-content pull-left flip">
-                                                        <h4 class="entry-title text-white text-uppercase font-weight-600 m-0 mt-5"><a href="blog-single-left-sidebar.html">Post title here</a></h4>
+                                                        <h4 class="entry-title text-white text-uppercase font-weight-600 m-0 mt-5"><a href="blog-single-left-sidebar.html">CƠ SỞ MỚI 5T</a></h4>
                                                         <ul class="list-inline">
                                                             <li><i class="fa fa-user-o mr-5 text-theme-colored2"></i>By Author</li>
                                                             <li><i class="fa fa-thumbs-o-up mr-5 text-theme-colored2"></i>Likes</li>
@@ -1317,7 +1317,7 @@
                                             <div class="entry-meta media no-bg no-border mt-0 mb-10">
                                                 <div class="media-body pl-0">
                                                     <div class="event-content pull-left flip">
-                                                        <h4 class="entry-title text-white text-uppercase font-weight-600 m-0 mt-5"><a href="blog-single-left-sidebar.html">Post title here</a></h4>
+                                                        <h4 class="entry-title text-white text-uppercase font-weight-600 m-0 mt-5"><a href="blog-single-left-sidebar.html">SIÊU PHẨM 5T-AD </a></h4>
                                                         <ul class="list-inline">
                                                             <li><i class="fa fa-user-o mr-5 text-theme-colored2"></i>By Author</li>
                                                             <li><i class="fa fa-thumbs-o-up mr-5 text-theme-colored2"></i>Likes</li>
@@ -1348,7 +1348,7 @@
                                             <div class="entry-meta media no-bg no-border mt-0 mb-10">
                                                 <div class="media-body pl-0">
                                                     <div class="event-content pull-left flip">
-                                                        <h4 class="entry-title text-white text-uppercase font-weight-600 m-0 mt-5"><a href="blog-single-left-sidebar.html">Post title here</a></h4>
+                                                        <h4 class="entry-title text-white text-uppercase font-weight-600 m-0 mt-5"><a href="blog-single-left-sidebar.html">BẢO QUẢN ĐÀN ĐÚNG CÁCH</a></h4>
                                                         <ul class="list-inline">
                                                             <li><i class="fa fa-user-o mr-5 text-theme-colored2"></i>By Author</li>
                                                             <li><i class="fa fa-thumbs-o-up mr-5 text-theme-colored2"></i>Likes</li>
