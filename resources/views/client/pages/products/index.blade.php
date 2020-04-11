@@ -37,11 +37,11 @@
                                                 <div class="overlay"></div>
                                             </div>
                                             <div class="product-details text-center">
-                                                <a href="{{ route('client.product.show', '5t-ad') }}"><h5 class="product-title">{{ $product->pro_name }}</h5></a>
+                                                <a href="{{ route('client.product.show', ['slug' => \Illuminate\Support\Str::slug($product->pro_name) . '-' . $product->id]) }}"><h5 class="product-title">{{ $product->pro_name }}</h5></a>
                                                 <div class="star-rating" title="Rated 4.50 out of 5"><span data-width="90%">3.50</span></div>
                                                 <div class="price"><del><span class="amount">{{ number_format($product->pro_price, 0, '.', ',') }}</span></del><ins><span class="amount">{{ number_format(getPriceSale($product->pro_price, $product->pro_sale), 0, '.', ',') }}</span></ins></div>
                                                 <div class="btn-add-to-cart-wrapper">
-                                                    <a class="btn btn-default btn-xs btn-add-to-cart" href="#">Add To Cart</a>
+                                                    <a class="btn btn-default btn-xs btn-add-to-cart" href="{{ route('client.shopping.add', ['id' => $product->id]) }}">Thêm vào giỏ hàng</a>
                                                 </div>
                                             </div>
                                         </div>

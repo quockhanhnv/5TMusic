@@ -27,18 +27,18 @@
                 <div class="section-content">
                     <div class="row">
                         <div class="product">
-                            <div class="col-md-5">
+                                <div class="col-md-3">
                                 <div class="product-image">
                                     <ul class="owl-carousel-1col" data-nav="true">
-                                        <li data-thumb="https://placehold.it/750x750"><a href="https://placehold.it/750x750" data-lightbox="single-product"><img src="../../../../../placehold.it/750x750.jpg" alt=""></a></li>
-                                        <li data-thumb="images/construction/shop-single2.html"><a href="../../../../../placehold.it/750x750.jpg" data-lightbox="single-product"><img src="https://placehold.it/750x750" alt=""></a></li>
-                                        <li data-thumb="https://placehold.it/750x750"><a href="https://placehold.it/750x750" data-lightbox="single-product"><img src="https://placehold.it/750x750" alt=""></a></li>
+                                        <li data-thumb=""><a href="" data-lightbox="single-product"><img src="{{ $product->pro_avatar }}" alt=""></a></li>
+                                        <li data-thumb=""><a href="" data-lightbox="single-product"><img src="{{ $product->pro_avatar }}" alt=""></a></li>
+                                        <li data-thumb=""><a href="" data-lightbox="single-product"><img src="{{ $product->pro_avatar }}" alt=""></a></li>
                                     </ul>
                                 </div>
                             </div>
-                            <div class="col-md-7">
+                            <div class="col-md-9">
                                 <div class="product-summary">
-                                    <h2 class="product-title">Cordless Multi Screwdriver</h2>
+                                    <h2 class="product-title">{{ $product->pro_name }}</h2>
                                     <div class="product_review">
                                         <ul class="review_text list-inline">
                                             <li>
@@ -48,42 +48,31 @@
                                             <li><a href="#">Add reviews</a></li>
                                         </ul>
                                     </div>
-                                    <div class="price"> <del><span class="amount">$40.00</span></del> <ins><span class="amount">$30.00</span></ins> </div>
+                                    <div class="price"> <del><span class="amount">{{ number_format($product->pro_price, 0, '.', ',') }}</span></del> <ins><span class="amount">{{ number_format(getPriceSale($product->pro_price, $product->pro_sale), 0, '.', ',') }}</span></ins> </div>
                                     <div class="short-description">
-                                        <p>Donec volutpat purus tempor sem molestie, sed blandit lacus posuere. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut posuere mollis nulla ut consectetur.</p>
+                                        <p>{{ $product->pro_description }}.</p>
                                     </div>
-                                    <div class="tags"><strong>SKU:</strong> EA34</div>
-                                    <div class="category"><strong>Category:</strong> <a href="#">Jackets</a>, <a href="#">Shirts</a></div>
+                                    <div class="category"><strong>Danh mục:</strong> <a href="#">{{ $product->category->c_name }}</div>
                                     <div class="tags"><strong>Tags:</strong> <a href="#">Clothes</a>, <a href="#">Leather</a></div>
                                     <div class="cart-form-wrapper mt-30">
-                                        <form enctype="multipart/form-data" method="post" class="cart">
+                                        <form action="{{ route('client.shopping.add', ['id' => $product->id]) }} }}" enctype="multipart/form-data" method="get" class="cart">
+                                            @csrf
                                             <input type="hidden" value="productID" name="add-to-cart">
                                             <table class="table variations no-border">
                                                 <tbody>
                                                 <tr>
-                                                    <td class="name">Size</td>
-                                                    <td class="value">
-                                                        <select class="form-control">
-                                                            <option value="">Choose an option...</option>
-                                                            <option value="large">Large</option>
-                                                            <option selected="selected" value="medium">Medium</option>
-                                                            <option value="small">Small</option>
-                                                        </select>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="name">Amount</td>
+                                                    <td class="name">Số lượng</td>
                                                     <td class="value">
                                                         <div class="quantity buttons_added">
                                                             <input type="button" class="minus" value="-">
-                                                            <input type="number" size="4" class="input-text qty text" title="Qty" value="1" name="quantity" min="1" step="1">
+                                                            <input type="number" size="4" class="input-text qty text" title="Qty" value="1" name="qty" min="1" step="1">
                                                             <input type="button" class="plus" value="+">
                                                         </div>
                                                     </td>
                                                 </tr>
                                                 </tbody>
                                             </table>
-                                            <button class="single_add_to_cart_button btn btn-default" type="submit">Add to cart</button>
+                                            <button class="single_add_to_cart_button btn btn-default" type="submit">Thêm vào giỏ hàng</button>
                                         </form>
                                     </div>
                                 </div>
@@ -91,38 +80,63 @@
                             <div class="col-md-12">
                                 <div class="horizontal-tab product-tab">
                                     <ul class="nav nav-tabs">
-                                        <li class="active"><a href="#tab1" data-toggle="tab">Description</a></li>
-                                        <li><a href="#tab2" data-toggle="tab">Additional Information</a></li>
-                                        <li><a href="#tab3" data-toggle="tab">Reviews</a></li>
+                                        <li class="active"><a href="#tab1" data-toggle="tab">Chi tiết</a></li>
+                                        <li><a href="#tab2" data-toggle="tab">Thông số kỹ thuật</a></li>
+                                        <li><a href="#tab3" data-toggle="tab">Đánh giá</a></li>
                                     </ul>
                                     <div class="tab-content">
                                         <div class="tab-pane fade in active" id="tab1">
-                                            <h3>Product Description</h3>
-                                            <p>One Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, iste, architecto ullam tenetur quia nemo ratione tempora consectetur quos minus voluptates nisi hic alias libero explicabo reiciendis sint ut quo nulla ipsa aliquid neque molestias et qui sunt. Odit, molestiae. One Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, iste, architecto ullam tenetur quia nemo ratione tempora consectetur quos minus voluptates nisi hic alias libero explicabo reiciendis sint ut quo nulla ipsa aliquid neque molestias et qui sunt. Odit, molestiae.</p>
-                                            <p>One Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, iste, architecto ullam tenetur quia nemo ratione tempora consectetur quos minus voluptates nisi hic alias libero explicabo reiciendis sint ut quo nulla ipsa aliquid neque molestias et qui sunt. Odit, molestiae.</p>
+                                            <h3>Chi tiết về sản phẩm</h3>
+                                            <p>{{ $product->pro_content }}</p>
                                         </div>
                                         <div class="tab-pane fade" id="tab2">
                                             <table class="table table-striped">
                                                 <tbody>
                                                 <tr>
-                                                    <th>Brand</th>
-                                                    <td><p>Envato</p></td>
+                                                    <th>Kiểu dáng</th>
+                                                    <td><p>{{ $product->pro_style }}</p></td>
+                                                    <th>Mặt đàn</th>
+                                                    <td><p>{{ $product->pro_body }}</p></td>
                                                 </tr>
                                                 <tr>
-                                                    <th>Color</th>
-                                                    <td><p>Black</p></td>
+                                                    <th>Loại đàn</th>
+                                                    <td><p>{{ $product->pro_type }}</p></td>
+                                                    <th>Lưng đàn</th>
+                                                    <td><p>{{ $product->pro_back }}</p></td>
                                                 </tr>
                                                 <tr>
-                                                    <th>Size</th>
-                                                    <td><p>Large, Medium</p></td>
+                                                    <th>Số dây</th>
+                                                    <td><p>{{ $product->pro_strings }}</p></td>
+                                                    <th>Hông đàn</th>
+                                                    <td><p>{{ $product->pro_hip }}</p></td>
                                                 </tr>
                                                 <tr>
-                                                    <th>Weight</th>
-                                                    <td>27 kg</td>
+                                                    <th>Số phím</th>
+                                                    <td>{{ $product->pro_button }}</td>
+                                                    <th>Phím đàn</th>
+                                                    <td><p>{{ $product->pro_keyboard }}</p></td>
                                                 </tr>
                                                 <tr>
-                                                    <th>Dimensions</th>
-                                                    <td>16 x 22 x 123 cm</td>
+                                                    <th>EQ & Pickup</th>
+                                                    <td>
+                                                        @if($product->pro_eq_pickup == 1) Có
+                                                        @else Không
+                                                        @endif
+                                                    </td>
+                                                    <th>Cần đàn</th>
+                                                    <td><p>{{ $product->pro_neck }}</p></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Mặt phím</th>
+                                                    <td><p>{{ $product->pro_keyboard_face }}</p></td>
+                                                    <th>Ngựa đàn</th>
+                                                    <td><p>{{ $product->pro_bridge }}</p></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Lược đàn</th>
+                                                    <td><p>{{ $product->pro_comb }}</p></td>
+                                                    <th>Ngựa đàn</th>
+                                                    <td><p>{{ $product->pro_string_type }}</p></td>
                                                 </tr>
                                                 </tbody>
                                             </table>

@@ -22,8 +22,12 @@ class ProductController extends Controller
         return view('client.pages.products.index', compact('hotProducts'));
     }
 
-    public function show()
+    public function show($slug)
     {
-        return view('client.pages.products.detail');
+        $arraySlug = explode('-', $slug);
+        $id = array_pop($arraySlug);
+        $product = $this->productService->findById($id);
+
+        return view('client.pages.products.detail', compact('product'));
     }
 }

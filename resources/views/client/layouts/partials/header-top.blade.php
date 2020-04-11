@@ -338,11 +338,8 @@
                             <li><a href="page-course-details.html">Course Details</a></li>
                         </ul>
                     </li>
-
+                    <li @if(\Request::route()->getName() === 'client.shopping.list') class="active" @endif><a href="{{route('client.shopping.list')}}"><i class="icon_cart_alt" style="line-height: 14px"></i> <span class="label label-danger" id="itemCount">{{\Cart::count()}}</span></a></li>
                 </ul>
-                <div class="pull-right sm-pull-none mb-sm-15">
-                    <a class="btn btn-colored btn-theme-colored2 mt-15 mt-sm-10 pt-10 pb-10 ajaxload-popup" href="{{ asset('template/ajax-load/form-appointment.html') }}">Giới thiệu</a>
-                </div>
             </nav>
         </div>
     </div>
