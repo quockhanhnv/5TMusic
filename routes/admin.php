@@ -55,6 +55,17 @@
         Route::get('','AdminRatingController@index')->name('admin.rating.index');
         Route::get('delete/{id}','AdminRatingController@delete')->name('admin.rating.delete');
     });
+
+    Route::group(['prefix' => 'orders'], function(){
+        Route::get('','AdminOrderController@index')->name('admin.order.index');
+        Route::get('delete/{id}','AdminOrderController@delete')->name('admin.order.delete');
+        Route::get('order-details-delete/{id}','AdminOrderController@deleteOrderDetails')->name('ajax_admin.order.detail.delete');
+        Route::get('view-order-details/{id}','AdminOrderController@getOrderDetails')->name('ajax.admin.order.detail');
+        Route::get('action/{action}/{id}','AdminOrderController@getAction')->name('admin.action.order');
+    });
+
+
+
 //    ======================= COMMON ROUTE ==============================================
         Route::post('upload-content-images', 'AdminUploadController@uploadContentImages')->name('content-images-upload');
 

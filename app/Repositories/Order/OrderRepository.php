@@ -16,22 +16,22 @@ class OrderRepository extends BaseRepository implements OrderRepositoryInterface
 
     public function withRelation($relation)
     {
-        // TODO: Implement withRelation() method.
+        return $this->model->with($relation);
     }
 
     public function paginate($models, $itemPerPage)
     {
-        // TODO: Implement paginate() method.
+        return $models->paginate($itemPerPage);
     }
 
     public function findById($id)
     {
-        // TODO: Implement findById() method.
+        return $this->model->find($id);
     }
 
     public function getAll()
     {
-        // TODO: Implement getAll() method.
+        return $this->model->all();
     }
 
     public function store($data)

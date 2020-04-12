@@ -24,7 +24,7 @@ class OrderDetailRepository extends BaseRepository implements OrderDetailReposit
 
     public function findById($id)
     {
-        // TODO: Implement findById() method.
+        return $this->model->find($id);
     }
 
     public function getAll()
@@ -40,5 +40,15 @@ class OrderDetailRepository extends BaseRepository implements OrderDetailReposit
     public function update($data, $id)
     {
         // TODO: Implement update() method.
+    }
+
+    public function deleteWithOrderId($id)
+    {
+        return $this->model->where('order_detail_order_id', $id)->delete();
+    }
+
+    public function getOrderDetails($id)
+    {
+        return $this->model->where('order_detail_order_id', $id)->get();
     }
 }

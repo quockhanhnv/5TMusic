@@ -57,8 +57,6 @@
                                         <div class="m-widget4__item">
                                             <img class="" src="{{ asset($category->c_avatar)}}" style="width: 50px;height: 50px" title="">
                                         </div>
-
-
                                     </td>
                                     <td>
                                         @if ($category->c_status == 1)

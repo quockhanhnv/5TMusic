@@ -15,4 +15,8 @@ interface OrderDetailRepositoryInterface
     public function store($data);
 
     public function update($data, $id);
+
+    public function deleteWithOrderId($id);
+
+    public function getOrderDetails($id);
 }
