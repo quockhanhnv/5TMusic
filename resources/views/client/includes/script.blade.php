@@ -13,3 +13,18 @@
 <script type="text/javascript" src="{{ asset('template/js/revolution-slider/js/extensions/revolution.extension.parallax.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('template/js/revolution-slider/js/extensions/revolution.extension.slideanims.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('template/js/revolution-slider/js/extensions/revolution.extension.video.min.js') }}"></script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
+<script type="text/javascript">
+    if (typeof TYPE_MESSAGE != "undefined")
+    {
+        switch (TYPE_MESSAGE) {
+            case 'success':
+                toastr["success"](MESSAGE)
+                break;
+            case 'error':
+                toastr["error"](MESSAGE)
+                break;
+        }
+    }
+</script>

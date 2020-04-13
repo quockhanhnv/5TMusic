@@ -30,7 +30,7 @@
 						<div class="m-stack__item m-brand  m-brand--skin-dark ">
 							<div class="m-stack m-stack--ver m-stack--general">
 								<div class="m-stack__item m-stack__item--middle m-brand__logo">
-									<a href="layout.blade.php" class="m-brand__logo-wrapper">
+									<a href="{{ route('dashboard') }}" class="m-brand__logo-wrapper">
 										<img alt="" src="{{ asset('admin-assets/assets/demo/demo12/media/img/logo/logo.png') }}"/>
 									</a>
 								</div>

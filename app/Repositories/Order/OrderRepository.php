@@ -14,9 +14,9 @@ class OrderRepository extends BaseRepository implements OrderRepositoryInterface
     }
 
 
-    public function withRelation($relation)
+    public function withRelation($model, $relation)
     {
-        return $this->model->with($relation);
+        return $model->with($relation);
     }
 
     public function paginate($models, $itemPerPage)
@@ -27,6 +27,11 @@ class OrderRepository extends BaseRepository implements OrderRepositoryInterface
     public function findById($id)
     {
         return $this->model->find($id);
+    }
+
+    public function filter($models, $field, $operator, $value)
+    {
+        return $models->where($field, $operator, $value);
     }
 
     public function getAll()
@@ -43,5 +48,11 @@ class OrderRepository extends BaseRepository implements OrderRepositoryInterface
     public function update($data, $id)
     {
         // TODO: Implement update() method.
+    }
+
+    public function orderByField($field)
+    {
+//        dd($this->model->orderBy($field));
+        return $this->model->orderBy($field);
     }
 }

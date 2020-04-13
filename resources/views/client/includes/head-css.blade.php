@@ -29,3 +29,5 @@
 <link  href="{{ asset('template/js/revolution-slider/css/layers.css') }}" rel="stylesheet" type="text/css"/>
 <link  href="{{ asset('template/js/revolution-slider/css/navigation.css') }}" rel="stylesheet" type="text/css"/>
 <link href="{{ asset('template/css/colors/theme-skin-color-set1.css') }}" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css">

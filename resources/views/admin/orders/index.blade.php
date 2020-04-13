@@ -5,14 +5,43 @@
         <div class="m-portlet__head">
             <div class="m-portlet__head-caption">
                 <div class="m-portlet__head-title">
-                    <h3 class="m-portlet__head-text">
-                        <a href="{{ route('admin.course.create') }}" class="btn btn-outline-accent m-btn m-btn--icon m-btn--icon-only m-btn--custom m-btn--outline-2x m-btn--pill m-btn--air">
-                            <i class="fa flaticon-edit"></i>
-                        </a>
-                        <span>
-                            Tạo mới
-                        </span>
-                    </h3>
+                    <br>
+                    <form action="" method="GET">
+                        <div class="form-group m-form__group row">
+                            <div class="col-lg-3">
+                                <input type="text" name="name" value="{{ \Request::get('name') }}" class="form-control m-input" placeholder="Tên khách hàng">
+                        </div>
+                            <div class="col-lg-3">
+                                <input type="text" name="email" value="{{ \Request::get('email') }}" class="form-control m-input" placeholder="Email khách hàng">
+                            </div>
+                            <div class="col-lg-2">
+                                <select name="user_type" class="form-control m-input" id="exampleSelect1">
+                                    <option value="0">Phân loại KH</option>
+                                    <option value="1" {{ \Request::get('type') == 1 ? "selected" : '' }}>Thành viên</option>
+                                    <option value="2" {{ \Request::get('type') == 2 ? "selected" : '' }}>Khách</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-2">
+                                <select name="status" class="form-control m-input" id="exampleSelect1">
+                                    <option value="">Trạng thái</option>
+                                    <option value="1" {{ \Request::get('status') == 1 ? "selected" : '' }}>Tiếp nhận</option>
+                                    <option value="2" {{ \Request::get('status') == 2 ? "selected" : '' }}>Vận chuyển</option>
+                                    <option value="3" {{ \Request::get('status') == 3 ? "selected" : '' }}>Thành công</option>
+                                    <option value="-1" {{ \Request::get('status') == -1 ? "selected" : '' }}>Hủy</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-1">
+                                <button type="submit" class="btn btn-info">
+                                    Tìm  kiếm
+                                </button>
+                            </div>
+                            <div class="col-lg-1">
+                                <button type="reset" class="btn btn-secondary">
+                                    Excel
+                                </button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -20,7 +49,7 @@
             <!--begin::Section-->
             <div class="m-section">
                 <div class="m-section__content">
-                    <table class="table table-responsive table-bordered">
+                    <table class="table table-responsive-lg table-bordered">
                         <thead>
                         <tr>
                             <th>
@@ -91,14 +120,69 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <span class="m-badge m-badge--primary m-badge--wide">{{ number_format($order->order_total_money, 0, '.', ',') }}</span>
+                                        <span id="data-total-{{$order->id}}" class="m-badge m-badge--primary m-badge--wide">{{ number_format($order->order_total_money, 0, '.', ',') }}</span>
                                     </td>
 
                                     <td>
                                         {!!   $order->order_user_id > 0 ? '<span class="m--font-success">Thành Viên</span>' : 'Khách' !!}
                                     </td>
                                     <td>
-                                        <a class="btn btn-warning">{{ $order->getStatus()['name'] }}</a>
+                                        <div class="m-dropdown m-dropdown--inline m-dropdown--small m-dropdown--arrow m-dropdown--align-right" m-dropdown-toggle="hover">
+                                            <a style="color: white" class="{{ $order->getStatus()['class'] }}">{{ $order->getStatus()['name'] }}</a>
+                                            <div class="m-dropdown__wrapper">
+                                                <span class="m-dropdown__arrow m-dropdown__arrow--right"></span>
+                                                <div class="m-dropdown__inner">
+                                                    <div class="m-dropdown__body">
+                                                        <div class="m-dropdown__content">
+                                                            <ul class="m-nav">
+                                                                <li class="m-nav__section m-nav__section--first">
+                                                                <span class="m-nav__section-text">
+                                                                    Trạng thái
+                                                                </span>
+                                                                </li>
+                                                                <li class="m-nav__separator m-nav__separator--fit"></li>
+                                                                <li class="m-nav__item">
+                                                                    <a href="{{ route('admin.order.action', ['received', $order->id]) }}" class="m-nav__link">
+                                                                        <i class="m-nav__link-icon flaticon-share"></i>
+                                                                        <span class="m-nav__link-text">
+                                                                        Tiếp nhận
+                                                                    </span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="m-nav__separator m-nav__separator--fit"></li>
+                                                                <li class="m-nav__separator m-nav__separator--fit"></li>
+                                                                <li class="m-nav__item">
+                                                                    <a href="{{ route('admin.order.action', ['process', $order->id]) }}" class="m-nav__link">
+                                                                        <i class="m-nav__link-icon flaticon-share"></i>
+                                                                        <span class="m-nav__link-text">
+                                                                        Vận chuyển
+                                                                    </span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="m-nav__separator m-nav__separator--fit"></li>
+                                                                <li class="m-nav__item">
+                                                                    <a href="{{ route('admin.order.action', ['success', $order->id]) }}" class="m-nav__link">
+                                                                        <i class="m-nav__link-icon flaticon-chat-1"></i>
+                                                                        <span class="m-nav__link-text">
+                                                                            Hoàn thành
+                                                                        </span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="m-nav__separator m-nav__separator--fit"></li>
+                                                                <li class="m-nav__item">
+                                                                    <a href="{{ route('admin.order.action', ['cancel', $order->id]) }}" class="m-nav__link">
+                                                                        <i class="m-nav__link-icon flaticon-info"></i>
+                                                                        <span class="m-nav__link-text">
+                                                                            Hủy
+                                                                        </span>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </td>
                                     <td>
                                         {{ $order->created_at }}
@@ -169,11 +253,8 @@
                         </table>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                            Close
-                        </button>
-                        <button type="button" class="btn btn-primary">
-                            Save changes
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">
+                            Đóng
                         </button>
                     </div>
                 </div>
@@ -186,7 +267,7 @@
         <div class="form-group m-form__group row align-items-center">
             <div class="col-md-5"></div>
             <div class="col-md-5 text-center">
-                {{$orders->links()}}
+                {{$orders->appends($query)->links()}}
             </div>
         </div>
         <!-- End: Pagination -->
@@ -235,13 +316,21 @@
                     },
                     dataType: 'JSON',
                     success: function (response) {
+                        let orderId = response.orderId;
                         if(response.code == 200) {
-                            debugger;
+                            // cập nhật lại giá khi xóa 1 order detail
+                            let currentTotal = $('#data-total-'+orderId).text();
+                            currentTotal = currentTotal.split(",").join(""); // parse to number
+                            // (141800000).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,').split(".00").join("")
+                            let updateTotal = currentTotal - response.decrementMoney;
+                            updateTotal = updateTotal.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,').split(".00").join("");
+                            $('#data-total-'+orderId).text(updateTotal);
+                            // xóa order detail thì xóa luôn dòng đáy bằng ajax
                             $this.parents('tr').remove();
+
                         }
                         if(response.flag_delete == true) { // xóa order
-                            debugger;
-                            let orderId = response.orderId
+                            $('#data-total-'+orderId).innerHTML =
                             $('#'+orderId).remove();
                         }
                     },

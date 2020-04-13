@@ -19,14 +19,24 @@ class OrderService extends BaseService
         $this->productService = $productService;
     }
 
-    public function withRelation($relation)
+    public function withRelation($model, $relation)
     {
-        return $this->repository->withRelation($relation);
+        return $this->repository->withRelation($model, $relation);
     }
 
     public function paginate($models, $itemPerPage)
     {
         return $this->repository->paginate($models, $itemPerPage);
+    }
+
+    public function orderByField($field)
+    {
+        return $this->repository->orderByField($field);
+    }
+
+    public function filter($models, $field, $operator, $value)
+    {
+        return $this->repository->filter($models, $field, $operator, $value);
     }
 
     public function findById($id)

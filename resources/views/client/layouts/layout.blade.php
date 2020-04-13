@@ -12,6 +12,14 @@
     @yield('css')
     <!-- external javascripts -->
     @include('client.includes.head-js')
+
+{{--   ============ Toastr message =================   --}}
+    @if(session('toastr'))
+        <script>
+            var TYPE_MESSAGE = "{{ session('toastr.type') }}"
+            var MESSAGE = "{{ session('toastr.message') }}"
+        </script>
+    @endif
 </head>
 
 <body class="">

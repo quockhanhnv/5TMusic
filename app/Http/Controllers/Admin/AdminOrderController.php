@@ -19,13 +19,30 @@ class AdminOrderController extends Controller
         $this->orderDetailService = $orderDetailService;
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $orders = $this->orderService->withRelation('user');
+        $orders = $this->orderService->orderByField('created_at');
+        if($name = $request->name) $orders = $this->orderService->filter($orders,'order_name', 'like', '%'.$name.'%');
+
+        if($email = $request->email) $orders = $this->orderService->filter($orders,'order_name', 'like', '%'.$email.'%');
+
+        if($request->has('user_type')) {
+            $userType = $request->get('user_type');
+            if($userType == 1) {
+                $orders = $this->orderService->filter($orders,'order_user_id', '<>', 0);
+            }
+            else {
+                $orders = $this->orderService->filter($orders,'order_user_id', '=', 0);
+            }
+        }
+        if($status = $request->status) $orders = $this->orderService->filter($orders,'order_status', '=', $status);
+
+        $orders = $this->orderService->withRelation($orders,'user');
         $orders = $this->orderService->paginate($orders, 10);
 
         $viewData = [
-            'orders' => $orders
+            'orders' => $orders,
+            'query'  => $request->query()
         ];
         return view('admin.orders.index', $viewData);
     }
@@ -55,13 +72,14 @@ class AdminOrderController extends Controller
            $orderDetail = $this->orderDetailService->findById($id);
            $orderId = $orderDetail->order_detail_order_id;
            $decrementMoney = $orderDetail->order_detail_qty * getPriceSale($orderDetail->order_detail_price, $orderDetail->order_detail_sale);
-           $this->orderService->findById($orderDetail->order_detail_order_id)->decrement('order_total_money', $decrementMoney);
+           $this->orderService->findById($orderId)->decrement('order_total_money', $decrementMoney);
 
            $orderDetail->delete();
 
             //kiểm tra nếu xóa hết order detail rồi thì xóa luôn order đấy vì làm gì còn sản phẩm nào đâu.Ok
             $checkOrderHaveAnyOrderDetails = $this->orderService->findById($orderId)->orderDetails->count();
             $flag_delete = $checkOrderHaveAnyOrderDetails == 0 ? true : false;
+            if($flag_delete == true) $this->orderService->findById($orderId)->delete();
            return response([
                'orderId' => $orderId,
                'decrementMoney' => $decrementMoney,
@@ -69,5 +87,32 @@ class AdminOrderController extends Controller
                'code' => Response::HTTP_OK
            ]);
         }
+    }
+
+    public function changeStatus($action, $id)
+    {
+        $order = $this->orderService->findById($id);
+        if ($order) {
+            switch ($action) {
+                case 'received':
+                    $order->order_status = 1;
+                    break;
+                case 'process':
+                    $order->order_status = 2;
+                    break;
+                case 'success':
+                    $order->order_status = 3;
+
+                    break;
+                case 'cancel':
+                    $order->order_status = -1;
+                    # code...
+                    break;
+            }
+
+            $order->save();
+        }
+
+        return redirect()->back();
     }
 }

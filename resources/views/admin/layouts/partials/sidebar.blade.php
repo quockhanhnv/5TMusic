@@ -69,7 +69,7 @@
                     <span class="m-menu__link-title">
                         <span class="m-menu__link-wrap">
                             <span class="m-menu__link-text">
-                                Support
+                                Hóa đơn
                             </span>
                             <span class="m-menu__link-badge">
                                 <span class="m-badge m-badge--accent">
@@ -101,12 +101,12 @@
                             </span>
                         </li>
                         <li class="m-menu__item " aria-haspopup="true"  m-menu-link-redirect="1">
-                            <a  href="inner.html" class="m-menu__link ">
+                            <a  href="{{ route('admin.order.index') }}" class="m-menu__link ">
                                 <i class="m-menu__link-bullet m-menu__link-bullet--line">
                                     <span></span>
                                 </i>
                                 <span class="m-menu__link-text">
-                                    Reports
+                                    Danh sách
                                 </span>
                             </a>
                         </li>

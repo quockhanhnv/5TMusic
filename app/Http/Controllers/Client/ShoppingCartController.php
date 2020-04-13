@@ -7,6 +7,7 @@ use App\Services\ProductService;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class ShoppingCartController extends Controller
 {
@@ -34,6 +35,13 @@ class ShoppingCartController extends Controller
 
         if(!$product) return redirect()->route('home');
 
+        if($product->pro_stock_quantity < 1) {
+            Session::flash('toastr', [
+                'type'    => 'error',
+                'message' => 'Số lượng sản phẩm không đủ'
+            ]);
+            return redirect()->back();
+        }
         \Cart::add([
             'id' => $product->id,
             'name' => $product->pro_name,
@@ -46,8 +54,13 @@ class ShoppingCartController extends Controller
                 'image' => $product->pro_avatar
             ]
         ]);
+        //4. Thông báo
+        Session::flash('toastr', [
+            'type'    => 'success',
+            'message' => 'Thêm giỏ hàng thành công'
+        ]);
 
-        return redirect()->back()->with('message', 'Thêm mới giỏ hàng thành công');
+        return redirect()->back();
     }
 
     // when client submir from contains info of us this method is run

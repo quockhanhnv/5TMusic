@@ -61,7 +61,7 @@
         Route::get('delete/{id}','AdminOrderController@delete')->name('admin.order.delete');
         Route::get('order-details-delete/{id}','AdminOrderController@deleteOrderDetails')->name('ajax_admin.order.detail.delete');
         Route::get('view-order-details/{id}','AdminOrderController@getOrderDetails')->name('ajax.admin.order.detail');
-        Route::get('action/{action}/{id}','AdminOrderController@getAction')->name('admin.action.order');
+        Route::get('action/{action}/{id}','AdminOrderController@changeStatus')->name('admin.order.action');
     });
 
 

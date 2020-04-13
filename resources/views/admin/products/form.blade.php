@@ -5,7 +5,7 @@
             <label>
                 Tên sản phẩm<span class="text-danger">&nbsp(*)</span>:
             </label>
-            <input type="text" name="pro_name" value="{{  $product->pro_name ?? old('pro_name') }}" class="form-control m-input" placeholder="Enter course name">
+            <input type="text" name="pro_name" value="{{  $product->pro_name ?? old('pro_name') }}" class="form-control m-input" placeholder="">
             @if(count($errors) > 0)
                 <span class="text-danger">{{$errors->first('pro_name')}}</span>
             @endif
@@ -14,7 +14,7 @@
             <label class="">
                 Giá<span class="text-danger">&nbsp(*)</span>::
             </label>
-            <input type="text" name="pro_price" value="{{  $product->pro_price ?? old('pro_price') }}" class="form-control m-input" placeholder="Enter price">
+            <input type="text" name="pro_price" value="{{  $product->pro_price ?? old('pro_price') }}" class="form-control m-input" placeholder="">
             @if(count($errors) > 0)
                 <span class="text-danger">{{$errors->first('pro_price')}}</span>
             @endif
@@ -59,7 +59,7 @@
             <label>
                 Kiểu dáng:
             </label>
-            <input type="text" name="pro_style" value="{{  $product->pro_style ?? old('pro_style') }}" class="form-control m-input" placeholder="Enter course name">
+            <input type="text" name="pro_style" value="{{  $product->pro_style ?? old('pro_style') }}" class="form-control m-input" placeholder="">
             @if(count($errors) > 0)
                 <span class="text-danger">{{$errors->first('pro_style')}}</span>
             @endif
@@ -70,7 +70,7 @@
             <label>
                 Loại đàn:
             </label>
-            <input type="text" name="pro_type" value="{{  $product->pro_type ?? old('pro_type') }}" class="form-control m-input" placeholder="Enter course name">
+            <input type="text" name="pro_type" value="{{  $product->pro_type ?? old('pro_type') }}" class="form-control m-input" placeholder="">
             @if(count($errors) > 0)
                 <span class="text-danger">{{$errors->first('pro_type')}}</span>
             @endif
@@ -79,7 +79,7 @@
             <label>
                 Số dây:
             </label>
-            <input type="text" name="pro_strings" value="{{  $product->pro_strings ?? old('pro_strings') }}" class="form-control m-input" placeholder="Enter course name">
+            <input type="text" name="pro_strings" value="{{  $product->pro_strings ?? old('pro_strings') }}" class="form-control m-input" placeholder="">
             @if(count($errors) > 0)
                 <span class="text-danger">{{$errors->first('pro_strings')}}</span>
             @endif
@@ -88,7 +88,7 @@
             <label>
                 Số phím:
             </label>
-            <input type="text" name="pro_button" value="{{  $product->pro_price ?? old('pro_button') }}" class="form-control m-input" placeholder="Enter course name">
+            <input type="text" name="pro_button" value="{{  $product->pro_price ?? old('pro_button') }}" class="form-control m-input" placeholder="">
             @if(count($errors) > 0)
                 <span class="text-danger">{{$errors->first('pro_button')}}</span>
             @endif
@@ -99,7 +99,7 @@
             <label>
                 Dây đàn:
             </label>
-            <input type="text" name="pro_string_type" value="{{  $product->pro_string_type ?? old('pro_string_type') }}" class="form-control m-input" placeholder="Enter course name">
+            <input type="text" name="pro_string_type" value="{{  $product->pro_string_type ?? old('pro_string_type') }}" class="form-control m-input" placeholder="">
             @if(count($errors) > 0)
                 <span class="text-danger">{{$errors->first('pro_string_type')}}</span>
             @endif
@@ -108,7 +108,7 @@
             <label>
                 Mặt đàn:
             </label>
-            <input type="text" name="pro_body" value="{{  $product->pro_body ?? old('pro_body') }}" class="form-control m-input" placeholder="Enter course name">
+            <input type="text" name="pro_body" value="{{  $product->pro_body ?? old('pro_body') }}" class="form-control m-input" placeholder="">
             @if(count($errors) > 0)
                 <span class="text-danger">{{$errors->first('pro_body')}}</span>
             @endif
@@ -117,7 +117,7 @@
             <label>
                 Hông đàn:
             </label>
-            <input type="text" name="pro_hip" value="{{  $product->pro_hip ?? old('pro_hip') }}" class="form-control m-input" placeholder="Enter course name">
+            <input type="text" name="pro_hip" value="{{  $product->pro_hip ?? old('pro_hip') }}" class="form-control m-input" placeholder="">
             @if(count($errors) > 0)
                 <span class="text-danger">{{$errors->first('pro_hip')}}</span>
             @endif
@@ -128,7 +128,7 @@
             <label>
                 Phím đàn:
             </label>
-            <input type="text" name="pro_keyboard" value="{{  $product->pro_keyboard ?? old('pro_keyboard') }}" class="form-control m-input" placeholder="Enter course name">
+            <input type="text" name="pro_keyboard" value="{{  $product->pro_keyboard ?? old('pro_keyboard') }}" class="form-control m-input" placeholder="">
             @if(count($errors) > 0)
                 <span class="text-danger">{{$errors->first('pro_keyboard')}}</span>
             @endif
@@ -137,7 +137,7 @@
             <label>
                 Cần đàn:
             </label>
-            <input type="text" name="pro_neck" value="{{  $product->pro_neck ?? old('pro_neck') }}" class="form-control m-input" placeholder="Enter course name">
+            <input type="text" name="pro_neck" value="{{  $product->pro_neck ?? old('pro_neck') }}" class="form-control m-input" placeholder="">
             @if(count($errors) > 0)
                 <span class="text-danger">{{$errors->first('pro_neck')}}</span>
             @endif
@@ -146,7 +146,7 @@
             <label>
                 Mặt phím:
             </label>
-            <input type="text" name="pro_keyboard_face" value="{{  $product->pro_keyboard_face ?? old('pro_keyboard_face') }}" class="form-control m-input" placeholder="Enter course name">
+            <input type="text" name="pro_keyboard_face" value="{{  $product->pro_keyboard_face ?? old('pro_keyboard_face') }}" class="form-control m-input" placeholder="">
             @if(count($errors) > 0)
                 <span class="text-danger">{{$errors->first('pro_keyboard_face')}}</span>
             @endif
@@ -157,7 +157,7 @@
             <label>
                 Ngựa đàn:
             </label>
-            <input type="text" name="pro_bridge" value="{{  $product->pro_bridge ?? old('pro_bridge') }}" class="form-control m-input" placeholder="Enter course name">
+            <input type="text" name="pro_bridge" value="{{  $product->pro_bridge ?? old('pro_bridge') }}" class="form-control m-input" placeholder="">
             @if(count($errors) > 0)
                 <span class="text-danger">{{$errors->first('pro_bridge')}}</span>
             @endif
@@ -166,7 +166,7 @@
             <label>
                 Lược đàn:
             </label>
-            <input type="text" name="pro_comb" value="{{  $product->pro_comb ?? old('pro_comb') }}" class="form-control m-input" placeholder="Enter course name">
+            <input type="text" name="pro_comb" value="{{  $product->pro_comb ?? old('pro_comb') }}" class="form-control m-input" placeholder="">
             @if(count($errors) > 0)
                 <span class="text-danger">{{$errors->first('pro_comb')}}</span>
             @endif
@@ -201,7 +201,15 @@
                 <span class="text-danger">{{$errors->first('pro_eq_pickup')}}</span>
             @endif
         </div>
-
+        <div class="col-lg-8">
+            <label>
+               Số lượng:
+            </label>
+            <input type="text" name="pro_stock_quantity" value="{{  $product->pro_stock_quantity ?? old('pro_stock_quantity') }}" class="form-control m-input" placeholder="">
+            @if(count($errors) > 0)
+                <span class="text-danger">{{$errors->first('pro_stock_quantity')}}</span>
+            @endif
+        </div>
     </div>
     <div class="form-group m-form__group row">
         <div class="col-lg-8">

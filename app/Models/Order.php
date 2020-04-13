@@ -16,7 +16,7 @@ class Order extends Model
         ],
         '2' => [
             'class' => 'btn btn-danger',
-            'name'  => 'Đang vận chuyển'
+            'name'  => 'Vận chuyển'
         ],
         '3' => [
             'class' => 'btn btn-success',
