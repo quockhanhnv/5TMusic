@@ -25,16 +25,19 @@
                                     @if(isset($cartItems))
                                     @foreach($cartItems as $key => $item)
                                         <tr class="cart_item">
-                                            <td class="product-remove"><a title="Remove this item" class="remove" href="{{ route('client.shopping.delete', ['id' => $key]) }}"><i class="fa fa-close"></i></a></td>
-                                            <td class="product-thumbnail"><a href="{{ route('client.product.show', ['slug' => \Illuminate\Support\Str::slug($item->name) .'-' . $item->id]) }}"><img alt="image" src="https://placehold.it/255x194"></a></td>
+                                            <td class="product-remove"><a title="Remove this item" class="remove" href="{{ route('client.shopping.delete', ['id' => $key]) }}"><span class="label label-danger">Xóa</span></a></td>
+                                            <td class="product-thumbnail"><a href="{{ route('client.product.show', ['slug' => \Illuminate\Support\Str::slug($item->name) .'-' . $item->id]) }}"><img alt="image" src="{{ $item->options->image }}"></a></td>
                                             <td class="product-name"><a href="{{ route('client.product.show', ['slug' => \Illuminate\Support\Str::slug($item->name) .'-' . $item->id]) }}">{{ $item->name }}</a>
-                                            <td class="product-price"><span class="amount">{{ number_format($item->price, 0, '.', ',') }}</span></td>
-                                            <td class="product-quantity"><div class="quantity buttons_added">
+                                            <td class="product-price"><span class="amount" id="data-price-item-{{$key}}">{{ number_format($item->price, 0, '.', ',') }}</span></td>
+                                            <td class="product-quantity">
+                                                <div class="quantity buttons_added">
                                                     <input type="button" class="minus" value="-">
-                                                    <input type="number" size="4" class="input-text qty text" title="Qty" value="{{ $item->qty }}" name="quantity" min="1" step="1">
+                                                    <input id="qty-{{$key}}" type="number" size="4" class="input-text qty text" title="Qty" value="{{ $item->qty }}" name="quantity" min="1" step="1">
                                                     <input type="button" class="plus" value="+">
-                                                </div></td>
-                                            <td class="product-subtotal"><span class="amount">{{ number_format($item->price * $item->qty, 0, '.', ',') }}đ</span></td>
+                                                </div>
+                                                <a data-id="{{ $key }}" data-product-id="{{ $item->id }}" class="js-update-cart-item" href="{{ route('client.shopping.update', $key) }}"><span class="label label-info">Cập nhật</span></a>
+                                            </td>
+                                            <td class="product-subtotal"><span class="amount" id="data-new-price-{{$key}}">{{ number_format($item->price * $item->qty, 0, '.', ',') }}đ</span></td>
                                         </tr>
                                     @endforeach
                                     @endif
@@ -44,8 +47,8 @@
                                                 <input id="cart-coupon" type="text" placeholder="Nhập voucher" value="" name="">
                                                 <button type="button" class="btn">Áp dụng</button>
                                             </div></td>
-                                        <td colspan="2"><span class="text-theme-colored2">Tổng tiền</span>: {{ \Cart::subtotal(0) }}</td>
-                                        <td><button type="button" class="btn btn-success">Cập nhật</button></td>
+                                        <td colspan="2"></td>
+                                        <td><span class="text-theme-colored2">Tổng tiền</span>: <span id="data-cart-sub-total">{{ \Cart::subtotal(0) }}đ</span></td>
                                     </tr>
                                     </tbody>
                                 </table>
@@ -121,4 +124,46 @@
         </section>
     </div>
     <!-- end main-content -->
+@endsection
+
+@section('js')
+    <script>
+        $('.js-update-cart-item').click(function (event) {
+            event.preventDefault();
+            let $this = $(this)
+            let key = $this.attr('data-id'); // update theo key của giỏ hàng nên phải lấy key gỏi hàng ra
+            let url = $this.attr('href'); // lấy url gửi ajax
+            let qty = $('#qty-'+key).val(); // lấy số lượng update từ input
+            if(qty <= 0) {
+                toastr["warning"]('Vui lòng xóa sản phẩm khỏi giỏ hàng');
+                return false;
+            }
+            let productId = $this.attr('data-product-id'); // lấy id của product để check xem trường hợp còn đủ sổ lượng trong db nữa k
+            let itemPrice = $('#data-price-item-'+key).text(); // Lấy giá của 1 sản phẩm để cập nhật lại tổng tiền khi bấm cập nhật
+            itemPrice = itemPrice.split(",").join("");
+            let newTotalPrice = itemPrice * qty; // giá mới
+            newTotalPrice = newTotalPrice.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,').split(".00").join("");
+            $('#data-new-price-'+key).text(newTotalPrice + 'đ');
+            // cập nhật lại tổng tiền ở response success lấy giá trị ở controller response về new cartSubtotal
+            $.ajax({
+                url: url,
+                method: 'GET',
+                data: {
+                    _token: '{{ csrf_token() }}',
+                    qty: qty,
+                    productId: productId,
+                    cartId : key
+                },
+                dataType: 'JSON',
+                success: function (response) {
+                   let newSubCartTotal = response.newCartSubTotal;
+                    $('#data-cart-sub-total').html(newSubCartTotal + 'đ')
+                    toastr["success"](response.message)
+                },
+                error: function () {
+                    console.log('Something went wrong when sending ajax');
+                }
+            });
+        })
+    </script>
 @endsection

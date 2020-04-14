@@ -143,7 +143,7 @@
                                      data-splitin="none"
                                      data-splitout="none"
                                      data-responsive_offset="on"
-                                     style="z-index: 5; white-space: nowrap; font-weight:700;">Welcome To<span class="text-theme-colored2"> Learpro</span>
+                                     style="z-index: 5; white-space: nowrap; font-weight:700;">Welcome To<span class="text-theme-colored2"> 5T Music</span>
                                 </div>
                                 <!-- LAYER NR. 3 -->
                                 <div class="tp-caption tp-resizeme text-white rs-parallaxlevel-0"
@@ -166,7 +166,7 @@
                                      data-splitin="none"
                                      data-splitout="none"
                                      data-responsive_offset="on"
-                                     style="z-index: 5; white-space: nowrap;">We provides always our best educational services for our all students <br> and  always try to achieve our students trust and satisfaction
+                                     style="z-index: 5; white-space: nowrap;">Chúng tôi luôn cung cấp các dịch vụ giáo dục tốt nhất cho tất cả học sinh<br> và luôn cố gắng để đạt được sự tin tưởng và hài lòng của học viên
                                 </div>
                                 <!-- LAYER NR. 4 -->
                                 <div class="tp-caption rs-parallaxlevel-0"
@@ -187,7 +187,7 @@
                                      data-splitout="none"
                                      data-responsive_offset="on"
                                      data-responsive="off"
-                                     style="z-index: 5; white-space: nowrap; letter-spacing:1px;"><a class="btn btn-theme-colored2 btn-lg btn-flat text-white font-weight-600 pl-30 pr-30 mr-15" href="#">Our Service</a><a class="btn btn-default btn-transparent btn-bordered btn-lg btn-flat font-weight-600 pl-30 pr-30" href="#">Get a Quote</a>
+                                     style="z-index: 5; white-space: nowrap; letter-spacing:1px;"><a class="btn btn-theme-colored2 btn-lg btn-flat text-white font-weight-600 pl-30 pr-30 mr-15" href="#">Thông Tin</a><a class="btn btn-default btn-transparent btn-bordered btn-lg btn-flat font-weight-600 pl-30 pr-30" href="#">Khóa Học</a>
                                 </div>
                             </li>
 
@@ -233,7 +233,7 @@
                                      data-splitin="none"
                                      data-splitout="none"
                                      data-responsive_offset="on"
-                                     style="z-index: 5; white-space: nowrap; font-weight:700;">Leading<span class="text-theme-colored2"> University</span>
+                                     style="z-index: 5; white-space: nowrap; font-weight:700;">ƯU ĐÃI<span class="text-theme-colored2"> HỌC PHÍ</span>
                                 </div>
                                 <!-- LAYER NR. 3 -->
                                 <div class="tp-caption tp-resizeme text-white rs-parallaxlevel-0"
@@ -256,7 +256,7 @@
                                      data-splitin="none"
                                      data-splitout="none"
                                      data-responsive_offset="on"
-                                     style="z-index: 5; white-space: nowrap;">We provides always our best educational services for our all students <br> and  always try to achieve our students trust and satisfaction
+                                     style="z-index: 5; white-space: nowrap;">5T Guitar Đơn vị Đào tạo Âm nhạc Top 1 Hà Nội, học viên đông nhất <br> với 6 cơ sở dạy đàn Guitar tại Hà Nội
                                 </div>
                                 <!-- LAYER NR. 4 -->
                                 <div class="tp-caption rs-parallaxlevel-0"
@@ -277,7 +277,7 @@
                                      data-splitout="none"
                                      data-responsive_offset="on"
                                      data-responsive="off"
-                                     style="z-index: 5; white-space: nowrap; letter-spacing:1px;"><a class="btn btn-theme-colored2 btn-lg btn-flat text-white font-weight-600 pl-30 pr-30 mr-15" href="#">Our Service</a><a class="btn btn-default btn-transparent btn-bordered btn-lg btn-flat font-weight-600 pl-30 pr-30" href="#">Get a Quote</a>
+                                     style="z-index: 5; white-space: nowrap; letter-spacing:1px;"><a class="btn btn-theme-colored2 btn-lg btn-flat text-white font-weight-600 pl-30 pr-30 mr-15" href="#">Thông Tin</a><a class="btn btn-default btn-transparent btn-bordered btn-lg btn-flat font-weight-600 pl-30 pr-30" href="#">Khóa Học</a>
                                 </div>
                             </li>
                         </ul>

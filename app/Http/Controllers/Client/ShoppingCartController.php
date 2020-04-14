@@ -72,6 +72,26 @@ class ShoppingCartController extends Controller
         $this->orderService->insertOrderAndOrderDetails($request->all());
         return redirect()->route('home')->with('message', 'Thanh toán giỏ hàng thành công');
     }
+
+    public function update(Request $request, $id) // update bằng ajax khi ở form thanh toán thay đổi số lượng
+    {
+
+        if($request->ajax()) {
+            $qty = $request->qty ?? 1;
+            $cartId = $request->cartId;
+            $productId = $request->productId;
+            $product = $this->productService->findById($productId);
+            if(!$product) return response(['message' => 'Không tồn tại sản phẩm']);
+            if($product->pro_stock_quantity < $qty) return response(['message' => 'Số lượng sản phẩm không đủ']);
+            \Cart::update($cartId, $qty);
+            $newSubTotal = \Cart::subtotal(0);
+
+            return response([
+                'message' => 'Cập nhật giỏ hàng thành công',
+                'newCartSubTotal' => $newSubTotal // response lại tổng giỏ hàng mới để bên kia dùng ajax cập nhật lại
+            ]);
+        }
+    }
     public function delete($id)
     {
         \Cart::remove($id);

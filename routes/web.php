@@ -16,7 +16,7 @@ Route::group(['namespace' => 'Client'], function() {
     Route::get('don-hang','ShoppingCartController@index')->name('client.shopping.list');
     Route::group(['prefix' => 'shopping'], function(){
         Route::get('add/{id}', 'ShoppingCartController@add')->name('client.shopping.add');
-        Route::get('update/{id}','ShoppingCartController@update')->name('client.shopping.update');
+        Route::get('update/{id}','ShoppingCartController@update')->name('client.shopping.update'); // update by ajax
         Route::get('delete/{id}','ShoppingCartController@delete')->name('client.shopping.delete');
         Route::post('pay','ShoppingCartController@postPay')->name('client.shopping.pay');
     });
