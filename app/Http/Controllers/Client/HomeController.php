@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Client;
 
 use App\Services\CourseService;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
@@ -17,6 +16,7 @@ class HomeController extends Controller
 
     public function index()
     {
+
         $hotCourses = $this->courseService->getHotCourses(4);
 
         $viewData = [

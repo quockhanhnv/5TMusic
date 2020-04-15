@@ -2,9 +2,14 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\User;
+use App\Http\Requests\RegisterMemberRequest;
+use App\Mail\RegisterMemberSuccessfully;
+use App\Models\User;
 use App\Http\Controllers\Controller;
+use App\Services\UserService;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
@@ -28,15 +33,18 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
+    protected $userService;
+
+    public function __construct(UserService $userService)
     {
+        $this->userService = $userService;
         $this->middleware('guest');
     }
 
@@ -69,4 +77,24 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
     }
+
+    public function getRegister()
+    {
+        return view('auth.register');
+    }
+
+    public function postRegister(RegisterMemberRequest $request)
+    {
+        $user = $this->userService->store($request->all());
+        if($user) {
+            Mail::to($request->email)->send(new RegisterMemberSuccessfully($request->name));
+
+            if(Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+                return redirect()->intended('/');
+            }
+        }
+
+        return redirect()->back();
+    }
+
 }

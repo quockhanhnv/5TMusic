@@ -26,6 +26,11 @@ class ProductRepository extends BaseRepository implements ProductRepositoryInter
         return $this->model->find($id);
     }
 
+    public function findByName($name)
+    {
+        return $this->model->where('pro_active', ACTIVE_STATUS)->where('pro_name', 'like', '%' . $name . '%');
+    }
+
     public function getAll()
     {
         return $this->model->where('pro_active', ACTIVE_STATUS);

@@ -2,9 +2,11 @@
 
 namespace App\Services;
 
+use App\Mail\OrderSuccessfully;
 use App\Repositories\Order\OrderRepositoryInterface;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class OrderService extends BaseService
 {
@@ -51,7 +53,8 @@ class OrderService extends BaseService
 
     public function insertOrderAndOrderDetails($data)
     {
-         return DB::transaction(function () use ($data) {
+        $emailCustomer = $data['order_email'];
+         return DB::transaction(function () use ($data, $emailCustomer) {
 
             $order = $this->store($data); // lưu vào bảng order thông tin khách hàng và tổng tiền
 
@@ -73,6 +76,10 @@ class OrderService extends BaseService
             }
             $data = array_values($data);
              $this->orderDetailService->store($data);
+//              for mailing
+             $orders = \Cart::content();
+             Mail::to($emailCustomer)->send(new OrderSuccessfully($orders));
+//              end for mailing
             \Cart::destroy();
         });
     }

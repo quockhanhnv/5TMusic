@@ -3,9 +3,9 @@
         <div class="widget">
             <h5 class="widget-title line-bottom">Search box</h5>
             <div class="search-form">
-                <form>
+                <form action="" method="GET">
                     <div class="input-group">
-                        <input type="text" placeholder="Click to Search" class="form-control search-input">
+                        <input type="text" name="name" placeholder="Click to Search Product" class="form-control search-input">
                         <span class="input-group-btn">
                         <button type="submit" class="btn search-button"><i class="fa fa-search"></i></button>
                         </span>

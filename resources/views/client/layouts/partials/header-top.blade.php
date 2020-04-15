@@ -11,7 +11,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-md-4 pr-0">
+            <div class="col-md-2 pr-0">
                 <div class="widget">
                     <ul class="styled-icons icon-sm pull-right flip sm-pull-none sm-text-center mt-5">
                         <li><a href="#"><i class="fa fa-facebook text-white"></i></a></li>
@@ -21,12 +21,20 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-4">
                 <ul class="list-inline sm-pull-none sm-text-center text-right text-white mb-sm-20 mt-10">
-                    <li class="m-0 pl-10"> <a href="{{ asset('template/ajax-load/login-form.html') }}" class="text-white ajaxload-popup">Đăng nhập /</a> </li>
+                    @guest
+                        <li class="m-0 pl-10"> <a href="{{ route('login') }}" style="color: white">Đăng nhập /</a> </li>
+                        <li class="m-0 pl-0 pr-10">
+                            <a href="{{ route('logout') }}" style="color: white">Đăng ký</a>
+                        </li>
+                    @endguest
+                    @auth
+                    <li class="m-0 pl-10"> <a href="" style="color: white">{{ auth()->user()->name }} /</a> </li>
                     <li class="m-0 pl-0 pr-10">
-                        <a href="{{ asset('template/ajax-load/register-form.html') }}" class="text-white ajaxload-popup">Đăng ký</a>
+                        <a href="{{ route('logout') }}" style="color: white">Đăng xuất</a>
                     </li>
+                    @endauth
                 </ul>
             </div>
         </div>
@@ -50,8 +58,8 @@
                     <div class="col-xs-12 col-sm-4 col-md-4">
                         <div class="widget no-border sm-text-center mt-10 mb-10 m-0">
                             <i class="pe-7s-mail-open text-theme-colored2 font-48 mt-0 mr-15 mr-sm-0 sm-display-block pull-left flip sm-pull-none"></i>
-                            <a href="#" class="font-12 text-gray text-uppercase">EMAIL LIÊN HỆ</a>
-                            <h5 class="font-13 text-black m-0"> abc5t@gmail.com</h5>
+                            <a href="#" class="font-12 text-gray text-uppercase">FB CÁ NHÂN</a>
+                            <h5 class="font-13 text-black m-0">Facebook.com/Thanh5T</h5>
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-4 col-md-4">

@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers\Client;
 
+use App\Mail\OrderSuccessfully;
 use App\Services\OrderService;
 use App\Services\ProductService;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 
 class ShoppingCartController extends Controller
@@ -70,6 +72,7 @@ class ShoppingCartController extends Controller
         $orderTotalMoney = str_replace(',', '', \Cart::subtotal(0)) ;
         $request->merge(['order_user_id' => $userId, 'order_total_money' => $orderTotalMoney]);
         $this->orderService->insertOrderAndOrderDetails($request->all());
+
         return redirect()->route('home')->with('message', 'Thanh toán giỏ hàng thành công');
     }
 

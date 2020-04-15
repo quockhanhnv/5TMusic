@@ -10,6 +10,8 @@ interface ProductRepositoryInterface
 
     public function findById($id);
 
+    public function findByName($name);
+
     public function getAll();
 
     public function store($data);

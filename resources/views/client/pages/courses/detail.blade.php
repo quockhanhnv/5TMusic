@@ -412,7 +412,7 @@
                                     <div class="search-form">
                                         <form>
                                             <div class="input-group">
-                                                <input type="text" placeholder="Click to Search" class="form-control search-input">
+                                                <input type="text" placeholder="Click to Search Course" class="form-control search-input">
                                                 <span class="input-group-btn">
                       <button type="submit" class="btn search-button"><i class="fa fa-search"></i></button>
                       </span>

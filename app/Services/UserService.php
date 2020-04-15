@@ -2,11 +2,12 @@
 
 namespace App\Services;
 
-use App\Repositories\User\CategoryRepositoryInterface;
+use App\Repositories\User\UserRepositoryInterface;
+use Illuminate\Support\Facades\Hash;
 
 class UserService extends BaseService
 {
-    public function __construct(CategoryRepositoryInterface $repository)
+    public function __construct(UserRepositoryInterface $repository)
     {
         $this->repository = $repository;
     }
@@ -16,8 +17,10 @@ class UserService extends BaseService
         return $this->repository->findById($id);
     }
 
-    public function index()
+    public function store($data)
     {
-        return $this->repository->index();
+        $data['password'] = Hash::make($data['password']);
+        return $this->repository->store($data);
     }
 }
+

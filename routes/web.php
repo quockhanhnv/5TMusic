@@ -1,6 +1,7 @@
 <?php
 
 Route::group(['namespace' => 'Client'], function() {
+
     Route::get('/','HomeController@index')->name('home');
 
     Route::get('khoa-hoc/{slug}', 'CourseController@show')->name('client.course.show');
@@ -20,4 +21,15 @@ Route::group(['namespace' => 'Client'], function() {
         Route::get('delete/{id}','ShoppingCartController@delete')->name('client.shopping.delete');
         Route::post('pay','ShoppingCartController@postPay')->name('client.shopping.pay');
     });
+});
+
+
+Route::group(['namespace' => 'Auth'], function () {
+    Route::get('dang-ky', 'RegisterController@getRegister')->name('client.register');
+    Route::post('dang-ky', 'RegisterController@postRegister');
+
+    Route::get('dang-nhap', 'LoginController@login')->name('login');
+    Route::post('dang-nhap', 'LoginController@postLogin');
+
+    Route::get('dang-xuat', 'LoginController@logout')->name('logout');
 });

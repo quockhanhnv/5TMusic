@@ -29,6 +29,11 @@ class ProductService extends BaseService
         return $this->repository->findById($id);
     }
 
+    public function findByName($name)
+    {
+        return $this->repository->findByName($name);
+    }
+
     public function store($data)
     {
         $data['pro_slug'] = Str::slug($data['pro_name']);

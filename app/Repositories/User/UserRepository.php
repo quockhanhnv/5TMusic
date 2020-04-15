@@ -17,9 +17,28 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
         return $this->model->find($id);
     }
 
-    public function index()
+    public function withRelation($relation)
     {
-        return $this->model->all();
+        // TODO: Implement withRelation() method.
     }
 
+    public function paginate($models, $itemPerPage)
+    {
+        // TODO: Implement paginate() method.
+    }
+
+    public function getAll()
+    {
+        // TODO: Implement getAll() method.
+    }
+
+    public function store($data)
+    {
+        return $this->model->fill($data)->save();
+    }
+
+    public function update($data, $id)
+    {
+        // TODO: Implement update() method.
+    }
 }

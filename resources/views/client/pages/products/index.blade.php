@@ -42,7 +42,7 @@
                                                 <div class="price"><del><span class="amount">{{ number_format($product->pro_price, 0, '.', ',') }}</span></del><ins><span class="amount">{{ number_format(getPriceSale($product->pro_price, $product->pro_sale), 0, '.', ',') }}</span></ins></div>
                                                 <div class="btn-add-to-cart-wrapper">
                                                     <a class="btn btn-default btn-xs btn-add-to-cart" href="{{ route('client.shopping.add', ['id' => $product->id]) }}">Thêm vào giỏ hàng</a>
-                                                </div>
+                                                </div>Search box
                                             </div>
                                         </div>
                                     </div>
@@ -54,7 +54,7 @@
                                     <div class="col-md-12">
                                         <nav>
                                             <ul class="pagination theme-colored">
-                                               {{ $hotProducts->links() }}
+                                               {{ $hotProducts->appends($query)->links() }}
                                             </ul>
                                         </nav>
                                     </div>
