@@ -16,7 +16,7 @@ class Product extends Model
         "3" => "UK",
     ];
 
-    public function getCountry()
+    public function getProvider()
     {
         return Arr::get($this->provider, $this->pro_provider,"[N\A]");
     }

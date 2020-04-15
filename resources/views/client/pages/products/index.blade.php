@@ -4,23 +4,23 @@
     <!-- Start main-content -->
     <div class="main-content">
         <!-- Section: inner-header -->
-        <section class="inner-header divider layer-overlay overlay-theme-colored-7" data-bg-img="{{ asset('template/images/bg/bg1.jpg') }}">
-            <div class="container pt-120 pb-60">
-                <!-- Section Content -->
-                <div class="section-content">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h2 class="text-theme-colored2 font-36">Shop With Sidebar</h2>
-                            <ol class="breadcrumb text-left mt-10 white">
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">Pages</a></li>
-                                <li class="active">Current Page</li>
-                            </ol>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+{{--        <section class="inner-header divider layer-overlay overlay-theme-colored-7" data-bg-img="{{ asset('template/images/bg/bg1.jpg') }}">--}}
+{{--            <div class="container pt-120 pb-60">--}}
+{{--                <!-- Section Content -->--}}
+{{--                <div class="section-content">--}}
+{{--                    <div class="row">--}}
+{{--                        <div class="col-md-6">--}}
+{{--                            <h2 class="text-theme-colored2 font-36">Shop With Sidebar</h2>--}}
+{{--                            <ol class="breadcrumb text-left mt-10 white">--}}
+{{--                                <li><a href="#">Home</a></li>--}}
+{{--                                <li><a href="#">Pages</a></li>--}}
+{{--                                <li class="active">Current Page</li>--}}
+{{--                            </ol>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </section>--}}
 
         <section class="">
             <div class="container">
@@ -42,7 +42,7 @@
                                                 <div class="price"><del><span class="amount">{{ number_format($product->pro_price, 0, '.', ',') }}</span></del><ins><span class="amount">{{ number_format(getPriceSale($product->pro_price, $product->pro_sale), 0, '.', ',') }}</span></ins></div>
                                                 <div class="btn-add-to-cart-wrapper">
                                                     <a class="btn btn-default btn-xs btn-add-to-cart" href="{{ route('client.shopping.add', ['id' => $product->id]) }}">Thêm vào giỏ hàng</a>
-                                                </div>Search box
+                                                </div>NSX: {{ $product->getProvider() }}
                                             </div>
                                         </div>
                                     </div>
