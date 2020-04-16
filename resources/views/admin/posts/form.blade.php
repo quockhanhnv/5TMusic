@@ -71,6 +71,7 @@
 
 @section('js')
     <script src="{{ asset('admin-assets\assets\plugin\ckeditor\ckeditor.js') }}"></script>
+
     <script>
         var options = {
             filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',

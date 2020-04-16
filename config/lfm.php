@@ -25,8 +25,9 @@ return [
     | If both options are set to false, then shared folder will be activated.
     |
      */
+
     'allow_private_folder'     => true,
-    'url_prefix' => 'filemanager',
+
     // Flexible way to customize client folders accessibility
     // If you want to customize client folders, publish tag="lfm_handler"
     // Then you can rewrite userField function in App\Handler\ConfigHandler class
