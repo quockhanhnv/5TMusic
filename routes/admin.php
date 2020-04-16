@@ -4,6 +4,9 @@
         return view('admin.dashboard.index');
     })->name('dashboard');
 
+    Route::group(['prefix' => 'laravel-filemanager'], function () {
+        \UniSharp\LaravelFilemanager\Lfm::routes();
+    });
 
     Route::group(['prefix' => 'categories'], function(){
         Route::get('','AdminCategoryController@index')->name('admin.category.index');
@@ -64,7 +67,19 @@
         Route::get('action/{action}/{id}','AdminOrderController@changeStatus')->name('admin.order.action');
     });
 
+    Route::group(['prefix' => 'posts'], function(){
+        Route::get('','AdminPostController@index')->name('admin.post.index');
+        Route::get('create','AdminPostController@create')->name('admin.post.create');
+        Route::post('create','AdminPostController@store');
 
+        Route::get('update/{id}','AdminPostController@edit')->name('admin.post.update');
+        Route::post('update/{id}','AdminPostController@update');
+
+        Route::get('hot/{id}','AdminPostController@hot')->name('admin.post.hot');
+        Route::get('active/{id}','AdminPostController@active')->name('admin.post.active');
+
+        Route::get('delete/{id}','AdminPostController@delete')->name('admin.post.delete');
+}   );
 
 //    ======================= COMMON ROUTE ==============================================
         Route::post('upload-content-images', 'AdminUploadController@uploadContentImages')->name('content-images-upload');

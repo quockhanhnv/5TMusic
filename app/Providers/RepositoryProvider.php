@@ -10,6 +10,8 @@ use App\Repositories\Order\OrderRepository;
 use App\Repositories\Order\OrderRepositoryInterface;
 use App\Repositories\OrderDetail\OrderDetailRepository;
 use App\Repositories\OrderDetail\OrderDetailRepositoryInterface;
+use App\Repositories\Post\PostRepository;
+use App\Repositories\Post\PostRepositoryInterface;
 use App\Repositories\Product\ProductRepository;
 use App\Repositories\Product\ProductRepositoryInterface;
 use App\Repositories\Rate\RatingRepository;
@@ -36,6 +38,7 @@ class RepositoryProvider extends ServiceProvider
                      RatingRepositoryInterface::class => RatingRepository::class,
                      OrderRepositoryInterface::class => OrderRepository::class,
                      OrderDetailRepositoryInterface::class => OrderDetailRepository::class,
+                     PostRepositoryInterface::class => PostRepository::class,
 
                  ] as $interface => $concrete) {
 
