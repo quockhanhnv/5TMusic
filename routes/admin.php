@@ -4,10 +4,6 @@
         return view('admin.dashboard.index');
     })->name('dashboard');
 
-    Route::group(['prefix' => 'laravel-filemanager'], function () {
-        \UniSharp\LaravelFilemanager\Lfm::routes();
-    });
-
     Route::group(['prefix' => 'categories'], function(){
         Route::get('','AdminCategoryController@index')->name('admin.category.index');
         Route::get('create','AdminCategoryController@create')->name('admin.category.create');
