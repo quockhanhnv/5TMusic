@@ -13,19 +13,19 @@ class PostRepository extends BaseRepository implements PostRepositoryInterface
         return Post::class;
     }
 
-    public function withRelation($model, $relation)
+    public function withRelation($relation)
     {
-        // TODO: Implement withRelation() method.
+        return $this->model->with($relation);
     }
 
     public function paginate($models, $itemPerPage)
     {
-        // TODO: Implement paginate() method.
+        return $models->paginate($itemPerPage);
     }
 
     public function findById($id)
     {
-        // TODO: Implement findById() method.
+        return $this->model->find($id);
     }
 
     public function filter($models, $field, $operator, $value)
@@ -35,7 +35,7 @@ class PostRepository extends BaseRepository implements PostRepositoryInterface
 
     public function getAll()
     {
-        // TODO: Implement getAll() method.
+        return $this->model->where('post_active', ACTIVE_STATUS);
     }
 
     public function store($data)
@@ -45,11 +45,16 @@ class PostRepository extends BaseRepository implements PostRepositoryInterface
 
     public function update($data, $id)
     {
-        // TODO: Implement update() method.
+        return $this->model->find($id)->fill($data)->save();
     }
 
     public function orderByField($field)
     {
         // TODO: Implement orderByField() method.
+    }
+
+    public function getHotPosts($courseNumber)
+    {
+        return $this->model->limit($courseNumber)->get();
     }
 }

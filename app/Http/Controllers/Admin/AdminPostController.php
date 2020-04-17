@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\AdminCourseRequest;
+use App\Http\Requests\AdminPostRequest;
 use App\Services\CategoryService;
 use App\Services\CourseService;
 use App\Http\Controllers\Controller;
@@ -23,14 +23,14 @@ class AdminPostController extends Controller
 
     public function index()
     {
-//        $courses = $this->courseService->withRelation('category');
-//        $courses = $this->courseService->paginate($courses, 10);
-//
-//        $viewData = [
-//            'courses' => $courses
-//        ];
-//
-//        return view('admin.courses.index', $viewData);
+        $posts = $this->postService->getAll();
+        $posts = $this->postService->paginate($posts, 10);
+
+        $viewData = [
+            'posts' => $posts
+        ];
+
+        return view('admin.posts.index', $viewData);
     }
 
     public function create()
@@ -38,32 +38,31 @@ class AdminPostController extends Controller
         return view('admin.posts.create');
     }
 
-    public function store(AdminCourseRequest $request)
+    public function store(AdminPostRequest $request)
     {
-        $data = $request->except('files');
+        $data = $request->all();
         try {
             $this->postService->store($data);
-            return redirect()->route('admin.course.index')->with('success', 'Tạo mới khóa học thành công');
+            return redirect()->route('admin.post.index')->with('success', 'Tạo mới bài viết thành công');
         } catch (\Exception $exception) {
-            Log::error('Something went wrong when insert course ' . $exception->getMessage());
+            Log::error('Something went wrong when insert post ' . $exception->getMessage());
             return redirect()->back()->withInput()->with('error', 'Xảy ra lỗi trong thao tác, vui lòng thử lại');
         }
     }
 
     public function edit($id)
     {
-        $course = $this->courseService->findById($id);
-        $categories = $this->categoryService->getAll();
+        $post = $this->postService->findById($id);
 
-        return view('admin.courses.update', compact('course', 'categories'));
+        return view('admin.posts.update', compact('post'));
     }
 
-    public function update(AdminCourseRequest $request, $id)
+    public function update(AdminPostRequest $request, $id)
     {
-        $data = $request->except('files');
+        $data = $request->all();
         try {
-            $this->courseService->update($data, $id);
-            return redirect()->route('admin.course.index')->with('success', 'Cập nhật khóa thành công');
+            $this->postService->update($data, $id);
+            return redirect()->route('admin.post.index')->with('success', 'Cập nhật bài viết thành công');
         } catch (\Exception $exception) {
             Log::error('Something went wrong when update course ' . $exception->getMessage());
             return redirect()->back()->withInput()->with('error', 'Xảy ra lỗi trong thao tác, vui lòng thử lại');
@@ -72,27 +71,27 @@ class AdminPostController extends Controller
 
     public function active($id)
     {
-        $course = $this->courseService->findById($id);
-        $course->course_active = ! $course->course_active;
+        $post = $this->postService->findById($id);
+        $post->post_active = ! $post->post_active;
 
-        $course->save();
+        $post->save();
 
         return redirect()->back();
     }
 
     public function hot($id)
     {
-        $course = $this->courseService->findById($id);
-        $course->course_hot = ! $course->course_hot;
-        $course->save();
+        $post = $this->postService->findById($id);
+        $post->post_hot = ! $post->post_hot;
+        $post->save();
 
         return redirect()->back();
     }
 
     public function delete($id)
     {
-        $course = $this->courseService->findById($id);
-        if ($course) $course->delete();
+        $post = $this->postService->findById($id);
+        if ($post) $post->delete();
 
         return redirect()->back();
     }

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5d3ed326041a7b1e58dfab9ddb042638",
+    "content-hash": "3b3cbed64eacf9ee08055dd91cb2253c",
     "packages": [
         {
             "name": "bumbummen99/shoppingcart",
@@ -3210,16 +3210,16 @@
         },
         {
             "name": "unisharp/laravel-filemanager",
-            "version": "v2.0.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/UniSharp/laravel-filemanager.git",
-                "reference": "0d017dd8da173cadf896c9ae4882343042dc589b"
+                "reference": "5cc82eca5c6636aeb86a9b31090bad26491b953b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/UniSharp/laravel-filemanager/zipball/0d017dd8da173cadf896c9ae4882343042dc589b",
-                "reference": "0d017dd8da173cadf896c9ae4882343042dc589b",
+                "url": "https://api.github.com/repos/UniSharp/laravel-filemanager/zipball/5cc82eca5c6636aeb86a9b31090bad26491b953b",
+                "reference": "5cc82eca5c6636aeb86a9b31090bad26491b953b",
                 "shasum": ""
             },
             "require": {
@@ -3281,7 +3281,7 @@
                 "tinymce",
                 "upload"
             ],
-            "time": "2020-01-08T09:44:46+00:00"
+            "time": "2020-01-09T10:45:53+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -5110,7 +5110,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "unisharp/laravel-filemanager": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

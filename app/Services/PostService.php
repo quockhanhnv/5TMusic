@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Repositories\Post\PostRepositoryInterface;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
 
 class PostService extends BaseService
 {
@@ -15,8 +16,20 @@ class PostService extends BaseService
         $this->repository = $repository;
         $this->uploadFileService = $uploadFileService;
     }
+
+    public function withRelation($relation)
+    {
+        return $this->repository->withRelation($relation);
+    }
+
+    public function getAll()
+    {
+        return $this->repository->getAll();
+    }
+
     public function store($data)
     {
+        $data['post_user_id'] = Auth::id() ? Auth::id() : 0;
         $data['post_slug']     = Str::slug($data['post_name']);
         if (isset($data['post_avatar'])) {
             $avatarPath = $this->uploadFileService->upload($data['post_avatar'], 'posts');
@@ -24,5 +37,33 @@ class PostService extends BaseService
         }
 
         return $this->repository->store($data);
+    }
+
+    public function paginate($models, $itemPerPage)
+    {
+        return $this->repository->paginate($models, $itemPerPage);
+    }
+
+    public function findById($id)
+    {
+        return $this->repository->findById($id);
+    }
+
+    public function update($data, $id)
+    {
+        $data['post_user_id'] = Auth::id() ? Auth::id() : 0;
+        $data['post_slug'] = Str::slug($data['post_name']);
+        if (isset($data['post_avatar'])) {
+            $avatarPath = $this->uploadFileService->upload($data['post_avatar'], 'posts');
+            $data['post_avatar'] = $avatarPath;
+        }
+
+        return $this->repository->update($data, $id);
+    }
+
+    // =============== client ==========
+    public function getHotPosts($courseNumber)
+    {
+        return $this->repository->getHotPosts($courseNumber);
     }
 }

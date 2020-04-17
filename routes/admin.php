@@ -66,10 +66,10 @@
     Route::group(['prefix' => 'posts'], function(){
         Route::get('','AdminPostController@index')->name('admin.post.index');
         Route::get('create','AdminPostController@create')->name('admin.post.create');
-        Route::post('create','AdminPostController@store');
+        Route::post('create','AdminPostController@store')->name('admin.post.store');
 
-        Route::get('update/{id}','AdminPostController@edit')->name('admin.post.update');
-        Route::post('update/{id}','AdminPostController@update');
+        Route::get('update/{id}','AdminPostController@edit')->name('admin.post.show');
+        Route::post('update/{id}','AdminPostController@update')->name('admin.post.update');
 
         Route::get('hot/{id}','AdminPostController@hot')->name('admin.post.hot');
         Route::get('active/{id}','AdminPostController@active')->name('admin.post.active');

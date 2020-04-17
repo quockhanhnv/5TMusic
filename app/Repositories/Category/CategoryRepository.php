@@ -16,6 +16,7 @@ class CategoryRepository extends BaseRepository implements CategoryRepositoryInt
     {
         return $this->model->with($relation);
     }
+
     public function paginate($models, $itemPerPage)
     {
         return $models->paginate($itemPerPage);

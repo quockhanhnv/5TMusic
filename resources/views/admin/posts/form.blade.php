@@ -74,10 +74,10 @@
 
     <script>
         var options = {
-            filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
-            filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
-            filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
-            filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token='
+            filebrowserImageBrowseUrl: "{{ route('unisharp.lfm.show') }}",
+            filebrowserImageUploadUrl: "{{ route('unisharp.lfm.upload') }}",
+            {{--filebrowserBrowseUrl: '/laravel-filemanager?type=Files',--}}
+            {{--filebrowserUploadUrl: "{{route('unisharp.lfm.upload')}}"--}}
         };
     </script>
     <script>
