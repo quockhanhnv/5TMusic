@@ -9,7 +9,7 @@
                     </div>
                     <div class="feature-title">
                         <h3>Đăng Ký Online</h3>
-                        <a href="#" class="read-more font-roboto-slab text-theme-colored2">Xem thêm</a>
+                        <a href="#register" class="read-more font-roboto-slab text-theme-colored2">Xem thêm</a>
                     </div>
                 </div>
             </div>
@@ -20,7 +20,7 @@
                     </div>
                     <div class="feature-title">
                         <h3>Giáo Trình Hiện Đại</h3>
-                        <a href="#" class="read-more font-roboto-slab text-theme-colored2">Xem thêm</a>
+                        <a href="#books" class="read-more font-roboto-slab text-theme-colored2">Xem thêm</a>
                     </div>
                 </div>
             </div>
@@ -31,7 +31,7 @@
                     </div>
                     <div class="feature-title">
                         <h3>Hơn 20.000 Học Viên</h3>
-                        <a href="#" class="read-more font-roboto-slab text-theme-colored2">Xem thêm</a>
+                        <a href="#gallery" class="read-more font-roboto-slab text-theme-colored2">Xem thêm</a>
                     </div>
                 </div>
             </div>

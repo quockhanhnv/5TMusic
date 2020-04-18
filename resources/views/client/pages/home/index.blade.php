@@ -19,7 +19,7 @@
 
         <!-- Section: Courses -->
         <section id="courses" class="bg-silver-deep">
-            <div class="container pb-40">
+            <div class="container pb-40" id="books">
                 <div class="section-title">
                     <div class="row">
                         <div class="col-md-12">
@@ -86,7 +86,7 @@
 
         <!-- Divider: Reservation Form -->
         <section id="reservation" class="parallax layer-overlay overlay-theme-colored-9" data-bg-img="{{ asset('template/images/bg/hoc-vien.jpg') }}" data-parallax-ratio="0.4">
-            <div class="container">
+            <div class="container" id="register">
                 <div class="row">
                     <div class="col-md-8 sm-text-center">
                         <h3 class="text-white mt-30 mb-0">Nhận đăng ký trực tuyến miễn phí</h3>
