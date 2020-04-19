@@ -27,6 +27,16 @@ class PostService extends BaseService
         return $this->repository->getAll();
     }
 
+    public function orderByField($field, $orderBy)
+    {
+        return $this->repository->orderByField($field, $orderBy);
+    }
+
+    public function filter($models, $field, $operator, $value)
+    {
+        return $this->repository->filter($models, $field, $operator, $value);
+    }
+
     public function store($data)
     {
         $data['post_user_id'] = Auth::id() ? Auth::id() : 0;

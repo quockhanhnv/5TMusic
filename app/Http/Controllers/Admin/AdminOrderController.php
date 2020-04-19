@@ -21,10 +21,10 @@ class AdminOrderController extends Controller
 
     public function index(Request $request)
     {
-        $orders = $this->orderService->orderByField('created_at');
+        $orders = $this->orderService->orderByField('created_at', 'desc');
         if($name = $request->name) $orders = $this->orderService->filter($orders,'order_name', 'like', '%'.$name.'%');
 
-        if($email = $request->email) $orders = $this->orderService->filter($orders,'order_name', 'like', '%'.$email.'%');
+        if($email = $request->email) $orders = $this->orderService->filter($orders,'order_email', 'like', '%'.$email.'%');
 
         if($request->has('user_type')) {
             $userType = $request->get('user_type');

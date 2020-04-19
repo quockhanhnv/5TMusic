@@ -23,7 +23,7 @@ class CourseController extends Controller
     public function index()
     {
         $courses = $this->courseService->withRelation('category');
-        $courses = $this->courseService->paginate($courses, 2);
+        $courses = $this->courseService->paginate($courses, 5);
 
         return view('client.pages.courses.index', compact('courses'));
     }

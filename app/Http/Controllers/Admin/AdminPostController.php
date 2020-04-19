@@ -23,7 +23,9 @@ class AdminPostController extends Controller
 
     public function index()
     {
-        $posts = $this->postService->getAll();
+
+        $posts = $this->postService->orderByField('created_at', 'desc');
+        $posts = $this->postService->filter($posts,'post_active', '=', ACTIVE_STATUS);
         $posts = $this->postService->paginate($posts, 10);
 
         $viewData = [

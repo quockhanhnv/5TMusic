@@ -24,10 +24,10 @@
                             <div class="col-lg-2">
                                 <select name="status" class="form-control m-input" id="exampleSelect1">
                                     <option value="">Trạng thái</option>
-                                    <option value="1" {{ \Request::get('status') == 1 ? "selected" : '' }}>Tiếp nhận</option>
-                                    <option value="2" {{ \Request::get('status') == 2 ? "selected" : '' }}>Vận chuyển</option>
-                                    <option value="3" {{ \Request::get('status') == 3 ? "selected" : '' }}>Thành công</option>
-                                    <option value="-1" {{ \Request::get('status') == -1 ? "selected" : '' }}>Hủy</option>
+                                    <option value="1" {{ \Request::get('status') == RECEIVED_STATUS ? "selected" : '' }}>Tiếp nhận</option>
+                                    <option value="2" {{ \Request::get('status') == DELIVERING_STATUS ? "selected" : '' }}>Vận chuyển</option>
+                                    <option value="3" {{ \Request::get('status') == FINISHED_STATUS ? "selected" : '' }}>Hoàn thành</option>
+                                    <option value="-1" {{ \Request::get('status') == CANCELED_STATUS ? "selected" : '' }}>Hủy</option>
                                 </select>
                             </div>
                             <div class="col-lg-1">

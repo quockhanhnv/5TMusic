@@ -50,9 +50,8 @@ class OrderRepository extends BaseRepository implements OrderRepositoryInterface
         // TODO: Implement update() method.
     }
 
-    public function orderByField($field)
+    public function orderByField($field, $orderBy)
     {
-//        dd($this->model->orderBy($field));
-        return $this->model->orderBy($field);
+        return $this->model->orderBy($field, $orderBy);
     }
 }

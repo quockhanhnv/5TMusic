@@ -54,11 +54,29 @@
                 </a>
             </li>
             <li class="m-menu__item " aria-haspopup="true"  m-menu-link-redirect="1">
+                <a href="{{ route('admin.post.index') }}" class="m-menu__link ">
+                    <span class="m-menu__item-here"></span>
+                    <i class="m-menu__link-icon flaticon-computer"></i>
+                    <span class="m-menu__link-text">
+                        Bài viết
+                    </span>
+                </a>
+            </li>
+            <li class="m-menu__item " aria-haspopup="true"  m-menu-link-redirect="1">
                 <a  href="{{ route('admin.rating.index') }}" class="m-menu__link ">
                     <span class="m-menu__item-here"></span>
                     <i class="m-menu__link-icon flaticon-share"></i>
                     <span class="m-menu__link-text">
                         Đánh giá
+                    </span>
+                </a>
+            </li>
+            <li class="m-menu__item " aria-haspopup="true"  m-menu-link-redirect="1">
+                <a  href="{{ route('admin.reservation.index') }}" class="m-menu__link ">
+                    <span class="m-menu__item-here"></span>
+                    <i class="m-menu__link-icon flaticon-share"></i>
+                    <span class="m-menu__link-text">
+                        Lịch hẹn
                     </span>
                 </a>
             </li>

@@ -1,21 +1,21 @@
 <?php
 
-namespace App\Repositories\Post;
+namespace App\Repositories\Reservation;
 
-use App\Models\Post;
+use App\Models\Reservation;
 use App\Repositories\BaseRepository;
 
-class PostRepository extends BaseRepository implements PostRepositoryInterface
+class ReservationRepository extends BaseRepository implements ReservationRepositoryInterface
 {
-
     public function model()
     {
-        return Post::class;
+        return Reservation::class;
     }
 
-    public function withRelation($relation)
+
+    public function withRelation($model, $relation)
     {
-        return $this->model->with($relation);
+        return $model->with($relation);
     }
 
     public function paginate($models, $itemPerPage)
@@ -35,7 +35,7 @@ class PostRepository extends BaseRepository implements PostRepositoryInterface
 
     public function getAll()
     {
-        return $this->model->where('post_active', ACTIVE_STATUS);
+        // TODO: Implement getAll() method.
     }
 
     public function store($data)
@@ -45,16 +45,11 @@ class PostRepository extends BaseRepository implements PostRepositoryInterface
 
     public function update($data, $id)
     {
-        return $this->model->find($id)->fill($data)->save();
+        // TODO: Implement update() method.
     }
 
     public function orderByField($field, $orderBy)
     {
         return $this->model->orderBy($field, $orderBy);
-    }
-
-    public function getHotPosts($courseNumber)
-    {
-        return $this->model->where('post_hot', HOT_STATUS)->limit($courseNumber)->get();
     }
 }

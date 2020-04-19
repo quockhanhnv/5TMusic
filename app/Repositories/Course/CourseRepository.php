@@ -30,7 +30,7 @@ class CourseRepository extends BaseRepository implements CourseRepositoryInterfa
 
     public function getAll()
     {
-        return $this->model->where('c_status', ACTIVE_STATUS)->get();
+        return $this->model->where('course_active', ACTIVE_STATUS)->get();
     }
 
     public function store($data)

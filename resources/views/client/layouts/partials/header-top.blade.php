@@ -175,7 +175,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li><a href="#home">Khóa Học</a>
+                    <li><a href="{{ route('client.course.index') }}">Khóa Học</a>
                         <ul class="dropdown">
                             <li><a href="page-course-gird.html">Course Gird</a></li>
                             <li><a href="page-course-list.html">Course List</a></li>

@@ -1,8 +1,9 @@
 <?php
 
 Route::group(['namespace' => 'Client'], function() {
-
+    // ==================== Home =====================
     Route::get('/','HomeController@index')->name('home');
+    Route::post('reservation', 'ReservationController@reservation')->name('reservation');
 
     //    =============== Courses ========================
     Route::get('khoa-hoc', 'CourseController@index')->name('client.course.index');

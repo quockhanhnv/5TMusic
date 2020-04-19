@@ -18,5 +18,5 @@ interface OrderRepositoryInterface
 
     public function update($data, $id);
 
-    public function orderByField($field);
+    public function orderByField($field, $orderBy);
 }

@@ -77,6 +77,14 @@
         Route::get('delete/{id}','AdminPostController@delete')->name('admin.post.delete');
 }   );
 
+    Route::group(['prefix' => 'reservations'], function(){
+        Route::get('','AdminReservationController@index')->name('admin.reservation.index');
+        Route::get('action/{action}/{id}','AdminReservationController@changeStatus')->name('admin.reservation.action');
+
+        Route::get('delete/{id}','AdminReservationController@delete')->name('admin.reservation.delete');
+
+    }   );
+
 //    ======================= COMMON ROUTE ==============================================
         Route::post('upload-content-images', 'AdminUploadController@uploadContentImages')->name('content-images-upload');
 

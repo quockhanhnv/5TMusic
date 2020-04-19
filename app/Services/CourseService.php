@@ -67,5 +67,10 @@ class CourseService extends BaseService
         return $this->repository->findAndUpdateReviewTotal($ratingStarNumber, $courseId, $operator);
     }
 
+    public function getAll()
+    {
+        return $this->repository->getAll();
+    }
+
 
 }

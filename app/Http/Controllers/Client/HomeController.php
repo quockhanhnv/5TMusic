@@ -22,12 +22,16 @@ class HomeController extends Controller
 
         $hotCourses = $this->courseService->getHotCourses(4);
         $hotPosts = $this->postService->getHotPosts(4);
+        $courses = $this->courseService->getAll();
 
         $viewData = [
             'hotCourses' => $hotCourses,
             'hotPosts' => $hotPosts,
+            'courses' => $courses,
         ];
 
         return view('client.pages.home.index', $viewData);
     }
+
+
 }

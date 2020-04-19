@@ -31,9 +31,9 @@ class OrderService extends BaseService
         return $this->repository->paginate($models, $itemPerPage);
     }
 
-    public function orderByField($field)
+    public function orderByField($field, $orderBy)
     {
-        return $this->repository->orderByField($field);
+        return $this->repository->orderByField($field, $orderBy);
     }
 
     public function filter($models, $field, $operator, $value)

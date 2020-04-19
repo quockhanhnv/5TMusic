@@ -10,21 +10,21 @@ class Order extends Model
     protected $guarded = [];
 
     protected $status = [
-        '1' => [
+        RECEIVED_STATUS => [
             'class' => 'btn btn-primary',
-            'name'  => 'Tiếp nhận'
+            'name'  => RECEIVED_NAME
         ],
-        '2' => [
+        DELIVERING_STATUS => [
             'class' => 'btn btn-danger',
-            'name'  => 'Vận chuyển'
+            'name'  => DELIVERING_NAME
         ],
-        '3' => [
+        FINISHED_STATUS => [
             'class' => 'btn btn-success',
-            'name'  => 'Hoàn thành'
+            'name'  => FINISHED_NAME
         ],
-        '-1' => [
+        CANCELED_STATUS => [
             'class' => 'btn btn-metal',
-            'name'  => 'Đã Huỷ'
+            'name'  => CANCELED_NAME
         ],
     ];
 

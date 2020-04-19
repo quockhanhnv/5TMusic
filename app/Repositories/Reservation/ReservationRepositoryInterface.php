@@ -1,16 +1,14 @@
 <?php
 
-namespace App\Repositories\Post;
+namespace App\Repositories\Reservation;
 
-interface PostRepositoryInterface
+interface ReservationRepositoryInterface
 {
-    public function withRelation($relation);
+    public function withRelation($model, $relation);
 
     public function paginate($models, $itemPerPage);
 
     public function findById($id);
-
-    public function orderByField($field, $orderBy);
 
     public function filter($models, $field, $operator, $value);
 
@@ -20,5 +18,5 @@ interface PostRepositoryInterface
 
     public function update($data, $id);
 
-    public function getHotPosts($courseNumber);
+    public function orderByField($field, $orderBy);
 }
