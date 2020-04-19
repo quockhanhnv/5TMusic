@@ -81,7 +81,7 @@
                             </div>
                             <div class="col-sm-12">
                                 <div class="form-group mb-0 mt-10">
-                                    <button type="submit" class="btn btn-colored btn-theme-colored2 text-white btn-lg btn-block" data-loading-text="Please wait...">Đăng ký</button>
+                                    <button type="submit" class="btn btn-colored btn-theme-colored2 text-white btn-lg btn-block" data-loading-text="Xin chờ...">Đăng ký</button>
                                 </div>
                             </div>
                         </div>
@@ -92,12 +92,12 @@
                     <script type="text/javascript">
                         $("#reservation_form").validate({
                             messages: {
-                                reservation_name: "Nhập tên của bạn",
+                                reservation_name: "Vui lòng nhập tên của bạn",
                                 reservation_email: "Nhập email",
                                 reservation_phone: "Nhập SĐT",
                                 reservation_course_id: "Chọn khóa học",
-                                reservation_time: "Nhập thời gian nhập học",
-                                reservation_message: "Nhập tin nhắn của bạn",
+                                reservation_time: "Nhập thời gian học",
+                                reservation_message: "Vui lòng nhập tin nhắn của bạn",
                             },
                             submitHandler: function(form) {
                                 var form_btn = $(form).find('button[type="submit"]');
