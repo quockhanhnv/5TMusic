@@ -12,6 +12,8 @@ interface ProductRepositoryInterface
 
     public function findByName($name);
 
+    public function orderByField($field, $orderBy);
+
     public function getAll();
 
     public function store($data);

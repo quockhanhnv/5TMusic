@@ -29,6 +29,11 @@ class ProductService extends BaseService
         return $this->repository->findById($id);
     }
 
+    public function orderByField($field, $orderBy)
+    {
+        return $this->repository->orderByField($field, $orderBy);
+    }
+
     public function findByName($name)
     {
         return $this->repository->findByName($name);

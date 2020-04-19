@@ -23,7 +23,7 @@ class AdminProductController extends Controller
 
     public function index()
     {
-        $products = $this->productService->withRelation('category');
+        $products = $this->productService->withRelation('category')->orderBy('created_at', 'desc');
         $products = $this->productService->paginate($products, 10);
 
         $viewData = [

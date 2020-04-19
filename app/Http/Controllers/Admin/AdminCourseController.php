@@ -21,7 +21,7 @@ class AdminCourseController extends Controller
 
     public function index()
     {
-        $courses = $this->courseService->withRelation('category');
+        $courses = $this->courseService->withRelation('category')->orderBy('created_at', 'desc');
         $courses = $this->courseService->paginate($courses, 10);
 
         $viewData = [

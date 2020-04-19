@@ -17,7 +17,7 @@ class PostController extends Controller
 
     public function index()
     {
-        $posts = $this->postService->withRelation('user');
+        $posts = $this->postService->withRelation('user')->orderBy('created_at', 'desc');
         $posts = $this->postService->paginate($posts, 6);
 
         return view('client.pages.posts.index', compact('posts'));
