@@ -6,6 +6,8 @@ use App\Repositories\Category\CategoryRepository;
 use App\Repositories\Category\CategoryRepositoryInterface;
 use App\Repositories\Course\CourseRepository;
 use App\Repositories\Course\CourseRepositoryInterface;
+use App\Repositories\Gallery\GalleryRepository;
+use App\Repositories\Gallery\GalleryRepositoryInterface;
 use App\Repositories\Order\OrderRepository;
 use App\Repositories\Order\OrderRepositoryInterface;
 use App\Repositories\OrderDetail\OrderDetailRepository;
@@ -42,6 +44,7 @@ class RepositoryProvider extends ServiceProvider
                      OrderDetailRepositoryInterface::class => OrderDetailRepository::class,
                      PostRepositoryInterface::class => PostRepository::class,
                      ReservationRepositoryInterface::class => ReservationRepository::class,
+                     GalleryRepositoryInterface::class => GalleryRepository::class,
 
                  ] as $interface => $concrete) {
 

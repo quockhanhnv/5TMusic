@@ -21,7 +21,7 @@
                             <i class="fa flaticon-edit"></i>
                         </a>
                         <span>
-                            Tạo mới
+                            Danh sách
                         </span>
                     </h3>
                 </div>

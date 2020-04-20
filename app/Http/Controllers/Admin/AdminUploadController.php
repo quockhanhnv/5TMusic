@@ -36,7 +36,7 @@ class AdminUploadController extends Controller
         $fileName = $request->get('fileName');
         $path = 'uploads/tempFiles/' . date('Y') . '/' . date('m') . '/' . date('d') . '/' . $fileName;
         \File::delete($path);
-        \File::deleteDirectory(public_path('tempFiles'));
+//        \File::deleteDirectory(public_path('tempFiles'));
 
         return response([
             'filePath' => $path

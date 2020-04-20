@@ -83,7 +83,22 @@
 
         Route::get('delete/{id}','AdminReservationController@delete')->name('admin.reservation.delete');
 
-    }   );
+    });
+
+    Route::group(['prefix' => 'galleries'], function(){
+        Route::get('','AdminGalleryController@index')->name('admin.gallery.index');
+        Route::get('create','AdminGalleryController@create')->name('admin.gallery.create');
+        Route::post('create','AdminGalleryController@store')->name('admin.gallery.store');
+
+        Route::get('update/{id}','AdminGalleryController@edit')->name('admin.gallery.show');
+        Route::post('update/{id}','AdminGalleryController@update')->name('admin.gallery.update');
+
+        Route::get('hot/{id}','AdminGalleryController@hot')->name('admin.gallery.hot');
+        Route::get('active/{id}','AdminGalleryController@active')->name('admin.gallery.active');
+
+        Route::get('delete/{id}','AdminGalleryController@delete')->name('admin.gallery.delete');
+
+    });
 
 //    ======================= COMMON ROUTE ==============================================
         Route::post('upload-content-images', 'AdminUploadController@uploadContentImages')->name('content-images-upload');
