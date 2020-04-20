@@ -7,7 +7,7 @@
                 <label class="">
                     Danh mục<span class="text-danger">&nbsp(*)</span>:
                 </label>
-                <select name="gallery_type" class="form-control m-input" id="exampleSelect1">
+                <select name="gallery_type" class="form-control m-input" id="exampleSelect1" required aria-required="true">
                     <option value="">__Chọn danh mục__</option>
                     @foreach($types as $key => $type)
                         <option value="{{ $key }}">
@@ -21,13 +21,17 @@
             </div>
         </div>
         <div class="form-group m-form__group row">
-            <div class="col-sm-12 ">
-                <div class="dz-message">
+            <div class="col-sm-12 m-dropzone m-dropzone--default dz-clickable">
+                <div class="m-dropzone__msg dz-message needsclick">
                     <div class="drag-icon-cph">
-                        <i class="material-icons">touch_app</i>
+                        <i class="la la-hand-pointer-o"></i>
                     </div>
-                    <h3>Kéo thả hoặc click để chọn ảnh</h3>
-                    <em>(Chọn ảnh dạng jpeg,jpg,png,gif)</em>
+                    <h3 class="m-dropzone__msg-title">
+                        Kéo thả file ảnh hoặc click để tải lên
+                    </h3>
+                    <span class="m-dropzone__msg-desc">
+                        Hỗ trợ các file ảnh PNG, JPEG, JPG
+                    </span>
                 </div>
                 <div class="fallback">
                     <input name="files[]" type="file"/>
@@ -41,22 +45,36 @@
 @section('js')
     <script>
          var urlGalleryIndex = "{{ route('admin.gallery.index') }}";
+         var createGallery = $('form#createGallery');
+         createGallery.validate({
+             rules: {
+                 gallery_type: 'required'
+             },
+             messages: {
+                 gallery_type: {
+                     required: 'Hãy chọn danh mục xuất hiện ngoài trang chủ'
+                 }
+             }
+         });
     </script>
     <script>
         var _token = $('meta[name="csrf-token"]').attr('content');
         Dropzone.options.createGallery = {
             paramName: "files[]", // The name that will be used to transfer the file
-            maxFilesize: 5, // MB
+            maxFilesize: 10, // MB
             addRemoveLinks: true,
             acceptedFiles: '.jpg, .jpeg, .png, .gif',
-            dictRemoveFile: 'Xoá file',
+            dictRemoveFile: 'Xoá',
             autoProcessQueue: false,
             init: function() {
                 var submitButton =  $('#createBtn');
                 var myDropzone = this;
                 submitButton.click(function (e) {
                     e.preventDefault();
-                    myDropzone.processQueue();
+                    // myDropzone.processQueue();
+                    if(createGallery.valid()){
+                        myDropzone.processQueue();
+                    }
                 });
                 this.on('sending', function (file, xhr, formData) {
                     var data = $('form#createGallery').serializeArray();
@@ -68,8 +86,8 @@
                 this.on('success', function () {
                     swal({
                         title: "Tạo mới hình ảnh thành công!",
-                        text: "Cửa sổ sẽ tự động đóng sau 2s",
-                        timer: 2000,
+                        text: "Cửa sổ sẽ tự động đóng sau 10s",
+                        timer: 10000,
                         showConfirmButton: false
                     });
                     window.location.href=urlGalleryIndex;

@@ -19,4 +19,6 @@ interface GalleryRepositoryInterface
     public function update($data, $id);
 
     public function getTypesAttr();
+
+    public function getGalleriesForHomePage();
 }

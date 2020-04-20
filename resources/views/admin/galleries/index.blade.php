@@ -54,7 +54,7 @@
                                         </div>
                                     </td>
                                     </td>
-                                    <td>{{ $galerry->getType() }}</td>
+                                    <td>{{ $galerry->getType() ?? '' }}</td>
                                     <th> {{ $galerry->user->name }}</th>
                                     <td>{{ $galerry->created_at }}</td>
                                     <td>

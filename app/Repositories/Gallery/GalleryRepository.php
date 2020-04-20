@@ -51,4 +51,9 @@ class GalleryRepository extends BaseRepository implements GalleryRepositoryInter
     {
         return $this->model->types;
     }
+
+    public function getGalleriesForHomePage()
+    {
+        return $this->model->where('gallery_active', ACTIVE_STATUS)->get();
+    }
 }

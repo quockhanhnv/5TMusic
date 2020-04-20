@@ -67,4 +67,10 @@ class GalleryService extends BaseService
     {
         return $this->repository->findById($id);
     }
+
+    // Client
+    public function getGalleriesForHomePage()
+    {
+        return $this->repository->getGalleriesForHomePage();
+    }
 }
