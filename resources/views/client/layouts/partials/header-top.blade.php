@@ -1,10 +1,10 @@
-<div class="header-top bg-theme-colored2 sm-text-center">
+<div class="header-top bg-theme-colored2 sm-text-center" data-bg-color="#212331" style="background: rgb(33, 35, 49) !important;">
     <div class="container">
         <div class="row">
             <div class="col-md-6">
                 <div class="widget text-white">
                     <ul class="list-inline xs-text-center text-white">
-                        <li class="m-0 pl-10 pr-10"> <a href="#" class="text-white"><i class="fa fa-phone text-white"></i> 123-456-789</a> </li>
+                        <li class="m-0 pl-10 pr-10"> <a href="#" class="text-white"><i class="fa fa-phone text-white"></i> 0971.777.555</a> </li>
                         <li class="m-0 pl-10 pr-10">
                             <a href="#" class="text-white"><i class="fa fa-envelope-o text-white mr-5"></i> phambathanh5t@gmail.com</a>
                         </li>
@@ -14,9 +14,9 @@
             <div class="col-md-2 pr-0">
                 <div class="widget">
                     <ul class="styled-icons icon-sm pull-right flip sm-pull-none sm-text-center mt-5">
-                        <li><a href="#"><i class="fa fa-facebook text-white"></i></a></li>
-                        <li><a href="#"><i class="fa fa-google-plus text-white"></i></a></li>
-                        <li><a href="#"><i class="fa fa-instagram text-white"></i></a></li>
+                        <li><a href="https://www.facebook.com/Trungtamdaotaoamnhac5T"><i class="fa fa-facebook text-white"></i></a></li>
+                        <li><a href="https://www.facebook.com/Trungtamdaotaoamnhac5T"><i class="fa fa-google-plus text-white"></i></a></li>
+                        <li><a href="https://www.youtube.com/channel/UCo93dK1TP5Xgw7ItJMuIaww"><i class="fa fa-youtube text-white"></i></a></li>
 
                     </ul>
                 </div>
@@ -43,10 +43,10 @@
 <div class="header-middle p-0 bg-lightest xs-text-center">
     <div class="container pt-20 pb-20">
         <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-4">
-                <a class="menuzord-brand pull-left flip sm-pull-center mb-15" href="{{ route('home') }}"><img src="{{ asset('template/images/logo-wide.png') }}" alt=""></a>
+            <div class="col-xs-12 col-sm-12 col-md-2">
+                <a class="" href="{{ route('home') }}"><img src="{{ asset('images/logos/image_header_logo.png') }}" alt=""></a>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-8">
+            <div class="col-xs-12 col-sm-12 col-md-10">
                 <div class="row">
                     <div class="col-xs-12 col-sm-4 col-md-4">
                         <div class="widget no-border sm-text-center mt-10 mb-10 m-0">
@@ -66,7 +66,7 @@
                         <div class="widget no-border sm-text-center mt-10 mb-10 m-0">
                             <i class="pe-7s-map-marker text-theme-colored2 font-48 mt-0 mr-15 mr-sm-0 sm-display-block pull-left flip sm-pull-none"></i>
                             <a href="#" class="font-12 text-gray text-uppercase">Cơ sở chính</a>
-                            <h5 class="font-13 text-black m-0"> KTX Mỹ Đình, HN</h5>
+                            <h5 class="font-13 text-black m-0"> DN5, KTX Mỹ Đình, HN</h5>
                         </div>
                     </div>
                 </div>

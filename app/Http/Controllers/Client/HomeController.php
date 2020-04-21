@@ -27,7 +27,7 @@ class HomeController extends Controller
         $hotPosts = $this->postService->getHotPosts(4);
         $courses = $this->courseService->getAll(); // for reservation form
         $galleryTypes = $this->galleryService->getTypesAttr();
-        $gallerImages = $this->galleryService->getGalleriesForHomePage();
+        $gallerImages = $this->galleryService->getGalleriesForHomePage()->paginate(12);
 
 
 

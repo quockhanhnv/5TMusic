@@ -34,7 +34,7 @@
                     </span>
                 </div>
                 <div class="fallback">
-                    <input name="files[]" type="file"/>
+                    <input name="files[]" type="file" multiple>
                 </div>
             </div>
         </div>
@@ -66,6 +66,7 @@
             acceptedFiles: '.jpg, .jpeg, .png, .gif',
             dictRemoveFile: 'Xoá',
             autoProcessQueue: false,
+            uploadMultiple: true,
             init: function() {
                 var submitButton =  $('#createBtn');
                 var myDropzone = this;
@@ -86,10 +87,13 @@
                 this.on('success', function () {
                     swal({
                         title: "Tạo mới hình ảnh thành công!",
-                        text: "Cửa sổ sẽ tự động đóng sau 10s",
-                        timer: 10000,
+                        text: "Cửa sổ sẽ tự động đóng sau 5s",
+                        timer: 5000,
                         showConfirmButton: false
                     });
+
+                });
+                this.on('queuecomplete', function () {
                     window.location.href=urlGalleryIndex;
                 });
 
