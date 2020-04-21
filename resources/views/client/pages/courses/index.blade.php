@@ -56,53 +56,31 @@
                     <div class="col-md-3">
                         <div class="sidebar sidebar-left mt-sm-30">
                             <div class="widget">
-                                <h5 class="widget-title line-bottom">Archives</h5>
+                                <h5 class="widget-title line-bottom">Sản Phẩm Mới Nhất</h5>
                                 <ul class="list list-divider list-border">
-                                    <li><a href="#"><i class="fa fa-check-square-o mr-10 text-black-light"></i> Vehicle Accidents</a></li>
-                                    <li><a href="#"><i class="fa fa-check-square-o mr-10 text-black-light"></i> Family Law</a></li>
-                                    <li><a href="#"><i class="fa fa-check-square-o mr-10 text-black-light"></i> Personal Injury</a></li>
-                                    <li><a href="#"><i class="fa fa-check-square-o mr-10 text-black-light"></i> Personal Injury</a></li>
-                                    <li><a href="#"><i class="fa fa-check-square-o mr-10 text-black-light"></i> Case Investigation</a></li>
-                                    <li><a href="#"><i class="fa fa-check-square-o mr-10 text-black-light"></i> Business Taxation</a></li>
+                                    @foreach($products as $product)
+                                        <li>
+                                            <a href="{{ route('client.product.show', $product->pro_slug . '-' . $product->id) }}">
+                                                <i class="fa fa-hand-o-right"></i> &nbsp;{{ $product->pro_name }} &nbsp;<span class="label label-danger">New</span>
+                                            </a>
+                                        </li>
+                                    @endforeach
                                 </ul>
                             </div>
-                            <div class="widget">
-                                <h5 class="widget-title line-bottom">Twitter Feed</h5>
-                                <div class="twitter-feed list-border clearfix" data-username="Envato" data-count="2"></div>
-                            </div>
-                            <div class="widget">
-                                <h5 class="widget-title line-bottom">Image gallery with text</h5>
-                                <div class="owl-carousel-1col">
-                                    <div class="item">
-                                        <img src="https://placehold.it/365x230" alt="">
-                                        <h4 class="title">This is a Demo Title</h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae illum amet illo.</p>
-                                    </div>
-                                    <div class="item">
-                                        <img src="https://placehold.it/365x230" alt="">
-                                        <h4 class="title">This is a Demo Title</h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae illum amet illo.</p>
-                                    </div>
-                                    <div class="item">
-                                        <img src="https://placehold.it/365x230" alt="">
-                                        <h4 class="title">This is a Demo Title</h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae illum amet illo.</p>
-                                    </div>
-                                </div>
-                            </div>
+
                             <div class="widget">
                                 <h5 class="widget-title line-bottom">Tags</h5>
                                 <div class="tags">
-                                    <a href="#">travel</a>
-                                    <a href="#">blog</a>
-                                    <a href="#">lifestyle</a>
-                                    <a href="#">feature</a>
-                                    <a href="#">mountain</a>
-                                    <a href="#">design</a>
-                                    <a href="#">restaurant</a>
-                                    <a href="#">journey</a>
-                                    <a href="#">classic</a>
-                                    <a href="#">sunset</a>
+                                    <a href="#">Khóa học</a>
+                                    <a href="#">Guitar</a>
+                                    <a href="#">5TGuitar</a>
+                                    <a href="#">5T-AD</a>
+                                    <a href="#">Classic</a>
+                                    <a href="#">Acoustic</a>
+                                    <a href="#">Music</a>
+                                    <a href="#">5T-Music</a>
+                                    <a href="#">Học đàn</a>
+                                    <a href="#">Tập đàn</a>
                                 </div>
                             </div>
                         </div>

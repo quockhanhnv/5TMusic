@@ -20,4 +20,6 @@ interface ProductRepositoryInterface
 
     public function update($data, $id);
 
+    public function getProductsForSidebar($numberProduct);
+
 }

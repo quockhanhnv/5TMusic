@@ -31,29 +31,24 @@
             </div>
             <div class="col-sm-6 col-md-3">
                 <div class="widget dark">
-                    <h4 class="widget-title line-bottom-theme-colored-2">Tin Mới</h4>
+                    <h4 class="widget-title line-bottom-theme-colored-2">Khóa Học</h4>
                     <div class="latest-posts">
-                        <article class="post media-post clearfix pb-0 mb-10">
-                            <a class="post-thumb" href="#"><img src="https://placehold.it/80x55" alt=""></a>
-                            <div class="post-right">
-                                <h5 class="post-title mt-0 mb-5"><a href="#">PHP Learning</a></h5>
-                                <p class="post-date mb-0 font-12">Mar 08, 2015</p>
+                        <div class="product-list">
+                        @foreach($courses as $course) <!-- from view composer-->
+                            <div class="media">
+                                <a class="media-left pull-left flip" href="{{ route('client.course.show', $course->course_slug . '-'. $course->id) }}">
+                                    <img class="media-object thumb" width="80" src="{{ $course->course_avatar }}" alt="">
+                                </a>
+                                <div class="media-body">
+                                    <h5 class="media-heading product-title mb-0"><a href="{{ route('client.course.show', $course->course_slug . '-'. $course->id) }}">{{ $course->course_name }}</a></h5>
+                                    <div class="star-rating mt-5 mb-5 ml-0" title="Rated {{ $course->course_review_total ? round($course->course_review_star/$course->course_review_total, 2) : 0}} out of 5">
+                                        <span data-width="{{$course->course_review_total ? (($course->course_review_star/$course->course_review_total)/5)*100 : 0}}%">{{ $course->course_review_total ? round($course->course_review_star/$course->course_review_total, 2) : 0}}</span>
+                                    </div>
+                                    <span class="price">{{ number_format(getPriceSale($course->course_price, $course->course_sale), 0, '.', ',') }} k</span>
+                                </div>
                             </div>
-                        </article>
-                        <article class="post media-post clearfix pb-0 mb-10">
-                            <a class="post-thumb" href="#"><img src="https://placehold.it/80x55" alt=""></a>
-                            <div class="post-right">
-                                <h5 class="post-title mt-0 mb-5"><a href="#">Web Development</a></h5>
-                                <p class="post-date mb-0 font-12">Mar 08, 2015</p>
-                            </div>
-                        </article>
-                        <article class="post media-post clearfix pb-0 mb-10">
-                            <a class="post-thumb" href="#"><img src="https://placehold.it/80x55" alt=""></a>
-                            <div class="post-right">
-                                <h5 class="post-title mt-0 mb-5"><a href="#">Spoken English</a></h5>
-                                <p class="post-date mb-0 font-12">Mar 08, 2015</p>
-                            </div>
-                        </article>
+                            @endforeach
+                        </div>
                     </div>
                 </div>
             </div>

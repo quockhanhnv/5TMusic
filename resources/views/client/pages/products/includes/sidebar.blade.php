@@ -5,7 +5,7 @@
             <div class="search-form">
                 <form action="" method="GET">
                     <div class="input-group">
-                        <input type="text" name="name" placeholder="Click to Search Product" class="form-control search-input">
+                        <input type="text" name="name" placeholder="Tìm kiếm sản phẩm" value="{{ \Request::get('name') }}" class="form-control search-input">
                         <span class="input-group-btn">
                         <button type="submit" class="btn search-button"><i class="fa fa-search"></i></button>
                         </span>
@@ -14,50 +14,34 @@
             </div>
         </div>
         <div class="widget">
-            <h5 class="widget-title line-bottom">Categories</h5>
+            <h5 class="widget-title line-bottom">Khóa Học</h5>
             <div class="categories">
                 <ul class="list list-border angle-double-right">
-                    <li><a href="#">Creative<span>(19)</span></a></li>
-                    <li><a href="#">Portfolio<span>(21)</span></a></li>
-                    <li><a href="#">Fitness<span>(15)</span></a></li>
-                    <li><a href="#">Gym<span>(35)</span></a></li>
-                    <li><a href="#">Personal<span>(16)</span></a></li>
+                    @foreach($courses as $course) <!-- from view composers -->
+                    <li><a href="{{ route('client.course.show', $course->course_slug .'-'. $course->id ) }}"><i class="fa fa-hand-o-right"></i> &nbsp{{ $course->course_name }} <span class="label label-danger">Hot</span></a> </li>
+                    @endforeach
                 </ul>
             </div>
         </div>
         <div class="widget">
-            <h5 class="widget-title line-bottom">Latest News</h5>
+            <h5 class="widget-title line-bottom">Tin Tức Nổi Bật</h5>
             <div class="latest-posts">
+                @foreach($news as $new) <!-- from view composers -->
                 <article class="post media-post clearfix pb-0 mb-10">
-                    <a class="post-thumb" href="#"><img src="https://placehold.it/75x75" alt=""></a>
+                    <a class="post-thumb" href="{{ route('client.post.show', $new->post_slug .  '-' . $new->id) }}">
+                        <img src="{{ $new->post_avatar }}" alt="" width="80">
+                    </a>
                     <div class="post-right">
-                        <h5 class="post-title mt-0"><a href="#">Sustainable Construction</a></h5>
-                        <p>Lorem ipsum dolor sit amet adipisicing elit...</p>
+                        <h5 class="post-title mt-0">
+                            <a href="{{ route('client.post.show', $new->post_slug .  '-' . $new->id) }}">
+                                {{ \Illuminate\Support\Str::limit($new->post_name, 60) }}
+                            </a>
+                        </h5>
                     </div>
                 </article>
-                <article class="post media-post clearfix pb-0 mb-10">
-                    <a class="post-thumb" href="#"><img src="https://placehold.it/75x75" alt=""></a>
-                    <div class="post-right">
-                        <h5 class="post-title mt-0"><a href="#">Industrial Coatings</a></h5>
-                        <p>Lorem ipsum dolor sit amet adipisicing elit...</p>
-                    </div>
-                </article>
-                <article class="post media-post clearfix pb-0 mb-10">
-                    <a class="post-thumb" href="#"><img src="https://placehold.it/75x75" alt=""></a>
-                    <div class="post-right">
-                        <h5 class="post-title mt-0"><a href="#">Storefront Installations</a></h5>
-                        <p>Lorem ipsum dolor sit amet adipisicing elit...</p>
-                    </div>
-                </article>
+                @endforeach
             </div>
         </div>
-        <div class="widget">
-            <h5 class="widget-title line-bottom">Photos from Flickr</h5>
-            <div id="flickr-feed" class="clearfix">
-                <!-- Flickr Link -->
-                <script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=9&amp;display=latest&amp;size=s&amp;layout=x&amp;source=user&amp;user=52617155@N08">
-                </script>
-            </div>
-        </div>
+
     </div>
 </div>

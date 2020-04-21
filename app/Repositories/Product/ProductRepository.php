@@ -55,4 +55,9 @@ class ProductRepository extends BaseRepository implements ProductRepositoryInter
     {
         return $this->model->where('pro_active', ACTIVE_STATUS);
     }
+
+    public function getProductsForSidebar($numberProduct)
+    {
+        return $this->model->limit($numberProduct)->orderBy('created_at', 'desc')->get();
+    }
 }

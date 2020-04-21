@@ -51,6 +51,11 @@ class CategoryRepository extends BaseRepository implements CategoryRepositoryInt
         return $listCategoriesSort;
     }
 
+    // for view composers
+//    public function getPatentCategories()
+//    {
+//        return $this->model->where('')
+//    }
 
 
 }
