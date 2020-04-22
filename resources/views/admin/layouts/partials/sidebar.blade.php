@@ -63,24 +63,6 @@
                 </a>
             </li>
             <li class="m-menu__item " aria-haspopup="true"  m-menu-link-redirect="1">
-                <a  href="{{ route('admin.rating.index') }}" class="m-menu__link ">
-                    <span class="m-menu__item-here"></span>
-                    <i class="m-menu__link-icon flaticon-share"></i>
-                    <span class="m-menu__link-text">
-                        Đánh giá
-                    </span>
-                </a>
-            </li>
-            <li class="m-menu__item " aria-haspopup="true"  m-menu-link-redirect="1">
-                <a  href="{{ route('admin.reservation.index') }}" class="m-menu__link ">
-                    <span class="m-menu__item-here"></span>
-                    <i class="m-menu__link-icon flaticon-share"></i>
-                    <span class="m-menu__link-text">
-                        Lịch hẹn
-                    </span>
-                </a>
-            </li>
-            <li class="m-menu__item " aria-haspopup="true"  m-menu-link-redirect="1">
                 <a  href="{{ route('admin.gallery.index') }}" class="m-menu__link ">
                     <span class="m-menu__item-here"></span>
                     <i class="m-menu__link-icon flaticon-share"></i>
@@ -88,6 +70,12 @@
                         Ảnh học viên
                     </span>
                 </a>
+            </li>
+            <li class="m-menu__section ">
+                <h4 class="m-menu__section-text">
+                    Báo cáo
+                </h4>
+                <i class="m-menu__section-icon flaticon-more-v3"></i>
             </li>
             <li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  m-menu-submenu-toggle="hover" m-menu-link-redirect="1">
                 <a  href="javascript:;" class="m-menu__link m-menu__toggle">
@@ -216,19 +204,21 @@
                     </ul>
                 </div>
             </li>
-
-            <li class="m-menu__section ">
-                <h4 class="m-menu__section-text">
-                    Reports
-                </h4>
-                <i class="m-menu__section-icon flaticon-more-v3"></i>
+            <li class="m-menu__item " aria-haspopup="true"  m-menu-link-redirect="1">
+                <a  href="{{ route('admin.reservation.index') }}" class="m-menu__link ">
+                    <span class="m-menu__item-here"></span>
+                    <i class="m-menu__link-icon flaticon-alert"></i>
+                    <span class="m-menu__link-text">
+                        Lịch hẹn
+                    </span>
+                </a>
             </li>
             <li class="m-menu__item " aria-haspopup="true"  m-menu-link-redirect="1">
-                <a  href="inner.html" class="m-menu__link ">
+                <a  href="{{ route('admin.rating.index') }}" class="m-menu__link ">
                     <span class="m-menu__item-here"></span>
-                    <i class="m-menu__link-icon flaticon-graphic"></i>
+                    <i class="m-menu__link-icon flaticon-share"></i>
                     <span class="m-menu__link-text">
-                        Accounting
+                        Đánh giá
                     </span>
                 </a>
             </li>
@@ -237,16 +227,7 @@
                     <span class="m-menu__item-here"></span>
                     <i class="m-menu__link-icon flaticon-network"></i>
                     <span class="m-menu__link-text">
-                        Products
-                    </span>
-                </a>
-            </li>
-            <li class="m-menu__item " aria-haspopup="true"  m-menu-link-redirect="1">
-                <a  href="inner.html" class="m-menu__link ">
-                    <span class="m-menu__item-here"></span>
-                    <i class="m-menu__link-icon flaticon-network"></i>
-                    <span class="m-menu__link-text">
-                        Sales
+                        Bình luận
                     </span>
                 </a>
             </li>

@@ -100,6 +100,9 @@
 
     });
 
+    Route::group(['prefix' => 'comments'], function(){
+
+    });
 //    ======================= COMMON ROUTE ==============================================
         Route::post('upload-content-images', 'AdminUploadController@uploadContentImages')->name('content-images-upload');
 

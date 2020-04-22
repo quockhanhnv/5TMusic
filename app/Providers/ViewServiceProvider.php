@@ -29,6 +29,7 @@ class ViewServiceProvider extends ServiceProvider
     {
         View::composer('client.pages.products.includes.sidebar', ProductListSidebarComposer::class);
         View::composer(['client.pages.courses.includes.sidebar', 'client.layouts.partials.footer'], SidebarCourseDetailComposer::class);
-        View::composer(['client.pages.courses.includes.sidebar', 'client.pages.courses.index'], CourseListSidebarComposer::class);
+        View::composer(['client.pages.courses.includes.sidebar', 'client.pages.courses.index', 'client.pages.products.includes.related-products'],
+            CourseListSidebarComposer::class);
     }
 }
