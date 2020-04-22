@@ -17,4 +17,9 @@ class Course extends Model
     {
         return $this->hasMany(Rating::class, 'rating_course_id');
     }
+
+    public function comments()
+    {
+        return $this->morphMany(Comment::class, 'commentable');
+    }
 }

@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use App\Repositories\Category\CategoryRepository;
 use App\Repositories\Category\CategoryRepositoryInterface;
+use App\Repositories\Comment\CommentRepository;
+use App\Repositories\Comment\CommentRepositoryInterface;
 use App\Repositories\Course\CourseRepository;
 use App\Repositories\Course\CourseRepositoryInterface;
 use App\Repositories\Gallery\GalleryRepository;
@@ -45,6 +47,7 @@ class RepositoryProvider extends ServiceProvider
                      PostRepositoryInterface::class => PostRepository::class,
                      ReservationRepositoryInterface::class => ReservationRepository::class,
                      GalleryRepositoryInterface::class => GalleryRepository::class,
+                     CommentRepositoryInterface::class => CommentRepository::class,
 
                  ] as $interface => $concrete) {
 

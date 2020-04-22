@@ -32,6 +32,9 @@ class ProductController extends Controller
         $id = array_pop($arraySlug);
         $product = $this->productService->findById($id);
 
-        return view('client.pages.products.detail', compact('product'));
+        // lấy ra tất cả comment của khóa học đó
+        $comments = $product->comments()->paginate(20);
+
+        return view('client.pages.products.detail', compact('product', 'comments'));
     }
 }

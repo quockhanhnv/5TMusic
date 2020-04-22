@@ -313,94 +313,22 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <!-- Comments-->
                                     <div class="tab-pane fade" id="tab5">
-                                        <h4 class="line-bottom-theme-colored-2 mb-0">Comments</h4>
+                                        <h4 class="line-bottom-theme-colored-2 mb-0">Bình luận</h4>
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="blog-posts single-post">
-                                                    <div class="comments-area">
-                                                        <ul class="comment-list">
-                                                            <li>
-                                                                <div class="media comment-author"> <a class="media-left pull-left flip" href="#"><img class="img-thumbnail" src="{{ asset('template/images/blog/comment1.jpg') }}" alt=""></a>
-                                                                    <div class="media-body">
-                                                                        <h5 class="media-heading comment-heading">John Doe says:</h5>
-                                                                        <div class="comment-date">23/06/2014</div>
-                                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna et sed aliqua. Ut enim ea commodo consequat...</p>
-                                                                        <a class="replay-icon pull-right text-theme-colored2" href="#"> <i class="fa fa-commenting-o text-theme-colored2"></i> Replay</a> </div>
-                                                                </div>
-                                                            </li>
-                                                            <li>
-                                                                <div class="media comment-author"> <a class="media-left pull-left flip" href="#"><img class="img-thumbnail" src="{{ asset('template/images/blog/comment2.jpg') }}" alt=""></a>
-                                                                    <div class="media-body">
-                                                                        <h5 class="media-heading comment-heading">John Doe says:</h5>
-                                                                        <div class="comment-date">23/06/2014</div>
-                                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna et sed aliqua. Ut enim ea commodo consequat...</p>
-                                                                        <a class="replay-icon pull-right text-theme-colored2" href="#"> <i class="fa fa-commenting-o text-theme-colored2"></i> Replay</a>
-                                                                        <div class="clearfix"></div>
-                                                                        <div class="media comment-author nested-comment"> <a href="#" class="media-left pull-left flip pt-20"><img alt="" src="{{ asset('template/images/blog/comment3.jpg') }}" class="img-thumbnail"></a>
-                                                                            <div class="media-body p-20 bg-lighter">
-                                                                                <h5 class="media-heading comment-heading">John Doe says:</h5>
-                                                                                <div class="comment-date">23/06/2014</div>
-                                                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna et sed aliqua. Ut enim ea commodo consequat...</p>
-                                                                                <a class="replay-icon pull-right text-theme-colored2" href="#"> <i class="fa fa-commenting-o text-theme-colored2"></i> Replay</a>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="media comment-author nested-comment"> <a href="#" class="media-left pull-left flip pt-20"><img alt="" src="{{ asset('template/images/blog/comment2.jpg') }}" class="img-thumbnail"></a>
-                                                                            <div class="media-body p-20 bg-lighter">
-                                                                                <h5 class="media-heading comment-heading">John Doe says:</h5>
-                                                                                <div class="comment-date">23/06/2014</div>
-                                                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna et sed aliqua. Ut enim ea commodo consequat...</p>
-                                                                                <a class="replay-icon pull-right text-theme-colored2" href="#"> <i class="fa fa-commenting-o text-theme-colored2"></i> Replay</a>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </li>
-                                                            <li>
-                                                                <div class="media comment-author"> <a class="media-left pull-left flip" href="#"><img class="img-thumbnail" src="{{ asset('template/images/blog/comment2.jpg') }}" alt=""></a>
-                                                                    <div class="media-body">
-                                                                        <h5 class="media-heading comment-heading">John Doe says:</h5>
-                                                                        <div class="comment-date">23/06/2014</div>
-                                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna et sed aliqua. Ut enim ea commodo consequat...</p>
-                                                                        <a class="replay-icon pull-right text-theme-colored2" href="#"> <i class="fa fa-commenting-o text-theme-colored2"></i> Replay</a> </div>
-                                                                </div>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="comment-box">
-                                                        <div class="row">
-                                                            <div class="col-sm-12">
-                                                                <h5>Leave a Comment</h5>
-                                                                <div class="row">
-                                                                    <form role="form" id="comment-form">
-                                                                        <div class="col-sm-6 pt-0 pb-0">
-                                                                            <div class="form-group">
-                                                                                <input type="text" class="form-control" required name="contact_name" id="contact_name" placeholder="Enter Name">
-                                                                            </div>
-                                                                            <div class="form-group">
-                                                                                <input type="text" required class="form-control" name="contact_email2" id="contact_email2" placeholder="Enter Email">
-                                                                            </div>
-                                                                            <div class="form-group">
-                                                                                <input type="text" placeholder="Enter Website" required class="form-control" name="subject">
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-sm-6">
-                                                                            <div class="form-group">
-                                                                                <textarea class="form-control" required name="contact_message2" id="contact_message2"  placeholder="Enter Message" rows="7"></textarea>
-                                                                            </div>
-                                                                            <div class="form-group">
-                                                                                <button type="submit" class="btn btn-dark btn-flat pull-right m-0" data-loading-text="Please wait...">Submit</button>
-                                                                            </div>
-                                                                        </div>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                    @if(isset($comments))
+                                                        @include('client.pages.products.includes.comment-list', ['comments' => $comments])
+                                                    @endif
+                                                    @include('client.pages.products.includes.comment-form')
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <!-- End Comments-->
+
                                 </div>
                                 <div><a class="btn btn-xl btn-theme-colored2 mt-30 pr-40 pl-40" href="shop-product-details.html">Order Now</a></div>
                             </div>
@@ -418,7 +346,6 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <script>
         $(document).ready(function(){
-            console.log('a');
             /* 1. Visualizing things on Hover - See next part for action on click */
             $('#stars li').on('mouseover', function(){
                 var onStar = parseInt($(this).data('value'), 10); // The star currently mouse on
@@ -464,50 +391,86 @@
                 }
             });
 
-        });
+            function confirmRating(value)
+            {
+                console.log(value);
+                Swal.fire({
+                    title: 'Gửi đánh giá',
+                    text: "Cảm ơn bạn đã đánh giá " + value +" sao",
+                    icon: 'success',
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Ok',
+                }).then((result) => {
+                    if (result.value) {
+                        console.log(value);
+                        $.ajax({
+                            url: '{{ route('client.rating.course') }}',
+                            method: 'POST',
+                            data: {
+                                rating_star_number: value,
+                                rating_course_id:'{{ $course->id }}',
+                                _token: '{{ csrf_token() }}',
+                            },
+                            dataType: 'JSON',
+                            success: function (response) {
+                                console.log(response);
+                            },
+                            error: function () {
+                                console.log('Something went wrong when sending ajax');
+                            }
+                        });
+                    }
+                })
+            }
 
-        function confirmRating(value)
-        {
-            console.log(value);
-            Swal.fire({
-                title: 'Gửi đánh giá',
-                text: "Cảm ơn bạn đã đánh giá " + value +" sao",
-                icon: 'success',
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Ok',
-            }).then((result) => {
-                if (result.value) {
-                    console.log(value);
-                    $.ajax({
-                        url: '{{ route('client.rating.course') }}',
+            function ratingOneStar(ratingValue) {
+                Swal.fire({
+                    title: 'Gửi đánh giá',
+                    text: 'Chúng tôi sẽ cải thiện service.Cảm ơn bạn đã đánh giá ' + ratingValue + ' sao !',
+                    icon: 'success',
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Ok',
+                });
+            }
+
+            // comment
+
+            $("#comment-form").validate({
+                messages: {
+                    commentable_name: "Vui lòng nhập tên của bạn",
+                    commentable_content: "Vui lòng nhập nội dung bình luận",
+                },
+                submitHandler: function(form) {
+                    var form_btn = $(form).find('button[type="submit"]');
+                    var form_result_div = '#form-result';
+                    $(form_result_div).remove();
+                    var form_btn_old_msg = form_btn.html();
+                    form_btn.html(form_btn.prop('disabled', true).data("loading-text"));
+                    $(form).ajaxSubmit({
+                        url: '{{ route('client.comment.add.course.cmt') }}',
                         method: 'POST',
+                        dataType:  'json',
                         data: {
-                            rating_star_number: value,
-                            rating_course_id:'{{ $course->id }}',
                             _token: '{{ csrf_token() }}',
+                            commentable_id: "{{ $course->id }}"
                         },
-                        dataType: 'JSON',
-                        success: function (response) {
-                            console.log(response);
-                        },
-                        error: function () {
-                            console.log('Something went wrong when sending ajax');
+                        success: function(data) {
+                            if( data.status == 200 ) {
+                                $(form).find('.form-control').val('');
+                            }
+                            form_btn.prop('disabled', false).html(form_btn_old_msg);
+                            $(form_result_div).html(data.message).fadeIn('slow');
+                            setTimeout(function(){ $(form_result_div).fadeOut('slow') }, 6000);
+                            toastr[data.type](data.message);
                         }
                     });
                 }
-            })
-        }
-
-        function ratingOneStar(ratingValue) {
-            Swal.fire({
-                title: 'Gửi đánh giá',
-                text: 'Chúng tôi sẽ cải thiện service.Cảm ơn bạn đã đánh giá ' + ratingValue + ' sao !',
-                icon: 'success',
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Ok',
             });
-        }
+        });
+
+
+
     </script>
 @endsection

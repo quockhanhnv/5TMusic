@@ -7,6 +7,7 @@ use App\Services\CourseService;
 use App\Services\RatingService;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\DB;
 
 class CourseController extends Controller
@@ -22,7 +23,7 @@ class CourseController extends Controller
 
     public function index()
     {
-        $courses = $this->courseService->withRelation('category')->orderBy('created_at', 'desc');
+        $courses = $this->courseService->withRelation(['category', 'comments'])->orderBy('created_at', 'desc');
         $courses = $this->courseService->paginate($courses, 5);
 
         return view('client.pages.courses.index', compact('courses'));
@@ -35,8 +36,10 @@ class CourseController extends Controller
         $course = $this->courseService->findById($id);
         // thống kê rating cho client
         $ratingsDefault = $this->ratingService->statisticReviewForClient($id);
+        // lấy ra tất cả comment của khóa học đó
+        $comments = $course->comments()->paginate(20);
 
-        return view('client.pages.courses.detail', compact('course', 'ratingsDefault'));
+        return view('client.pages.courses.detail', compact('course', 'ratingsDefault', 'comments'));
     }
 
 }

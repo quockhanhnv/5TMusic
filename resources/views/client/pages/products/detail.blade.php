@@ -82,7 +82,7 @@
                                     <ul class="nav nav-tabs">
                                         <li class="active"><a href="#tab1" data-toggle="tab">Chi tiết</a></li>
                                         <li><a href="#tab2" data-toggle="tab">Thông số kỹ thuật</a></li>
-                                        <li><a href="#tab3" data-toggle="tab">Đánh giá</a></li>
+                                        <li><a href="#tab3" data-toggle="tab">Bình luận</a></li>
                                     </ul>
                                     <div class="tab-content">
                                         <div class="tab-pane fade in active" id="tab1">
@@ -141,40 +141,24 @@
                                                 </tbody>
                                             </table>
                                         </div>
+
+                                        <!-- Comments-->
                                         <div class="tab-pane fade" id="tab3">
-                                            <div class="reviews">
-                                                <ol class="commentlist">
-                                                    <li class="comment">
-                                                        <div class="media"> <a href="#" class="media-left"><img class="thumb img-circle media-object" alt="" src="https://placehold.it/75x75" width="75"></a>
-                                                            <div class="media-body">
-                                                                <ul class="review_text list-inline mt-5">
-                                                                    <li>
-                                                                        <div title="Rated 5.00 out of 5" class="star-rating"><span  data-width="100%">5.00</span></div>
-                                                                    </li>
-                                                                    <li>
-                                                                        <h5 class="media-heading meta"><span class="author">Tom Joe</span> – Mar 15, 2015:</h5>
-                                                                    </li>
-                                                                </ul>
-                                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec volutpat purus tempor sem molestie, sed blandit lacus posuere. Lorem ipsum dolor sit amet.</div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="comment">
-                                                        <div class="media"> <a href="#" class="media-left"><img class="thumb img-circle media-object" alt="" src="https://placehold.it/75x75" width="75"></a>
-                                                            <div class="media-body">
-                                                                <ul class="review_text list-inline mt-5">
-                                                                    <li>
-                                                                        <div title="Rated 4.00 out of 5" class="star-rating"><span  data-width="80%">4.00</span></div>
-                                                                    </li>
-                                                                    <li>
-                                                                        <h5 class="media-heading meta"><span class="author">Mark Doe</span> – Jan 23, 2015:</h5>
-                                                                    </li>
-                                                                </ul>
-                                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec volutpat purus tempor sem molestie, sed blandit lacus posuere. Lorem ipsum dolor sit amet.</div>
-                                                        </div>
-                                                    </li>
-                                                </ol>
+                                            <h4 class="line-bottom-theme-colored-2 mb-0">Bình luận</h4>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="blog-posts single-post">
+                                                        @if(isset($comments))
+                                                            @include('client.pages.products.includes.comment-list', ['comments' => $comments])
+                                                        @endif
+                                                        @include('client.pages.products.includes.comment-form')
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
+
+                                        <!-- End Comments-->
+
                                     </div>
                                 </div>
                             </div>
@@ -283,4 +267,43 @@
         </section>
     </div>
     <!-- end main-content -->
+@endsection
+
+@section('js')
+    <script>
+        $(document).ready(function(){
+            $("#comment-form").validate({
+                messages: {
+                    commentable_name: "Vui lòng nhập tên của bạn",
+                    commentable_content: "Vui lòng nhập nội dung bình luận",
+                },
+                submitHandler: function(form) {
+                    var form_btn = $(form).find('button[type="submit"]');
+                    var form_result_div = '#form-result';
+                    $(form_result_div).remove();
+                    var form_btn_old_msg = form_btn.html();
+                    form_btn.html(form_btn.prop('disabled', true).data("loading-text"));
+                    $(form).ajaxSubmit({
+                        url: '{{ route('client.comment.add.product.cmt') }}',
+                        method: 'POST',
+                        dataType:  'json',
+                        data: {
+                            _token: '{{ csrf_token() }}',
+                            commentable_id: "{{ $product->id }}"
+                        },
+                        success: function(data) {
+                            if( data.status == 200 ) {
+                                $(form).find('.form-control').val('');
+                            }
+                            form_btn.prop('disabled', false).html(form_btn_old_msg);
+                            $(form_result_div).html(data.message).fadeIn('slow');
+                            setTimeout(function(){ $(form_result_div).fadeOut('slow') }, 6000);
+                            toastr[data.type](data.message);
+                        }
+                    });
+                }
+            });
+        });
+
+    </script>
 @endsection
