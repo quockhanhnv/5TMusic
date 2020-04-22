@@ -79,102 +79,8 @@
         <div class="container">
             <nav id="menuzord" class="menuzord default menuzord-responsive">
                 <ul class="menuzord-menu">
-                    <li class="active"><a href="{{ route('home') }}">Home</a>
-                        <ul class="dropdown">
-                            <li><a href="#">Multipage Layouts</a>
-                                <ul class="dropdown">
-                                    <li><a href="index-mp-layout1.html">Layout1</a></li>
-                                    <li><a href="index-mp-layout2.html">Layout2</a></li>
-                                    <li><a href="index-mp-layout3.html">Layout3</a></li>
-                                    <li><a href="index-mp-layout4.html">Layout4</a></li>
-                                    <li><a href="index-mp-layout5.html">Layout5</a></li>
-                                    <li><a href="index-mp-layout6.html">Layout6</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Singlepage Layouts</a>
-                                <ul class="dropdown">
-                                    <li><a href="index-sp-layout1.html">Layout1</a></li>
-                                    <li><a href="index-sp-layout2.html">Layout2</a></li>
-                                    <li><a href="index-sp-layout3.html">Layout3</a></li>
-                                    <li><a href="index-sp-layout4.html">Layout4</a></li>
-                                    <li><a href="index-sp-layout5.html">Layout5</a></li>
-                                    <li><a href="index-sp-layout6.html">Layout6</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Boxed Layouts</a>
-                                <ul class="dropdown">
-                                    <li><a href="index-boxed-mp-layout1.html">Multipage Layout1</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">RTL Layouts</a>
-                                <ul class="dropdown">
-                                    <li><a href="index-rtl-mp-layout1.html">Multipage Layout1</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Dark Layouts</a>
-                                <ul class="dropdown">
-                                    <li><a href="index-dark-mp-layout1.html">Multipage Layout1</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Home Variations</a>
-                                <ul class="dropdown">
-                                    <li><a href="#">Rev Slider</a>
-                                        <ul class="dropdown">
-                                            <li><a href="index-home-variation-revslider-style1.html">Layout1</a></li>
-                                            <li><a href="index-home-variation-revslider-style2.html">Layout2</a></li>
-                                            <li><a href="index-home-variation-revslider-style3.html">Layout3</a></li>
-                                            <li><a href="index-home-variation-revslider-style4.html">Layout4</a></li>
-                                            <li><a href="index-home-variation-revslider-style5.html">Layout5</a></li>
-                                            <li><a href="index-home-variation-revslider-style6.html">Layout6</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Maximage Slider</a>
-                                        <ul class="dropdown">
-                                            <li><a href="index-home-variation-maximageslider-style1.html">Layout1</a></li>
-                                            <li><a href="index-home-variation-maximageslider-style2.html">Layout2</a></li>
-                                            <li><a href="index-home-variation-maximageslider-style3.html">Layout3</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="index-home-variation-owl-carousel.html">Owl Carousel</a></li>
-                                    <li><a href="index-home-variation-owl-image-slider.html">Owl Image Slider</a></li>
-                                    <li><a href="index-home-variation-typed-text.html">Typed Text Layout</a></li>
-                                    <li><a href="index-home-variation-video-background.html">Youtube Background Video</a></li>
-                                    <li><a href="index-home-variation-html5-video.html">Html5 Background Video</a></li>
-                                    <li><a href="index-home-variation-bg-image-parallax.html">Bg Image Parallax Layout</a></li>
-                                    <li><a href="index-home-variation-bg-static.html">Bg Static Layout</a></li>
-                                    <li><a href="#">Home Appointment Form</a>
-                                        <ul class="dropdown">
-                                            <li><a href="index-home-variation-appointment-form-style1.html">Layout1</a></li>
-                                            <li><a href="index-home-variation-appointment-form-style2.html">Layout2</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li><a href="{{ route('client.product.index') }}">Sản Phẩm <span class="label label-danger">New</span></a>
-                        <ul class="dropdown">
-                            <li><a href="#">About</a>
-                                <ul class="dropdown">
-                                    <li><a href="page-about1.html">About Style 1</a></li>
-                                    <li><a href="page-about2.html">About Style 2</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#home">Teachers</a>
-                                <ul class="dropdown">
-                                    <li><a href="page-teachers-style1.html">Teachers style 1</a></li>
-                                    <li><a href="page-teachers-style2.html">Teachers style 2</a></li>
-                                    <li><a href="page-teacher-details.html">Teachers Details</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Profile</a>
-                                <ul class="dropdown">
-                                    <li><a href="page-account.html">Account</a></li>
-                                    <li><a href="page-account-edit.html">Edit Account</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
+                    <li class="active"><a href="{{ route('home') }}">Home</a></li>
+                    <li><a href="{{ route('client.product.index') }}">Sản Phẩm <span class="label label-danger">Hot</span></a></li>
                     <li><a href="{{ route('client.course.index') }}">Khóa Học</a>
                         <ul class="dropdown">
                             <li><a href="page-course-gird.html">Course Gird</a></li>
@@ -184,13 +90,7 @@
                     </li>
                     <li><a href="{{ route('client.post.index') }}">Tin Tức <span class="label label-danger">New</span></a>
                     </li>
-                    <li><a href="#home">Sự Kiện</a>
-                        <ul class="dropdown">
-                            <li><a href="page-course-gird.html">Course Gird</a></li>
-                            <li><a href="page-course-list.html">Course List</a></li>
-                            <li><a href="page-course-details.html">Course Details</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="#home">Sự Kiện</a></li>
                     <li @if(\Request::route()->getName() === 'client.shopping.list') class="active" @endif><a href="{{route('client.shopping.list')}}"><i class="icon_cart_alt" style="line-height: 14px"></i> <span class="label label-danger" id="itemCount">{{\Cart::count()}}</span></a></li>
                 </ul>
             </nav>

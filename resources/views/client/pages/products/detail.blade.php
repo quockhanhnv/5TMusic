@@ -309,6 +309,27 @@
                     });
                 }
             });
+
+            // phân trang bằng ajax
+            $("body").on("click", ".pagination a", function(e){
+                e.preventDefault();
+                var page = $(this).attr('href').split('page=')[1];
+                // console.log(page);
+                getPaginateComments(page);
+            });
+
+            function getPaginateComments(page)
+            {
+                $.ajax({
+                    type: "GET",
+                    url: '?page='+ page
+                })
+                    .success(function(response) {
+                        $('.comment-list').html(response.html)
+                        console.log(response.html);
+                        // $('body').html(response);
+                    });
+            }
         });
 
     </script>

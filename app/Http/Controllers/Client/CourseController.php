@@ -29,7 +29,7 @@ class CourseController extends Controller
         return view('client.pages.courses.index', compact('courses'));
     }
 
-    public function show($slug)
+    public function show(Request $request, $slug)
     {
         $arraySlug = explode('-', $slug);
         $id = array_pop($arraySlug);
@@ -37,7 +37,12 @@ class CourseController extends Controller
         // thống kê rating cho client
         $ratingsDefault = $this->ratingService->statisticReviewForClient($id);
         // lấy ra tất cả comment của khóa học đó
-        $comments = $course->comments()->orderBy('created_at', 'desc')->paginate(10);
+        $comments = $course->comments()->orderBy('created_at', 'desc')->paginate(5);
+
+        if ($request->ajax()) { // phân trang bằng ajax
+            $html = view('client.pages.courses.includes.comment-list', compact('comments'))->render();
+            return response(['html' => $html ?? null]);
+        }
 
         return view('client.pages.courses.detail', compact('course', 'ratingsDefault', 'comments'));
     }

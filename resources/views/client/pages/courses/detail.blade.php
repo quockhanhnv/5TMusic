@@ -465,7 +465,6 @@
                             setTimeout(function(){ $(form_result_div).fadeOut('slow') }, 6000);
                             // console.log(data.html);
                             if(data.html) {
-                                console.log('vào');
                                 $('.comment-list li').last().remove(); // xóa cmt cuối
                                 $('.comment-list').prepend(data.html); // hiện cmt vừa cmt lên đầu
                             }
@@ -474,6 +473,27 @@
                     });
                 }
             });
+
+            // phân trang bằng ajax
+            $("body").on("click", ".pagination a", function(e){
+                e.preventDefault();
+                var page = $(this).attr('href').split('page=')[1];
+                // console.log(page);
+                getPaginateComments(page);
+            });
+
+            function getPaginateComments(page)
+            {
+                $.ajax({
+                    type: "GET",
+                    url: '?page='+ page
+                })
+                .success(function(response) {
+                    $('.comment-list').html(response.html)
+                    console.log(response.html);
+                    // $('body').html(response);
+                });
+            }
         });
 
 
