@@ -298,6 +298,12 @@
                             form_btn.prop('disabled', false).html(form_btn_old_msg);
                             $(form_result_div).html(data.message).fadeIn('slow');
                             setTimeout(function(){ $(form_result_div).fadeOut('slow') }, 6000);
+                            // console.log(data.html);
+                            if(data.html) {
+                                console.log('vào');
+                                $('.comment-list li').last().remove(); // xóa cmt cuối
+                                $('.comment-list').prepend(data.html); // hiện cmt vừa cmt lên đầu
+                            }
                             toastr[data.type](data.message);
                         }
                     });

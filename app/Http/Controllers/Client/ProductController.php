@@ -33,7 +33,7 @@ class ProductController extends Controller
         $product = $this->productService->findById($id);
 
         // lấy ra tất cả comment của khóa học đó
-        $comments = $product->comments()->paginate(20);
+        $comments = $product->comments()->orderBy('created_at', 'desc')->paginate(10);
 
         return view('client.pages.products.detail', compact('product', 'comments'));
     }

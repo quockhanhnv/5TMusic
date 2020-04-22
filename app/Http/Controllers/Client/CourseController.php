@@ -37,7 +37,7 @@ class CourseController extends Controller
         // thống kê rating cho client
         $ratingsDefault = $this->ratingService->statisticReviewForClient($id);
         // lấy ra tất cả comment của khóa học đó
-        $comments = $course->comments()->paginate(20);
+        $comments = $course->comments()->orderBy('created_at', 'desc')->paginate(10);
 
         return view('client.pages.courses.detail', compact('course', 'ratingsDefault', 'comments'));
     }

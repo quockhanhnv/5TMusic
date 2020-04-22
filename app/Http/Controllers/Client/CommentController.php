@@ -32,7 +32,15 @@ class CommentController extends Controller
             $comment= $course->comments()->create($data);
 
             if($comment) {
-                return response()->json(['status' => 200, 'type' => 'success', 'message' => 'Bình luận thành công']);
+                // để append dữ liệu khi vừa đánhg giá xong bằng js
+                $html = view('client.pages.products.includes.separable-comment', compact('comment'))->render();
+
+                return response()->json(
+                    [
+                        'status' => 200,
+                        'type' => 'success', 'message' => 'Bình luận thành công',
+                        'html' => $html ?? null
+                    ]);
             }
             return response()->json(['status' => 200, 'type' => 'warning', 'message' => 'Xảy ra lỗi trong quá trình bình luận']);
         }
@@ -50,7 +58,15 @@ class CommentController extends Controller
             $comment= $product->comments()->create($data);
 
             if($comment) {
-                return response()->json(['status' => 200, 'type' => 'success', 'message' => 'Bình luận thành công']);
+                // để append dữ liệu khi vừa đánhg giá xong bằng js
+                $html = view('client.pages.products.includes.separable-comment', compact('comment'))->render();
+
+                return response()->json(
+                    [
+                        'status' => 200,
+                        'type' => 'success', 'message' => 'Bình luận thành công',
+                        'html' => $html ?? null
+                    ]);
             }
             return response()->json(['status' => 200, 'type' => 'warning', 'message' => 'Xảy ra lỗi trong quá trình bình luận']);
         }
