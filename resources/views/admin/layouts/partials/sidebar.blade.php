@@ -222,8 +222,8 @@
                     </span>
                 </a>
             </li>
-            <li class="m-menu__item " aria-haspopup="true"  m-menu-link-redirect="1">
-                <a  href="inner.html" class="m-menu__link ">
+            <li class="m-menu__item  @if(\Request::route()->getName() === 'admin.comment.index') m-menu__item--active @endif>" aria-haspopup="true"  m-menu-link-redirect="1">
+                <a  href="{{ route('admin.comment.index') }}" class="m-menu__link ">
                     <span class="m-menu__item-here"></span>
                     <i class="m-menu__link-icon flaticon-network"></i>
                     <span class="m-menu__link-text">

@@ -101,7 +101,8 @@
     });
 
     Route::group(['prefix' => 'comments'], function(){
-
+        Route::get('','AdminCommentController@index')->name('admin.comment.index');
+        Route::get('delete/{id}','AdminCommentController@delete')->name('admin.comment.delete');
     });
 //    ======================= COMMON ROUTE ==============================================
         Route::post('upload-content-images', 'AdminUploadController@uploadContentImages')->name('content-images-upload');

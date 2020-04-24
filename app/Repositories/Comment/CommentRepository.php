@@ -9,32 +9,32 @@ class CommentRepository extends BaseRepository implements CommentRepositoryInter
 {
     public function model()
     {
-        Comment::class;
+        return Comment::class;
     }
 
     public function withRelation($relation)
     {
-        // TODO: Implement withRelation() method.
+        return $this->model->with($relation);
     }
 
     public function filter($models, $field, $operator, $value)
     {
-        // TODO: Implement filter() method.
+        return $models->where($field, $operator, $value);
     }
 
-    public function orderByField($models, $field, $orderBy)
+    public function orderByField($model, $field, $orderBy)
     {
-        // TODO: Implement orderByField() method.
+        return $model->orderBy($field, $orderBy);
     }
 
     public function paginate($models, $itemPerPage)
     {
-        // TODO: Implement paginate() method.
+        return $models->paginate($itemPerPage);
     }
 
     public function findById($id)
     {
-        // TODO: Implement findById() method.
+        return $this->model->find($id);
     }
 
     public function store($data)
