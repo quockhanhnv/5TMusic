@@ -79,16 +79,16 @@
         <div class="container">
             <nav id="menuzord" class="menuzord default menuzord-responsive">
                 <ul class="menuzord-menu">
-                    <li class="active"><a href="{{ route('home') }}">Home</a></li>
-                    <li><a href="{{ route('client.product.index') }}">Sản Phẩm <span class="label label-danger">Hot</span></a></li>
-                    <li><a href="{{ route('client.course.index') }}">Khóa Học</a>
+                    <li @if(\Request::route()->getName() === 'home') class="active" @endif><a href="{{ route('home') }}">Home</a></li>
+                    <li @if(\Request::route()->getName() === 'client.product.index') class="active" @endif><a href="{{ route('client.product.index') }}">Sản Phẩm <span class="label label-danger">Hot</span></a></li>
+                    <li @if(\Request::route()->getName() === 'client.course.index') class="active" @endif><a href="{{ route('client.course.index') }}">Khóa Học</a>
                         <ul class="dropdown">
                             <li><a href="page-course-gird.html">Course Gird</a></li>
                             <li><a href="page-course-list.html">Course List</a></li>
                             <li><a href="page-course-details.html">Course Details</a></li>
                         </ul>
                     </li>
-                    <li><a href="{{ route('client.post.index') }}">Tin Tức <span class="label label-danger">New</span></a>
+                    <li @if(\Request::route()->getName() === 'client.post.index') class="active" @endif><a href="{{ route('client.post.index') }}">Tin Tức <span class="label label-danger">New</span></a>
                     </li>
                     <li><a href="#home">Sự Kiện</a></li>
                     <li @if(\Request::route()->getName() === 'client.shopping.list') class="active" @endif><a href="{{route('client.shopping.list')}}"><i class="icon_cart_alt" style="line-height: 14px"></i> <span class="label label-danger" id="itemCount">{{\Cart::count()}}</span></a></li>

@@ -16,7 +16,7 @@
                 </h4>
                 <i class="m-menu__section-icon flaticon-more-v3"></i>
             </li>
-            <li class="m-menu__item  m-menu__item--active" aria-haspopup="true" >
+            <li class="m-menu__item  @if(\Request::route()->getName() === 'dashboard') m-menu__item--active @endif>" aria-haspopup="true" >
                 <a href="{{ route('dashboard') }}" class="m-menu__link ">
                     <span class="m-menu__item-here"></span>
                     <i class="m-menu__link-icon flaticon-line-graph"></i>
@@ -26,7 +26,7 @@
                 </a>
             </li>
 
-            <li class="m-menu__item " aria-haspopup="true"  m-menu-link-redirect="1">
+            <li class="m-menu__item  @if(\Request::route()->getName() === 'admin.category.index') m-menu__item--active @endif>" aria-haspopup="true"  m-menu-link-redirect="1">
                 <a  href="{{ route('admin.category.index') }}" class="m-menu__link ">
                     <span class="m-menu__item-here"></span>
                     <i class="m-menu__link-icon flaticon-suitcase"></i>
@@ -35,7 +35,7 @@
                     </span>
                 </a>
             </li>
-            <li class="m-menu__item " aria-haspopup="true"  m-menu-link-redirect="1">
+            <li class="m-menu__item  @if(\Request::route()->getName() === 'admin.product.index') m-menu__item--active @endif>" aria-haspopup="true"  m-menu-link-redirect="1">
                 <a href="{{ route('admin.product.index') }}" class="m-menu__link ">
                     <span class="m-menu__item-here"></span>
                     <i class="m-menu__link-icon flaticon-light"></i>
@@ -44,7 +44,7 @@
                     </span>
                 </a>
             </li>
-            <li class="m-menu__item " aria-haspopup="true"  m-menu-link-redirect="1">
+            <li class="m-menu__item  @if(\Request::route()->getName() === 'admin.course.index') m-menu__item--active @endif>" aria-haspopup="true"  m-menu-link-redirect="1">
                 <a href="{{ route('admin.course.index') }}" class="m-menu__link ">
                     <span class="m-menu__item-here"></span>
                     <i class="m-menu__link-icon flaticon-computer"></i>
@@ -53,7 +53,7 @@
                     </span>
                 </a>
             </li>
-            <li class="m-menu__item " aria-haspopup="true"  m-menu-link-redirect="1">
+            <li class="m-menu__item  @if(\Request::route()->getName() === 'admin.post.index') m-menu__item--active @endif>" aria-haspopup="true"  m-menu-link-redirect="1">
                 <a href="{{ route('admin.post.index') }}" class="m-menu__link ">
                     <span class="m-menu__item-here"></span>
                     <i class="m-menu__link-icon flaticon-computer"></i>
@@ -62,7 +62,7 @@
                     </span>
                 </a>
             </li>
-            <li class="m-menu__item " aria-haspopup="true"  m-menu-link-redirect="1">
+            <li class="m-menu__item  @if(\Request::route()->getName() === 'admin.gallery.index') m-menu__item--active @endif>" aria-haspopup="true"  m-menu-link-redirect="1">
                 <a  href="{{ route('admin.gallery.index') }}" class="m-menu__link ">
                     <span class="m-menu__item-here"></span>
                     <i class="m-menu__link-icon flaticon-share"></i>
@@ -115,7 +115,7 @@
                                 </span>
                             </span>
                         </li>
-                        <li class="m-menu__item " aria-haspopup="true"  m-menu-link-redirect="1">
+                        <li class="m-menu__item @if(\Request::route()->getName() === 'admin.order.index') m-menu__item--active @endif>" aria-haspopup="true"  m-menu-link-redirect="1">
                             <a  href="{{ route('admin.order.index') }}" class="m-menu__link ">
                                 <i class="m-menu__link-bullet m-menu__link-bullet--line">
                                     <span></span>
@@ -204,7 +204,7 @@
                     </ul>
                 </div>
             </li>
-            <li class="m-menu__item " aria-haspopup="true"  m-menu-link-redirect="1">
+            <li class="m-menu__item  @if(\Request::route()->getName() === 'admin.reservation.index') m-menu__item--active @endif>" aria-haspopup="true"  m-menu-link-redirect="1">
                 <a  href="{{ route('admin.reservation.index') }}" class="m-menu__link ">
                     <span class="m-menu__item-here"></span>
                     <i class="m-menu__link-icon flaticon-alert"></i>
@@ -213,7 +213,7 @@
                     </span>
                 </a>
             </li>
-            <li class="m-menu__item " aria-haspopup="true"  m-menu-link-redirect="1">
+            <li class="m-menu__item  @if(\Request::route()->getName() === 'admin.rating.index') m-menu__item--active @endif>" aria-haspopup="true"  m-menu-link-redirect="1">
                 <a  href="{{ route('admin.rating.index') }}" class="m-menu__link ">
                     <span class="m-menu__item-here"></span>
                     <i class="m-menu__link-icon flaticon-share"></i>
